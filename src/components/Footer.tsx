@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FOOTER_DATA } from "@/lib/data";
-import { MapPin, Mail, Sparkles } from "lucide-react";
+import { MapPin, Mail, Sparkles, MessageCircle } from "lucide-react";
 
 export function Footer() {
     return (
@@ -63,9 +63,12 @@ export function Footer() {
                             Contáctanos hoy para realizar un diagnóstico inicial gratuito y establecer la hoja de ruta QHSE para tu empresa.
                         </p>
                         <a
-                            href={`mailto:${FOOTER_DATA.contact.email}`}
+                            href="https://wa.me/56950989084?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20inicial%20gratuito."
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="mt-6 flex items-center justify-center w-full py-4 bg-gradient-to-r from-gold-dark to-gold text-black font-bold rounded-lg hover:from-gold hover:to-gold-light transition-all duration-300 shadow-[0_8px_20px_rgba(212,175,55,0.25)] hover:-translate-y-1"
                         >
+                            <MessageCircle className="w-5 h-5 mr-2" aria-label="Icono WhatsApp" />
                             Solicitar Diagnóstico
                         </a>
                     </motion.div>
