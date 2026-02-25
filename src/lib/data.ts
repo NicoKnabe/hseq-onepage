@@ -1,10 +1,10 @@
 export const HERO_DATA = {
-  title: "La Diferencia entre Cumplir y Operar sin Fricciones",
+  title: "Certeza Operativa y Cumplimiento Normativo de Excelencia",
   subtitle:
-    "Asegura el inicio de tus faenas a tiempo y blinda legalmente tu empresa con una gestión de riesgos impecable.",
+    "Garantice la continuidad de sus faenas y supere los estándares de la industria con una gestión preventiva implacable.",
   primaryButton: {
     text: "Agendar Reunión Técnica",
-    href: "#contacto", // Or an external calendly link if provided
+    href: "#contacto",
   },
   secondaryButton: {
     text: "📥 Descargar Brochure Comercial",
@@ -13,7 +13,8 @@ export const HERO_DATA = {
 };
 
 export const AUTHORITY_DATA = {
-  consultant: "Nicolás Knabe Alcaino",
+  consultant: "Nicolás Knabe",
+  title: "Consultoría HSEQ Especializada",
   highlights: [
     "Auditor Líder Trinorma",
     "Cambridge University",
@@ -21,7 +22,7 @@ export const AUTHORITY_DATA = {
   ],
   stats: [
     { value: 8, suffix: "+", label: "Años de Experiencia" },
-    { value: 0, suffix: "", label: "Rechazos Documentales" },
+    { value: 3, suffix: "", label: "Normas ISO Dominadas" },
     { value: 100, suffix: "%", label: "Aprobación en Faena" },
   ],
 };
@@ -32,37 +33,38 @@ export const CHALLENGES_DATA = {
     {
       title: "Decreto Supremo N°44",
       description:
-        "Evite multas y garantice el cumplimiento normativo con una actualización constante.",
+        "Gestión preventiva estricta y actualización constante para evitar paralizaciones.",
     },
     {
-      title: "Ley Karin",
+      title: "Filtro de Mandantes Mineros",
       description:
-        "Implementación obligatoria de protocolos de prevención y resguardo laboral.",
+        "Superar los altos estándares de acreditación de Codelco, BHP y otros, garantizando ingreso sin demoras.",
     },
     {
-      title: "Ley de 40 Horas",
+      title: "Normas ISO (Trinorma)",
       description:
-        "Adaptación estructural de los turnos y gestión eficiente del tiempo de trabajo.",
+        "Implementación, auditorías y mantenimiento integral de ISO 9001, 14001 y 45001.",
     },
     {
-      title: "Estándares Mandantes",
+      title: "Gestión Ambiental y RETC",
       description:
-        "Cumplimiento riguroso de exigencias para operar sin fricciones (ej. Mineras).",
+        "Cumplimiento riguroso de exigencias medioambientales, manejo de residuos y declaraciones.",
     },
   ],
 };
 
 export const SOLUTIONS_DATA = {
   sectionTitle: "Soluciones Estratégicas",
-  categories: [
+  sectionSubtitle: "Respuestas concretas frente a los riesgos regulatorios y operativos más críticos de la minería.",
+  solutions: [
     {
       id: "acreditacion",
       title: "Acreditación Minera",
-      points: ["Carpetas estándar", "Carpetas complejas"],
+      points: ["Carpetas estándar", "Carpetas complejas", "Aprobación garantizada"],
     },
     {
       id: "sistemas",
-      title: "Sistemas ISO y Medio Ambiente",
+      title: "Gestión ISO y Medio Ambiente",
       points: [
         "Auditorías Trinorma",
         "Matrices IAAS",
@@ -70,12 +72,12 @@ export const SOLUTIONS_DATA = {
       ],
     },
     {
-      id: "blindaje",
-      title: "Blindaje Legal",
+      id: "cumplimiento",
+      title: "Certeza Operativa",
       points: [
-        "Actualización DS 44",
+        "Actualización y Cumplimiento DS 44",
         "Matrices IPER",
-        "Implementación Ley Karin",
+        "Cero Hallazgos Documentales",
       ],
     },
   ],
@@ -88,39 +90,56 @@ export const PLANS_DATA = {
       name: "Esencial",
       description: "Cobertura fundamental para operaciones estándar.",
       features: [
-        "Mantenimiento documental básico",
+        "Mantenimiento documental preventivo",
         "Soporte remoto horario hábil",
         "Actualizaciones normativas clave",
       ],
+      highlighted: false,
+      buttonText: "Consultar Plan",
+      buttonHref: "#contacto"
     },
     {
       name: "Profesional",
-      description: "Gestión integral enfocada en empresas en crecimiento.",
+      description: "Gestión integral enfocada en el sector industrial.",
       features: [
         "Acreditación Minera continua",
         "Auditorías internas preventivas",
         "Soporte prioritario 24/7",
-        "Implementación DS44 y Ley Karin",
+        "Supervisión de Cumplimiento DS44",
       ],
-      isPopular: true,
+      highlighted: true,
+      buttonText: "Cotizar Profesional",
+      buttonHref: "#contacto"
     },
     {
       name: "Enterprise",
       description: "Solución corporativa para operaciones de alta complejidad.",
       features: [
-        "Gestión Trinorma (ISO)",
-        "Representación ante mandantes",
+        "Gestión Trinorma (ISO) completa",
+        "Representación directa ante mandantes",
         "Auditorías de tercera parte",
-        "Asesoría legal HSEQ exclusiva",
+        "Asesoría técnica HSEQ exclusiva",
       ],
+      highlighted: false,
+      buttonText: "Contactar a Ventas",
+      buttonHref: "#contacto"
     },
   ],
 };
 
 export const CONTACT_DATA = {
-  cta: "¿Listo para Blindar su Operación en 2026? Agende una evaluación técnica de 30 minutos.",
+  cta: "¿Listo para asegurar la Continuidad Operacional en 2026? Agende una evaluación técnica.",
   phone: "+56 9 5098 9084",
   email: "nicolasknabe@hotmail.com",
-  location: "Viña del Mar, Chile",
+  location: "Cobertura Nacional - Todo Chile",
   brochureLink: "/brochure.pdf",
+};
+
+export const FOOTER_DATA = {
+  description: "Tranquilidad y respaldo frente a mandantes y fiscalización. Gestión HSEQ de clase mundial para su empresa.",
+  contact: {
+    email: "nicolasknabe@hotmail.com",
+    location: "Cobertura Nacional - Todo Chile",
+  },
+  copyright: `© ${new Date().getFullYear()} Nicolás Knabe. Todos los derechos reservados.`,
 };

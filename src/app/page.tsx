@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Authority } from "@/components/Authority";
 import { Challenges } from "@/components/Challenges";
@@ -7,7 +8,8 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-50 font-sans selection:bg-cyan-500/30">
+    <main className="min-h-screen bg-black text-white font-sans selection:bg-gold/30">
+      <Navbar />
       <Hero />
       <Authority />
       <Challenges />

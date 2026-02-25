@@ -11,23 +11,23 @@ const cardVariants = {
 
 export function Challenges() {
     return (
-        <section className="py-24 bg-gray-900 border-b border-gray-800">
+        <section className="py-24 bg-black border-b border-gold/10">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
                         {CHALLENGES_DATA.sectionTitle}
                     </motion.h2>
                     <motion.div
-                        className="w-20 h-1 bg-cyan-400 mx-auto rounded-full"
+                        className="w-20 h-1 bg-gradient-to-r from-gold-dark to-gold mx-auto rounded-full"
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     />
                 </div>
@@ -41,15 +41,16 @@ export function Challenges() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-gray-800/40 border border-gray-700 rounded-2xl p-6 hover:bg-gray-800 hover:border-cyan-500/50 transition-all duration-300 group"
+                            className="bg-black-card border border-gold/10 rounded-2xl p-8 hover:-translate-y-2 hover:border-gold/40 hover:shadow-[0_12px_30px_rgba(212,175,55,0.15)] transition-all duration-300 group relative overflow-hidden"
                         >
-                            <div className="w-12 h-12 bg-gray-700/50 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 group-hover:text-cyan-400 transition-colors duration-300 border border-gray-600 group-hover:border-cyan-500/30">
-                                <AlertCircle className="w-6 h-6 text-gray-300 group-hover:text-cyan-400" />
+                            <div className="absolute top-0 left-0 w-1 h-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            <div className="w-14 h-14 bg-gold/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/15 group-hover:text-gold transition-colors duration-300 border border-gold/10 group-hover:border-gold/30">
+                                <AlertCircle className="w-7 h-7 text-white-dim group-hover:text-gold transition-colors duration-300" />
                             </div>
-                            <h3 className="text-xl font-semibold text-white mb-3">
+                            <h3 className="text-xl font-bold text-gold mb-4">
                                 {challenge.title}
                             </h3>
-                            <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                            <p className="text-white-dim leading-relaxed text-base">
                                 {challenge.description}
                             </p>
                         </motion.div>

@@ -35,11 +35,11 @@ function StatItem({ stat }: { stat: typeof AUTHORITY_DATA.stats[0] }) {
     const { count, ref } = useCounter(stat.value);
 
     return (
-        <div ref={ref} className="text-center p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50 backdrop-blur-sm">
-            <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 font-mono">
+        <div ref={ref} className="text-center p-6 bg-black-card rounded-2xl border border-gold/10 hover:-translate-y-1 hover:border-gold/30 transition-all duration-300 shadow-sm">
+            <div className="text-4xl md:text-5xl font-extrabold text-gold mb-2 font-mono drop-shadow-md">
                 {count}{stat.suffix}
             </div>
-            <div className="text-sm md:text-base text-gray-400 font-medium">
+            <div className="text-sm md:text-base text-gray font-bold tracking-widest uppercase">
                 {stat.label}
             </div>
         </div>
@@ -48,26 +48,28 @@ function StatItem({ stat }: { stat: typeof AUTHORITY_DATA.stats[0] }) {
 
 export function Authority() {
     return (
-        <section className="py-24 bg-[#0B1121] relative border-y border-gray-800/50">
+        <section className="py-24 bg-black relative border-y border-gold/10">
             <div className="container mx-auto px-6">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
                         className="space-y-6"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white">
-                            Consultor Especialista: <br />
-                            <span className="text-cyan-400">{AUTHORITY_DATA.consultant}</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                            {AUTHORITY_DATA.consultant} <br />
+                            <span className="text-gold text-2xl md:text-3xl mt-2 block font-normal tracking-wide">{AUTHORITY_DATA.title}</span>
                         </h2>
 
-                        <ul className="space-y-4">
+                        <div className="w-16 h-1 bg-gradient-to-r from-gold to-gold-dark rounded-full mb-6" />
+
+                        <ul className="space-y-4 pt-4">
                             {AUTHORITY_DATA.highlights.map((highlight, index) => (
-                                <li key={index} className="flex items-center text-gray-300 text-lg">
-                                    <BadgeCheck className="w-6 h-6 text-yellow-500 mr-3 shrink-0" />
+                                <li key={index} className="flex items-center text-white-dim text-lg">
+                                    <BadgeCheck className="w-6 h-6 text-gold mr-4 shrink-0" />
                                     {highlight}
                                 </li>
                             ))}
@@ -75,9 +77,9 @@ export function Authority() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="grid grid-cols-2 gap-4 lg:gap-6"
                     >
