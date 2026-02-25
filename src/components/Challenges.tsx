@@ -45,7 +45,7 @@ export function Challenges() {
                         >
                             <div className="absolute top-0 left-0 w-1 h-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             <div className="w-14 h-14 bg-gold/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/15 group-hover:text-gold transition-colors duration-300 border border-gold/10 group-hover:border-gold/30">
-                                <AlertCircle className="w-7 h-7 text-white-dim group-hover:text-gold transition-colors duration-300" />
+                                <AlertCircle className="w-7 h-7 text-white-dim group-hover:text-gold transition-colors duration-300" aria-label="Icono alerta de desafío" />
                             </div>
                             <h3 className="text-xl font-bold text-gold mb-4">
                                 {challenge.title}

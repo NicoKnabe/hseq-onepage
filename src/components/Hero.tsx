@@ -20,7 +20,7 @@ export function Hero() {
                         className="mb-8 inline-block"
                     >
                         <span className="text-gold tracking-widest uppercase text-sm font-bold border border-gold/30 px-4 py-1.5 rounded-full bg-gold/5">
-                            Consultoría HSEQ Especializada
+                            Consultoría QHSE Especializada
                         </span>
                     </motion.div>
 
@@ -53,7 +53,7 @@ export function Hero() {
                             className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-gradient-to-r from-gold-dark to-gold rounded-lg hover:from-gold hover:to-gold-light transition-all duration-300 shadow-[0_8px_25px_rgba(212,175,55,0.4)] hover:-translate-y-1"
                         >
                             {HERO_DATA.primaryButton.text}
-                            <ArrowRight className="ml-2 w-5 h-5" />
+                            <ArrowRight className="ml-2 w-5 h-5" aria-label="Flecha derecha" />
                         </a>
 
                         <a
@@ -61,7 +61,7 @@ export function Hero() {
                             download
                             className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold text-gold border border-gold/30 rounded-lg hover:bg-gold/10 transition-colors duration-300"
                         >
-                            <Download className="mr-2 w-5 h-5" />
+                            <Download className="mr-2 w-5 h-5" aria-label="Icono de descarga" />
                             {HERO_DATA.secondaryButton.text}
                         </a>
                     </motion.div>

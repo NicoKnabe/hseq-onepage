@@ -69,7 +69,7 @@ export function Authority() {
                         <ul className="space-y-4 pt-4">
                             {AUTHORITY_DATA.highlights.map((highlight, index) => (
                                 <li key={index} className="flex items-center text-white-dim text-lg">
-                                    <BadgeCheck className="w-6 h-6 text-gold mr-4 shrink-0" />
+                                    <BadgeCheck className="w-6 h-6 text-gold mr-4 shrink-0" aria-label="Check de Autoridad" />
                                     {highlight}
                                 </li>
                             ))}

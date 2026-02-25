@@ -51,17 +51,17 @@ export function Solutions() {
                                     key={index}
                                     onClick={() => setActiveTab(index)}
                                     className={`w-full flex items-center p-4 rounded-xl transition-all duration-300 text-left cursor-pointer border ${activeTab === index
-                                            ? "bg-black-card border-gold/50 shadow-[0_0_20px_rgba(212,175,55,0.15)]"
-                                            : "bg-transparent border-transparent hover:bg-black-card/50 hover:border-gold/20"
+                                        ? "bg-black-card border-gold/50 shadow-[0_0_20px_rgba(212,175,55,0.15)]"
+                                        : "bg-transparent border-transparent hover:bg-black-card/50 hover:border-gold/20"
                                         }`}
                                 >
                                     <div
                                         className={`p-3 rounded-lg mr-4 transition-colors ${activeTab === index
-                                                ? "bg-gold/10 text-gold"
-                                                : "bg-black-card text-gray"
+                                            ? "bg-gold/10 text-gold"
+                                            : "bg-black-card text-gray"
                                             }`}
                                     >
-                                        <Icon className="w-6 h-6" />
+                                        <Icon className="w-6 h-6" aria-label={`Icono de ${solution.title}`} />
                                     </div>
                                     <span
                                         className={`font-semibold text-lg ${activeTab === index ? "text-gold" : "text-white-dim"
@@ -89,7 +89,7 @@ export function Solutions() {
                         <ul className="grid sm:grid-cols-2 gap-4 relative z-10">
                             {SOLUTIONS_DATA.solutions[activeTab].points.map((point, idx) => (
                                 <li key={idx} className="flex items-start text-white-dim">
-                                    <CheckCircle2 className="w-5 h-5 text-gold mr-3 mt-1 shrink-0" />
+                                    <CheckCircle2 className="w-5 h-5 text-gold mr-3 mt-1 shrink-0" aria-label="Icono check de solución" />
                                     <span className="leading-relaxed">{point}</span>
                                 </li>
                             ))}

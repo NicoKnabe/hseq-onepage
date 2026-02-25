@@ -1,5 +1,5 @@
 export const HERO_DATA = {
-  title: "Certeza Operativa y Cumplimiento Normativo de Excelencia",
+  title: "Consultoría QHSE y Cumplimiento Normativo",
   subtitle:
     "Garantice la continuidad de sus faenas y supere los estándares de la industria con una gestión preventiva implacable.",
   primaryButton: {
@@ -14,7 +14,7 @@ export const HERO_DATA = {
 
 export const AUTHORITY_DATA = {
   consultant: "Nicolás Knabe",
-  title: "Consultoría HSEQ Especializada",
+  title: "Consultoría QHSE Especializada",
   highlights: [
     "Auditor Líder Trinorma",
     "Cambridge University",
@@ -118,7 +118,7 @@ export const PLANS_DATA = {
         "Gestión Trinorma (ISO) completa",
         "Representación directa ante mandantes",
         "Auditorías de tercera parte",
-        "Asesoría técnica HSEQ exclusiva",
+        "Asesoría técnica QHSE exclusiva",
       ],
       highlighted: false,
       buttonText: "Contactar a Ventas",
@@ -136,7 +136,7 @@ export const CONTACT_DATA = {
 };
 
 export const FOOTER_DATA = {
-  description: "Tranquilidad y respaldo frente a mandantes y fiscalización. Gestión HSEQ de clase mundial para su empresa.",
+  description: "Tranquilidad y respaldo frente a mandantes y fiscalización. Gestión QHSE de clase mundial para su empresa.",
   contact: {
     email: "nicolasknabe@hotmail.com",
     location: "Cobertura Nacional - Todo Chile",

@@ -34,14 +34,14 @@ export function Footer() {
                                 className="inline-flex items-center text-gold hover:text-gold-light transition-colors group"
                             >
                                 <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mr-4 group-hover:bg-gold/20 transition-colors border border-gold/20">
-                                    <Mail className="w-5 h-5" />
+                                    <Mail className="w-5 h-5" aria-label="Icono correo electrónico" />
                                 </div>
                                 <span className="font-semibold text-lg">{FOOTER_DATA.contact.email}</span>
                             </a>
 
                             <div className="inline-flex items-center text-white-dim">
                                 <div className="w-10 h-10 rounded-full bg-black-card flex items-center justify-center mr-4 border border-gold/10">
-                                    <MapPin className="w-5 h-5 text-gray" />
+                                    <MapPin className="w-5 h-5 text-gray" aria-label="Icono ubicación" />
                                 </div>
                                 <span>{FOOTER_DATA.contact.location}</span>
                             </div>
@@ -56,11 +56,11 @@ export function Footer() {
                         className="bg-black-card/80 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-gold/10"
                     >
                         <h4 className="text-xl font-bold text-white mb-6 flex items-center">
-                            <Sparkles className="w-5 h-5 text-gold mr-2" />
+                            <Sparkles className="w-5 h-5 text-gold mr-2" aria-label="Icono destellos" />
                             Inicia tu Evaluación
                         </h4>
                         <p className="text-white-dim mb-8 pb-4 border-b border-gold/10">
-                            Contáctanos hoy para realizar un diagnóstico inicial gratuito y establecer la hoja de ruta HSEQ para tu empresa.
+                            Contáctanos hoy para realizar un diagnóstico inicial gratuito y establecer la hoja de ruta QHSE para tu empresa.
                         </p>
                         <a
                             href={`mailto:${FOOTER_DATA.contact.email}`}
@@ -79,7 +79,7 @@ export function Footer() {
                     className="pt-8 border-t border-gold/10 flex flex-col md:flex-row items-center justify-between text-gray text-sm"
                 >
                     <p>{FOOTER_DATA.copyright}</p>
-                    <p className="mt-2 md:mt-0 font-medium">Consultoría HSEQ Especializada</p>
+                    <p className="mt-2 md:mt-0 font-medium">Consultoría QHSE Especializada</p>
                 </motion.div>
             </div>
         </footer>

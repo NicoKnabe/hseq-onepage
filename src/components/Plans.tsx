@@ -4,6 +4,15 @@ import { motion } from "framer-motion";
 import { PLANS_DATA } from "@/lib/data";
 import { CheckCircle2 } from "lucide-react";
 
+interface PlanData {
+    name: string;
+    description: string;
+    features: string[];
+    highlighted?: boolean;
+    buttonText: string;
+    buttonHref: string;
+}
+
 export function Plans() {
     return (
         <section id="planes" className="py-24 bg-black border-b border-gold/10 overflow-hidden relative">
@@ -29,7 +38,7 @@ export function Plans() {
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {PLANS_DATA.plans.map((plan, index) => (
+                    {(PLANS_DATA.plans as PlanData[]).map((plan, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
@@ -37,8 +46,8 @@ export function Plans() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.15 }}
                             className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 hover:-translate-y-2 flex flex-col ${plan.highlighted
-                                    ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)]"
-                                    : "border-gold/10 hover:border-gold/30 hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
+                                ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+                                : "border-gold/10 hover:border-gold/30 hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
                                 }`}
                         >
                             {plan.highlighted && (
@@ -57,7 +66,7 @@ export function Plans() {
                             <ul className="space-y-4 mb-8 flex-1">
                                 {plan.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start text-white-dim">
-                                        <CheckCircle2 className={`w-5 h-5 mr-3 shrink-0 ${plan.highlighted ? "text-gold" : "text-gray"}`} />
+                                        <CheckCircle2 className={`w-5 h-5 mr-3 shrink-0 ${plan.highlighted ? "text-gold" : "text-gray"}`} aria-label="Icono check de servicio" />
                                         <span className="text-sm leading-relaxed">{feature}</span>
                                     </li>
                                 ))}
@@ -66,8 +75,8 @@ export function Plans() {
                             <a
                                 href={plan.buttonHref}
                                 className={`block w-full text-center py-4 px-2 rounded-lg font-bold transition-all duration-300 ${plan.highlighted
-                                        ? "bg-gradient-to-r from-gold-dark to-gold text-black hover:from-gold hover:to-gold-light shadow-[0_8px_20px_rgba(212,175,55,0.3)] hover:-translate-y-1"
-                                        : "bg-black text-gold border border-gold/30 hover:bg-gold/10"
+                                    ? "bg-gradient-to-r from-gold-dark to-gold text-black hover:from-gold hover:to-gold-light shadow-[0_8px_20px_rgba(212,175,55,0.3)] hover:-translate-y-1"
+                                    : "bg-black text-gold border border-gold/30 hover:bg-gold/10"
                                     }`}
                             >
                                 {plan.buttonText}
