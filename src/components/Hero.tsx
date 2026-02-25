@@ -27,7 +27,7 @@ export function Hero() {
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-8"
                     >
                         {HERO_DATA.title}

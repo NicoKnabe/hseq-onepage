@@ -4,9 +4,19 @@ import { motion } from "framer-motion";
 import { CHALLENGES_DATA } from "@/lib/data";
 import { AlertCircle } from "lucide-react";
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
+
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
 export function Challenges() {
@@ -32,16 +42,18 @@ export function Challenges() {
                     />
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+                >
                     {CHALLENGES_DATA.challenges.map((challenge, index) => (
                         <motion.div
                             key={index}
                             variants={cardVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-black-card border border-gold/10 rounded-2xl p-8 hover:-translate-y-2 hover:border-gold/40 hover:shadow-[0_12px_30px_rgba(212,175,55,0.15)] transition-all duration-300 group relative overflow-hidden"
+                            className="bg-black-card border border-gold/10 rounded-2xl p-8 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-gold/40 hover:shadow-2xl hover:shadow-[rgba(212,175,55,0.2)] group relative overflow-hidden"
                         >
                             <div className="absolute top-0 left-0 w-1 h-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                             <div className="w-14 h-14 bg-gold/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/15 group-hover:text-gold transition-colors duration-300 border border-gold/10 group-hover:border-gold/30">
@@ -55,7 +67,7 @@ export function Challenges() {
                             </p>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

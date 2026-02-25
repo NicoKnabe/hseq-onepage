@@ -1,43 +1,23 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { AUTHORITY_DATA } from "@/lib/data";
 import { BadgeCheck } from "lucide-react";
-
-// Hook helper for counter (since framer-motion useSpring etc could be complex)
-function useCounter(end: number, duration: number = 2) {
-    const [count, setCount] = useState(0);
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true });
-
-    useEffect(() => {
-        if (inView) {
-            let start = 0;
-            const increment = end / (duration * 60); // Assuming 60fps
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= end) {
-                    setCount(end);
-                    clearInterval(timer);
-                } else {
-                    setCount(Math.ceil(start));
-                }
-            }, 1000 / 60);
-            return () => clearInterval(timer);
-        }
-    }, [inView, end, duration]);
-
-    return { count, ref };
-}
+import CountUp from "react-countup";
 
 function StatItem({ stat }: { stat: typeof AUTHORITY_DATA.stats[0] }) {
-    const { count, ref } = useCounter(stat.value);
-
     return (
-        <div ref={ref} className="text-center p-6 bg-black-card rounded-2xl border border-gold/10 hover:-translate-y-1 hover:border-gold/30 transition-all duration-300 shadow-sm">
+        <div className="text-center p-6 bg-black-card rounded-2xl border border-gold/10 hover:-translate-y-1 hover:border-gold/30 transition-all duration-300 shadow-sm">
             <div className="text-4xl md:text-5xl font-extrabold text-gold mb-2 font-mono drop-shadow-md">
-                {count}{stat.suffix}
+                <CountUp
+                    end={stat.value}
+                    duration={2.5}
+                    separator=","
+                    useEasing={true}
+                    enableScrollSpy={true}
+                    scrollSpyOnce={true}
+                />
+                {stat.suffix}
             </div>
             <div className="text-sm md:text-base text-gray font-bold tracking-widest uppercase">
                 {stat.label}

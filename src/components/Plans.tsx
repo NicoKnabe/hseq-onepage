@@ -37,17 +37,29 @@ export function Plans() {
                     />
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: { staggerChildren: 0.2 }
+                        }
+                    }}
+                    className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+                >
                     {(PLANS_DATA.plans as PlanData[]).map((plan, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
-                            className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 hover:-translate-y-2 flex flex-col ${plan.highlighted
-                                ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)]"
-                                : "border-gold/10 hover:border-gold/30 hover:shadow-[0_15px_40px_rgba(212,175,55,0.1)]"
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+                            }}
+                            className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl flex flex-col ${plan.highlighted
+                                ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[rgba(212,175,55,0.25)]"
+                                : "border-gold/10 hover:border-gold/30 hover:shadow-[rgba(212,175,55,0.15)]"
                                 }`}
                         >
                             {plan.highlighted && (
@@ -83,7 +95,7 @@ export function Plans() {
                             </a>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
