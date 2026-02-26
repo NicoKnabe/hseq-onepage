@@ -23,11 +23,11 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
     return (
-        <footer id="contacto" className="bg-black pt-24 pb-12 border-t border-gold/20 relative overflow-hidden">
+        <footer id="contacto" className="bg-black pt-16 md:pt-24 pb-12 border-t border-gold/20 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05),transparent_70%)]" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="grid md:grid-cols-2 gap-12 lg:gap-24 mb-16">
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
+                <div className="grid md:grid-cols-2 gap-10 lg:gap-24 mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}

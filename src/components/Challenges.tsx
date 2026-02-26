@@ -21,8 +21,8 @@ const cardVariants = {
 
 export function Challenges() {
     return (
-        <section className="py-24 bg-black border-b border-gold/10">
-            <div className="container mx-auto px-6">
+        <section className="py-16 md:py-24 bg-black border-b border-gold/10">
+            <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}

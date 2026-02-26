@@ -10,10 +10,10 @@ export function Solutions() {
     const solutionIcons = [FileText, Globe, Shield];
 
     return (
-        <section className="py-24 bg-black relative border-b border-gold/10 overflow-hidden">
+        <section className="py-16 md:py-24 bg-black relative border-b border-gold/10 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)]" />
             {/* Background decoration */}
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}

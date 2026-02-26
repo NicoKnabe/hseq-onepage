@@ -15,9 +15,9 @@ interface PlanData {
 
 export function Plans() {
     return (
-        <section id="planes" className="py-24 bg-black border-b border-gold/10 overflow-hidden relative">
+        <section id="planes" className="py-16 md:py-24 bg-black border-b border-gold/10 overflow-hidden relative">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.02),transparent_100%)]" />
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}

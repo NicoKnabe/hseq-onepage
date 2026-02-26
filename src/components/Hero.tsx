@@ -6,12 +6,12 @@ import { ArrowRight, Download } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="relative overflow-hidden bg-black pt-40 pb-20 lg:pt-56 lg:pb-32">
+        <section className="relative overflow-hidden bg-black pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-56 lg:pb-32">
             {/* Background Glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.08),transparent_50%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(212,175,55,0.04),transparent_50%)]" />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
