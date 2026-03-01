@@ -4,7 +4,7 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { CHALLENGES_DATA } from "@/lib/data";
 import { AlertCircle } from "lucide-react";
 
-function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challenges[0] }) {
+function ChallengeCard({ challenge, index }: { challenge: typeof CHALLENGES_DATA.challenges[0]; index: number }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
 
@@ -19,7 +19,11 @@ function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challe
     }
 
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: index * 0.1, ease: "easeOut" }}
             onMouseMove={handleMouseMove}
             className="group relative bg-black-card border border-gold/10 rounded-2xl p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden"
         >
@@ -48,7 +52,7 @@ function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challe
             <p className="relative z-10 text-white-dim leading-relaxed text-base">
                 {challenge.description}
             </p>
-        </div>
+        </motion.div>
     );
 }
 
@@ -63,7 +67,7 @@ export function Challenges() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-md"
                     >
                         {CHALLENGES_DATA.sectionTitle}
@@ -79,7 +83,7 @@ export function Challenges() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {CHALLENGES_DATA.challenges.map((challenge, index) => (
-                        <ChallengeCard key={index} challenge={challenge} />
+                        <ChallengeCard key={index} challenge={challenge} index={index} />
                     ))}
                 </div>
             </div>

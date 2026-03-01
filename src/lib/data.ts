@@ -130,7 +130,7 @@ export const PLANS_DATA = {
 export const CONTACT_DATA = {
   cta: "¿Listo para asegurar la Continuidad Operacional en 2026? Agende una evaluación técnica.",
   phone: "+56 9 5098 9084",
-  email: "nicolasknabe@hotmail.com",
+  email: "nknabe@qhse.cl",
   location: "Cobertura Nacional - Todo Chile",
   brochureLink: "/brochure.pdf",
 };
@@ -138,7 +138,7 @@ export const CONTACT_DATA = {
 export const FOOTER_DATA = {
   description: "Tranquilidad y respaldo frente a mandantes y fiscalización. Gestión QHSE de clase mundial para su empresa.",
   contact: {
-    email: "nicolasknabe@hotmail.com",
+    email: "nknabe@qhse.cl",
     location: "Cobertura Nacional - Todo Chile",
   },
   copyright: `© ${new Date().getFullYear()} Nicolás Knabe. Todos los derechos reservados.`,
