@@ -17,14 +17,18 @@ export function Plans() {
     return (
         <section id="planes" className="py-16 md:py-24 bg-black border-b border-gold/10 overflow-hidden relative">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.02),transparent_100%)]" />
+
+            {/* Top Gradient Transition from previous section */}
+            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent z-10" />
+
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                        className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-sm"
                     >
                         {PLANS_DATA.sectionTitle}
                     </motion.h2>
@@ -54,8 +58,8 @@ export function Plans() {
                         <motion.div
                             key={index}
                             variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+                                hidden: { opacity: 0, y: 50, filter: "blur(8px)" },
+                                visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5, ease: "easeOut" as const } }
                             }}
                             className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl flex flex-col ${plan.highlighted
                                 ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[rgba(212,175,55,0.25)]"
@@ -71,7 +75,7 @@ export function Plans() {
                             )}
 
                             <div className="text-center mb-8">
-                                <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
+                                <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-sm">{plan.name}</h3>
                                 <p className="text-white-dim text-sm h-10">{plan.description}</p>
                             </div>
 
@@ -84,19 +88,25 @@ export function Plans() {
                                 ))}
                             </ul>
 
-                            <a
+                            <motion.a
                                 href={plan.buttonHref}
-                                className={`block w-full text-center py-4 px-2 rounded-lg font-bold transition-all duration-300 ${plan.highlighted
-                                    ? "bg-gradient-to-r from-gold-dark to-gold text-black hover:from-gold hover:to-gold-light shadow-[0_8px_20px_rgba(212,175,55,0.3)] hover:-translate-y-1"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className={`block w-full text-center py-4 px-2 rounded-lg font-bold transition-all duration-300 relative overflow-hidden group ${plan.highlighted
+                                    ? "bg-gradient-to-r from-gold-dark to-gold text-black shadow-[0_8px_20px_rgba(212,175,55,0.3)]"
                                     : "bg-black text-gold border border-gold/30 hover:bg-gold/10"
                                     }`}
                             >
-                                {plan.buttonText}
-                            </a>
+                                {plan.highlighted && <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />}
+                                <span className={`relative z-10 ${plan.highlighted ? "text-black" : "text-gold"}`}>{plan.buttonText}</span>
+                            </motion.a>
                         </motion.div>
                     ))}
                 </motion.div>
             </div>
+
+            {/* Bottom Gradient Transition to next section */}
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-10" />
         </section>
     );
 }

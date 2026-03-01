@@ -1,8 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FOOTER_DATA } from "@/lib/data";
 import { MapPin, Mail, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { useRef } from "react";
 
 // WhatsApp Custom Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -22,11 +24,39 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 export function Footer() {
-    return (
-        <footer id="contacto" className="bg-black pt-16 md:pt-24 pb-12 border-t border-gold/20 relative overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05),transparent_70%)]" />
+    const containerRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end end"]
+    });
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10">
+    // Parallax effect: moves image up slowly as user scrolls down
+    const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
+
+    return (
+        <footer ref={containerRef} id="contacto" className="bg-black pt-16 md:pt-24 pb-12 relative overflow-hidden">
+            {/* Parallax Background */}
+            <motion.div
+                style={{ y }}
+                className="absolute inset-0 z-0 origin-bottom"
+            >
+                <Image
+                    src="/footer-bg.jpeg"
+                    alt="Paisaje de la Patagonia chilena"
+                    fill
+                    className="object-cover"
+                />
+            </motion.div>
+
+            {/* Dark Overlay for AAA Contrast */}
+            <div className="absolute inset-0 z-0 bg-black/85" />
+
+            {/* Top Gradient Transition from previous section */}
+            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent z-10" />
+
+            <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05),transparent_70%)]" />
+
+            <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10">
                 <div className="grid md:grid-cols-2 gap-10 lg:gap-24 mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -35,13 +65,13 @@ export function Footer() {
                         transition={{ duration: 0.6 }}
                     >
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-black-card border border-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
-                                <span className="font-extrabold text-2xl text-gold tracking-tighter">NK</span>
+                            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-black/60 backdrop-blur-md border border-gold/40 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+                                <span className="font-extrabold text-2xl text-gold tracking-tighter drop-shadow-sm">NK</span>
                             </div>
-                            <h3 className="text-2xl font-bold tracking-wide text-white">NICOLÁS KNABE</h3>
+                            <h3 className="text-2xl font-bold tracking-wide text-white drop-shadow-md">NICOLÁS KNABE</h3>
                         </div>
 
-                        <p className="text-white-dim mb-8 max-w-md leading-relaxed text-lg">
+                        <p className="text-white-dim mb-8 max-w-md leading-relaxed text-lg drop-shadow-md">
                             {FOOTER_DATA.description}
                         </p>
 
@@ -50,17 +80,17 @@ export function Footer() {
                                 href={`mailto:${FOOTER_DATA.contact.email}`}
                                 className="inline-flex items-center text-gold hover:text-gold-light transition-colors group"
                             >
-                                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mr-4 group-hover:bg-gold/20 transition-colors border border-gold/20">
+                                <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center mr-4 group-hover:bg-gold/20 transition-colors border border-gold/30">
                                     <Mail className="w-5 h-5" aria-label="Icono correo electrónico" />
                                 </div>
-                                <span className="font-semibold text-lg">{FOOTER_DATA.contact.email}</span>
+                                <span className="font-semibold text-lg drop-shadow-md">{FOOTER_DATA.contact.email}</span>
                             </a>
 
                             <div className="inline-flex items-center text-white-dim">
-                                <div className="w-10 h-10 rounded-full bg-black-card flex items-center justify-center mr-4 border border-gold/10">
+                                <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center mr-4 border border-gold/20">
                                     <MapPin className="w-5 h-5 text-gray" aria-label="Icono ubicación" />
                                 </div>
-                                <span>{FOOTER_DATA.contact.location}</span>
+                                <span className="drop-shadow-md">{FOOTER_DATA.contact.location}</span>
                             </div>
                         </div>
                     </motion.div>
@@ -70,24 +100,29 @@ export function Footer() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="bg-black-card/80 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-gold/10"
+                        className="bg-black/60 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-gold/20 shadow-xl"
                     >
-                        <h4 className="text-xl font-bold text-white mb-6 flex items-center">
+                        <h4 className="text-xl font-bold text-white mb-6 flex items-center drop-shadow-sm">
                             <Sparkles className="w-5 h-5 text-gold mr-2" aria-label="Icono destellos" />
                             Inicia tu Evaluación
                         </h4>
-                        <p className="text-white-dim mb-8 pb-4 border-b border-gold/10">
+                        <p className="text-white-dim mb-8 pb-4 border-b border-gold/20 drop-shadow-sm">
                             Contáctanos hoy para realizar un diagnóstico inicial gratuito y establecer la hoja de ruta QHSE para tu empresa.
                         </p>
-                        <a
+                        <motion.a
                             href="https://wa.me/56950989084?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20inicial%20gratuito."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-6 flex items-center justify-center w-full py-4 bg-gradient-to-r from-gold-dark to-gold text-black font-bold rounded-lg hover:from-gold hover:to-gold-light transition-all duration-300 shadow-[0_8px_20px_rgba(212,175,55,0.25)] hover:-translate-y-1"
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="mt-6 flex items-center justify-center w-full py-4 bg-gradient-to-r from-gold-dark to-gold text-black font-bold rounded-lg shadow-[0_8px_20px_rgba(212,175,55,0.25)] transition-all relative overflow-hidden group"
                         >
-                            <WhatsAppIcon className="w-5 h-5 mr-2" aria-label="Icono WhatsApp" />
-                            Solicitar Diagnóstico
-                        </a>
+                            <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                            <span className="relative z-10 flex items-center">
+                                <WhatsAppIcon className="w-5 h-5 mr-2" aria-label="Icono WhatsApp" />
+                                Solicitar Diagnóstico
+                            </span>
+                        </motion.a>
                     </motion.div>
                 </div>
 
@@ -96,7 +131,7 @@ export function Footer() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="pt-8 border-t border-gold/10 flex flex-col md:flex-row items-center justify-between text-gray text-sm"
+                    className="pt-8 border-t border-gold/20 flex flex-col md:flex-row items-center justify-between text-gray text-sm drop-shadow-md"
                 >
                     <p>{FOOTER_DATA.copyright}</p>
                     <p className="mt-2 md:mt-0 font-medium">Consultoría QHSE Especializada</p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { CHALLENGES_DATA } from "@/lib/data";
 import { AlertCircle } from "lucide-react";
 
@@ -15,21 +15,72 @@ const containerVariants = {
 };
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+    hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
+    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: "easeOut" as const } },
 };
+
+function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challenges[0] }) {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    function handleMouseMove({
+        currentTarget,
+        clientX,
+        clientY,
+    }: React.MouseEvent<HTMLDivElement>) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
+    return (
+        <motion.div
+            variants={cardVariants}
+            onMouseMove={handleMouseMove}
+            className="group relative bg-black-card border border-gold/10 rounded-2xl p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden"
+        >
+            {/* Glow Effect */}
+            <motion.div
+                className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
+                style={{
+                    background: useMotionTemplate`
+                        radial-gradient(
+                            350px circle at ${mouseX}px ${mouseY}px,
+                            rgba(212, 175, 55, 0.15),
+                            transparent 80%
+                        )
+                    `,
+                }}
+            />
+
+            <div className="relative z-10 w-14 h-14 bg-gold/5 rounded-xl flex items-center justify-center mb-6 border border-gold/10 transition-colors duration-300 group-hover:bg-gold/15 group-hover:border-gold/30">
+                <AlertCircle className="w-7 h-7 text-white-dim transition-colors duration-300 group-hover:text-gold" aria-label="Icono alerta de desafío" />
+            </div>
+
+            <h3 className="relative z-10 text-xl font-bold text-gold mb-4 drop-shadow-sm">
+                {challenge.title}
+            </h3>
+
+            <p className="relative z-10 text-white-dim leading-relaxed text-base">
+                {challenge.description}
+            </p>
+        </motion.div>
+    );
+}
 
 export function Challenges() {
     return (
-        <section className="py-16 md:py-24 bg-black border-b border-gold/10">
-            <div className="container mx-auto px-4 md:px-6">
+        <section className="py-16 md:py-24 bg-black relative border-b border-gold/10 overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.03),transparent_50%)]" />
+
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                        transition={{ duration: 0.7 }}
+                        className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-md"
                     >
                         {CHALLENGES_DATA.sectionTitle}
                     </motion.h2>
@@ -50,22 +101,7 @@ export function Challenges() {
                     className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
                 >
                     {CHALLENGES_DATA.challenges.map((challenge, index) => (
-                        <motion.div
-                            key={index}
-                            variants={cardVariants}
-                            className="bg-black-card border border-gold/10 rounded-2xl p-8 transition-all duration-300 ease-in-out hover:-translate-y-2 hover:border-gold/40 hover:shadow-2xl hover:shadow-[rgba(212,175,55,0.2)] group relative overflow-hidden"
-                        >
-                            <div className="absolute top-0 left-0 w-1 h-full bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            <div className="w-14 h-14 bg-gold/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/15 group-hover:text-gold transition-colors duration-300 border border-gold/10 group-hover:border-gold/30">
-                                <AlertCircle className="w-7 h-7 text-white-dim group-hover:text-gold transition-colors duration-300" aria-label="Icono alerta de desafío" />
-                            </div>
-                            <h3 className="text-xl font-bold text-gold mb-4">
-                                {challenge.title}
-                            </h3>
-                            <p className="text-white-dim leading-relaxed text-base">
-                                {challenge.description}
-                            </p>
-                        </motion.div>
+                        <ChallengeCard key={index} challenge={challenge} />
                     ))}
                 </motion.div>
             </div>

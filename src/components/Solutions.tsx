@@ -12,24 +12,27 @@ export function Solutions() {
     return (
         <section className="py-16 md:py-24 bg-black relative border-b border-gold/10 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)]" />
-            {/* Background decoration */}
+
+            {/* Top Gradient Transition from previous section */}
+            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent z-10" />
+
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                        className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-sm"
                     >
                         {SOLUTIONS_DATA.sectionTitle}
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-lg text-white-dim max-w-2xl mx-auto"
+                        className="text-lg text-white-dim max-w-2xl mx-auto drop-shadow-sm"
                     >
                         {SOLUTIONS_DATA.sectionSubtitle}
                     </motion.p>
@@ -38,9 +41,9 @@ export function Solutions() {
                 <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
                     {/* Tabs Sidebar */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        initial={{ opacity: 0, x: -30, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                        viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.6 }}
                         className="lg:col-span-4 space-y-3"
                     >
@@ -77,10 +80,10 @@ export function Solutions() {
                     {/* Active Tab Content */}
                     <motion.div
                         key={activeTab}
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="lg:col-span-8 bg-black-card border border-gold/10 rounded-2xl p-8 lg:p-12 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative"
+                        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="lg:col-span-8 bg-black-card border border-gold/10 rounded-2xl p-8 lg:p-12 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-[100px]" />
                         <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 pr-12 relative z-10">
@@ -97,6 +100,9 @@ export function Solutions() {
                     </motion.div>
                 </div>
             </div>
+
+            {/* Bottom Gradient Transition to next section */}
+            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-10" />
         </section>
     );
 }
