@@ -1,10 +1,8 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { FOOTER_DATA } from "@/lib/data";
 import { MapPin, Mail, Sparkles } from "lucide-react";
-import Image from "next/image";
-import { useRef } from "react";
 
 // WhatsApp Custom Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -24,37 +22,9 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 export function Footer() {
-    const containerRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end end"]
-    });
-
-    // Parallax effect: moves image up slowly as user scrolls down
-    const y = useTransform(scrollYProgress, [0, 1], [-100, 0]);
-
     return (
-        <footer ref={containerRef} id="contacto" className="bg-black pt-16 md:pt-24 pb-12 relative overflow-hidden">
-            {/* Parallax Background */}
-            <motion.div
-                style={{ y }}
-                className="absolute inset-0 z-0 origin-bottom"
-            >
-                <Image
-                    src="/footer-bg.jpeg"
-                    alt="Paisaje de la Patagonia chilena"
-                    fill
-                    className="object-cover"
-                />
-            </motion.div>
-
-            {/* Dark Overlay for AAA Contrast */}
-            <div className="absolute inset-0 z-0 bg-black/85" />
-
-            {/* Top Gradient Transition from previous section */}
-            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black to-transparent z-10" />
-
-            <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05),transparent_70%)]" />
+        <footer id="contacto" className="bg-transparent pt-16 md:pt-24 pb-12 relative overflow-hidden">
+            <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05),transparent_70%)] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10">
                 <div className="grid md:grid-cols-2 gap-10 lg:gap-24 mb-16">

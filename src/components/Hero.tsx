@@ -1,34 +1,12 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { HERO_DATA } from "@/lib/data";
 import { ArrowRight, Download } from "lucide-react";
-import Image from "next/image";
 
 export function Hero() {
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 1000], [0, 300]);
-    const scale = useTransform(scrollY, [0, 1000], [1.1, 1]);
-
     return (
-        <section className="relative overflow-hidden bg-black pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-56 lg:pb-32">
-            {/* Parallax Background */}
-            <motion.div
-                style={{ y, scale }}
-                className="absolute inset-0 z-0 origin-center"
-            >
-                <Image
-                    src="/hero-bg.jpeg"
-                    alt="Paisaje de la Cordillera de los Andes"
-                    fill
-                    priority
-                    className="object-cover"
-                />
-            </motion.div>
-
-            {/* Dark Overlay for AAA Contrast */}
-            <div className="absolute inset-0 z-0 bg-black/80" />
-
+        <section className="relative overflow-hidden bg-transparent pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-56 lg:pb-32">
             {/* Background Glow */}
             <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.08),transparent_50%)]" />
             <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_bottom_left,rgba(212,175,55,0.04),transparent_50%)]" />
@@ -96,9 +74,6 @@ export function Hero() {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Bottom Gradient Transition to next section */}
-            <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10" />
         </section>
     );
 }

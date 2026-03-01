@@ -10,11 +10,8 @@ export function Solutions() {
     const solutionIcons = [FileText, Globe, Shield];
 
     return (
-        <section className="py-16 md:py-24 bg-black relative border-b border-gold/10 overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)]" />
-
-            {/* Top Gradient Transition from previous section */}
-            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent z-10" />
+        <section className="py-16 md:py-24 bg-transparent relative border-b border-white/5 overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
@@ -100,9 +97,6 @@ export function Solutions() {
                     </motion.div>
                 </div>
             </div>
-
-            {/* Bottom Gradient Transition to next section */}
-            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-10" />
         </section>
     );
 }

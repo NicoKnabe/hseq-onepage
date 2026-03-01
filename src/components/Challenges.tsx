@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useMotionTemplate, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { CHALLENGES_DATA } from "@/lib/data";
 import { AlertCircle } from "lucide-react";
-import { useRef } from "react";
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,34 +69,9 @@ function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challe
 }
 
 export function Challenges() {
-    const sectionRef = useRef<HTMLElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start end", "end start"]
-    });
-    const yParallax = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
     return (
-        <section ref={sectionRef} className="py-16 md:py-32 bg-black relative border-b border-black overflow-hidden relative">
-
-            {/* Third App Background: Parallax Middle Image */}
-            <motion.div
-                style={{ y: yParallax }}
-                className="absolute inset-0 z-0 h-[120%] -top-[10%]"
-            >
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/middle-bg.jpeg')" }}
-                />
-            </motion.div>
-
-            {/* Dark Overlay for extreme immersion and text legibility */}
-            <div className="absolute inset-0 bg-black/85 z-0" />
-
+        <section className="py-16 md:py-32 bg-transparent relative border-b border-white/5 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_60%)] z-0" />
-
-            {/* Top Gradient Transition from previous section */}
-            <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent z-10" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
@@ -131,9 +105,6 @@ export function Challenges() {
                     ))}
                 </motion.div>
             </div>
-
-            {/* Bottom Gradient Transition to next section */}
-            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-10" />
         </section>
     );
 }
