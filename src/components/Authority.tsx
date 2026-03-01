@@ -7,7 +7,10 @@ import CountUp from "react-countup";
 
 function StatItem({ stat }: { stat: typeof AUTHORITY_DATA.stats[0] }) {
     return (
-        <div className="text-center p-6 bg-black-card rounded-2xl border border-gold/10 hover:-translate-y-1 hover:border-gold/30 transition-all duration-300 shadow-sm">
+        <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-center p-6 bg-black-card rounded-2xl border border-gold/10 transition-all duration-300 shadow-sm hover:border-gold/30 hover:shadow-lg hover:shadow-gold/10"
+        >
             <div className="text-4xl md:text-5xl font-extrabold text-gold mb-2 font-mono drop-shadow-md">
                 <CountUp
                     end={stat.value}
@@ -22,7 +25,7 @@ function StatItem({ stat }: { stat: typeof AUTHORITY_DATA.stats[0] }) {
             <div className="text-sm md:text-base text-gray font-bold tracking-widest uppercase">
                 {stat.label}
             </div>
-        </div>
+        </motion.div>
     );
 }
 
