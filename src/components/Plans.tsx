@@ -58,8 +58,8 @@ export function Plans() {
                         <motion.div
                             key={index}
                             variants={{
-                                hidden: { opacity: 0, y: 50, filter: "blur(8px)" },
-                                visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.5, ease: "easeOut" as const } }
+                                hidden: { opacity: 0, y: 50, rotateX: -15, filter: "blur(12px)" },
+                                visible: { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" as const } }
                             }}
                             className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl flex flex-col ${plan.highlighted
                                 ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[rgba(212,175,55,0.25)]"

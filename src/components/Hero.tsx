@@ -8,13 +8,14 @@ import Image from "next/image";
 export function Hero() {
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, 300]);
+    const scale = useTransform(scrollY, [0, 1000], [1.1, 1]);
 
     return (
         <section className="relative overflow-hidden bg-black pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-56 lg:pb-32">
             {/* Parallax Background */}
             <motion.div
-                style={{ y }}
-                className="absolute inset-0 z-0 origin-top"
+                style={{ y, scale }}
+                className="absolute inset-0 z-0 origin-center"
             >
                 <Image
                     src="/hero-bg.jpeg"
