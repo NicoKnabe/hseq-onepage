@@ -38,26 +38,10 @@ export function Plans() {
                     />
                 </div>
 
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: {
-                            opacity: 1,
-                            transition: { staggerChildren: 0.15 }
-                        }
-                    }}
-                    className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
-                >
+                <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {(PLANS_DATA.plans as PlanData[]).map((plan, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            variants={{
-                                hidden: { opacity: 0, y: 24 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const } }
-                            }}
                             className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl flex flex-col ${plan.highlighted
                                 ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[rgba(212,175,55,0.25)]"
                                 : "border-gold/10 hover:border-gold/30 hover:shadow-[rgba(212,175,55,0.15)]"
@@ -85,21 +69,19 @@ export function Plans() {
                                 ))}
                             </ul>
 
-                            <motion.a
+                            <a
                                 href={plan.buttonHref}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
                                 className={`block w-full text-center py-4 px-2 rounded-lg font-bold transition-all duration-300 relative overflow-hidden group ${plan.highlighted
-                                    ? "bg-gradient-to-r from-gold-dark to-gold text-black shadow-[0_8px_20px_rgba(212,175,55,0.3)]"
+                                    ? "bg-gradient-to-r from-gold-dark to-gold text-black shadow-[0_8px_20px_rgba(212,175,55,0.3)] hover:shadow-[0_12px_30px_rgba(212,175,55,0.4)]"
                                     : "bg-black text-gold border border-gold/30 hover:bg-gold/10"
                                     }`}
                             >
                                 {plan.highlighted && <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />}
                                 <span className={`relative z-10 ${plan.highlighted ? "text-black" : "text-gold"}`}>{plan.buttonText}</span>
-                            </motion.a>
-                        </motion.div>
+                            </a>
+                        </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );

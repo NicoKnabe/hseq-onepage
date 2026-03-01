@@ -4,21 +4,6 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { CHALLENGES_DATA } from "@/lib/data";
 import { AlertCircle } from "lucide-react";
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.15
-        }
-    }
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const } },
-};
-
 function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challenges[0] }) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
@@ -34,8 +19,7 @@ function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challe
     }
 
     return (
-        <motion.div
-            variants={cardVariants}
+        <div
             onMouseMove={handleMouseMove}
             className="group relative bg-black-card border border-gold/10 rounded-2xl p-8 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-gold/30 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden"
         >
@@ -64,7 +48,7 @@ function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challe
             <p className="relative z-10 text-white-dim leading-relaxed text-base">
                 {challenge.description}
             </p>
-        </motion.div>
+        </div>
     );
 }
 
@@ -93,17 +77,11 @@ export function Challenges() {
                     />
                 </div>
 
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-                >
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {CHALLENGES_DATA.challenges.map((challenge, index) => (
                         <ChallengeCard key={index} challenge={challenge} />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
