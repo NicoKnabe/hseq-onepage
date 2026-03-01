@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { SOLUTIONS_DATA } from "@/lib/data";
 import { CheckCircle2, Shield, FileText, Globe } from "lucide-react";
 

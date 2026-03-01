@@ -73,7 +73,7 @@ export function Plans() {
 
                             <div className="text-center mb-8">
                                 <h3 className="text-2xl font-bold text-white mb-3 drop-shadow-sm">{plan.name}</h3>
-                                <p className="text-white-dim text-sm h-10">{plan.description}</p>
+                                <p className="text-white-dim text-sm min-h-[2.5rem]">{plan.description}</p>
                             </div>
 
                             <ul className="space-y-4 mb-8 flex-1">

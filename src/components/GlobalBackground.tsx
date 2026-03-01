@@ -61,9 +61,8 @@ export function GlobalBackground() {
                 />
             </motion.div>
 
-            {/* Base global black overlay to ensure text readability is AAA everywhere */}
-            <div className="absolute inset-0 bg-black/70 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-black/60" />
+            {/* Base global overlay to ensure text readability while keeping images visible */}
+            <div className="absolute inset-0 bg-black/55" />
         </div>
     );
 }
