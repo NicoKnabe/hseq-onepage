@@ -9,14 +9,14 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.3
+            staggerChildren: 0.15
         }
     }
 };
 
 const cardVariants = {
-    hidden: { opacity: 0, x: -50, y: 50, filter: "blur(12px)" },
-    visible: { opacity: 1, x: 0, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" as const } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const } },
 };
 
 function ChallengeCard({ challenge }: { challenge: typeof CHALLENGES_DATA.challenges[0] }) {
@@ -76,10 +76,10 @@ export function Challenges() {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.7 }}
+                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-md"
                     >
                         {CHALLENGES_DATA.sectionTitle}

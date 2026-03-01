@@ -36,10 +36,10 @@ export function Authority() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
                     <motion.div
-                        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                         className="space-y-6"
                     >
                         <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
@@ -60,10 +60,10 @@ export function Authority() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                         className="grid grid-cols-2 gap-4 lg:gap-6"
                     >
                         {AUTHORITY_DATA.stats.map((stat, i) => (

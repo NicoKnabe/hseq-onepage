@@ -16,19 +16,19 @@ export function Solutions() {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-sm"
                     >
                         {SOLUTIONS_DATA.sectionTitle}
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, y: 16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-lg text-white-dim max-w-2xl mx-auto drop-shadow-sm"
                     >
                         {SOLUTIONS_DATA.sectionSubtitle}
@@ -38,10 +38,10 @@ export function Solutions() {
                 <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
                     {/* Tabs Sidebar */}
                     <motion.div
-                        initial={{ opacity: 0, x: -50, filter: "blur(12px)" }}
-                        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                         className="lg:col-span-4 space-y-3"
                     >
                         {SOLUTIONS_DATA.solutions.map((solution, index) => {
@@ -77,9 +77,9 @@ export function Solutions() {
                     {/* Active Tab Content */}
                     <motion.div
                         key={activeTab}
-                        initial={{ opacity: 0, x: 50, filter: "blur(12px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                         className="lg:col-span-8 bg-black-card border border-gold/10 rounded-2xl p-8 lg:p-12 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative overflow-hidden"
                     >
                         <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-[100px]" />

@@ -21,10 +21,10 @@ export function Plans() {
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
                     <motion.h2
-                        initial={{ opacity: 0, y: 50, filter: "blur(8px)" }}
-                        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6 }}
+                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-sm"
                     >
                         {PLANS_DATA.sectionTitle}
@@ -46,7 +46,7 @@ export function Plans() {
                         hidden: { opacity: 0 },
                         visible: {
                             opacity: 1,
-                            transition: { staggerChildren: 0.2 }
+                            transition: { staggerChildren: 0.15 }
                         }
                     }}
                     className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
@@ -55,8 +55,8 @@ export function Plans() {
                         <motion.div
                             key={index}
                             variants={{
-                                hidden: { opacity: 0, y: 50, rotateX: -15, filter: "blur(12px)" },
-                                visible: { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" as const } }
+                                hidden: { opacity: 0, y: 24 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const } }
                             }}
                             className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl flex flex-col ${plan.highlighted
                                 ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[rgba(212,175,55,0.25)]"
