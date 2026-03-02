@@ -10,7 +10,7 @@ export function Solutions() {
     const solutionIcons = [FileText, Globe, Shield];
 
     return (
-        <section className="py-16 md:py-24 bg-transparent relative border-b border-white/5 overflow-hidden">
+        <section id="servicios" className="py-16 md:py-24 bg-transparent relative border-b border-white/5 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
