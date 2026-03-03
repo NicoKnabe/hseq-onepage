@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { PLANS_DATA } from "@/lib/data";
 import { CheckCircle2 } from "lucide-react";
+import { RevealWrapper } from "./ui/RevealWrapper";
 
 interface PlanData {
     name: string;
@@ -20,32 +18,21 @@ export function Plans() {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-sm"
-                    >
-                        {PLANS_DATA.sectionTitle}
-                    </motion.h2>
-                    <motion.div
-                        className="w-20 h-1 bg-gradient-to-r from-gold to-gold-dark mx-auto rounded-full"
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    />
+                    <RevealWrapper>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 drop-shadow-sm">
+                            {PLANS_DATA.sectionTitle}
+                        </h2>
+                    </RevealWrapper>
+                    <RevealWrapper delay={0.2}>
+                        <div className="w-20 h-1 bg-gradient-to-r from-gold to-gold-dark mx-auto rounded-full" />
+                    </RevealWrapper>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {(PLANS_DATA.plans as PlanData[]).map((plan, index) => (
-                        <motion.div
+                        <RevealWrapper
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.7, delay: index * 0.12, ease: "easeOut" }}
+                            delay={index * 0.12}
                             className={`relative bg-black-card rounded-2xl p-8 lg:p-10 border transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl flex flex-col ${plan.highlighted
                                 ? "border-gold/50 shadow-[0_0_30px_rgba(212,175,55,0.15)] hover:shadow-[rgba(212,175,55,0.25)]"
                                 : "border-gold/10 hover:border-gold/30 hover:shadow-[rgba(212,175,55,0.15)]"
@@ -83,10 +70,11 @@ export function Plans() {
                                 {plan.highlighted && <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />}
                                 <span className={`relative z-10 ${plan.highlighted ? "text-black" : "text-gold"}`}>{plan.buttonText}</span>
                             </a>
-                        </motion.div>
+                        </RevealWrapper>
                     ))}
                 </div>
             </div>
         </section>
     );
 }
+

@@ -1,33 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { AUTHORITY_DATA } from "@/lib/data";
 import { BadgeCheck } from "lucide-react";
-import CountUp from "react-countup";
-
-function StatItem({ stat }: { stat: typeof AUTHORITY_DATA.stats[0] }) {
-    return (
-        <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-center p-6 bg-black-card rounded-2xl border border-gold/10 transition-all duration-300 shadow-sm hover:border-gold/30 hover:shadow-lg hover:shadow-gold/10"
-        >
-            <div className="text-4xl md:text-5xl font-extrabold text-gold mb-2 font-mono drop-shadow-md">
-                <CountUp
-                    end={stat.value}
-                    duration={2.5}
-                    separator=","
-                    useEasing={true}
-                    enableScrollSpy={true}
-                    scrollSpyOnce={true}
-                />
-                {stat.suffix}
-            </div>
-            <div className="text-sm md:text-base text-gray font-bold tracking-widest uppercase">
-                {stat.label}
-            </div>
-        </motion.div>
-    );
-}
+import { RevealWrapper } from "./ui/RevealWrapper";
+import { StatItem } from "./ui/StatItem";
 
 export function Authority() {
     return (
@@ -35,13 +9,7 @@ export function Authority() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="space-y-6"
-                    >
+                    <RevealWrapper className="space-y-6">
                         <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                             {AUTHORITY_DATA.consultant} <br />
                             <span className="text-gold text-2xl md:text-3xl mt-2 block font-normal tracking-wide">{AUTHORITY_DATA.title}</span>
@@ -57,24 +25,19 @@ export function Authority() {
                                 </li>
                             ))}
                         </ul>
-                    </motion.div>
+                    </RevealWrapper>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="grid grid-cols-2 gap-4 lg:gap-6"
-                    >
+                    <RevealWrapper delay={0.15} className="grid grid-cols-2 gap-4 lg:gap-6">
                         {AUTHORITY_DATA.stats.map((stat, i) => (
                             <div key={i} className={i === 2 ? "col-span-2" : "col-span-1"}>
                                 <StatItem stat={stat} />
                             </div>
                         ))}
-                    </motion.div>
+                    </RevealWrapper>
 
                 </div>
             </div>
         </section>
     );
 }
+

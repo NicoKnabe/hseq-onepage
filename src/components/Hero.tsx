@@ -1,8 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { HERO_DATA } from "@/lib/data";
 import { ArrowRight, Download } from "lucide-react";
+import { RevealWrapper } from "./ui/RevealWrapper";
+import { AnimatedButton } from "./ui/AnimatedButton";
 
 export function Hero() {
     return (
@@ -13,45 +12,46 @@ export function Hero() {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
-                    <motion.div
+                    <RevealWrapper
                         initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         className="mb-8 inline-block"
                     >
                         <span className="text-gold tracking-widest uppercase text-sm font-bold border border-gold/30 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-sm shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                             Consultoría QHSE Especializada
                         </span>
-                    </motion.div>
+                    </RevealWrapper>
 
-                    <motion.h1
+                    <RevealWrapper
                         initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-8 drop-shadow-lg"
                     >
-                        {HERO_DATA.title}
-                    </motion.h1>
+                        <h1>
+                            {HERO_DATA.title}
+                        </h1>
+                    </RevealWrapper>
 
-                    <motion.p
+                    <RevealWrapper
                         initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        delay={0.3}
                         className="text-lg md:text-xl text-white-dim mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
                     >
-                        {HERO_DATA.subtitle}
-                    </motion.p>
+                        <p>
+                            {HERO_DATA.subtitle}
+                        </p>
+                    </RevealWrapper>
 
-                    <motion.div
+                    <RevealWrapper
                         initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        delay={0.5}
                         className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
-                        <motion.a
+                        <AnimatedButton
                             href={HERO_DATA.primaryButton.href}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            primary
                             className="relative overflow-hidden inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-gradient-to-r from-gold-dark to-gold rounded-lg shadow-[0_8px_25px_rgba(212,175,55,0.4)] transition-colors group"
                         >
                             <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -59,21 +59,20 @@ export function Hero() {
                                 {HERO_DATA.primaryButton.text}
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-label="Flecha derecha" />
                             </span>
-                        </motion.a>
+                        </AnimatedButton>
 
-                        <motion.a
+                        <AnimatedButton
                             href={HERO_DATA.secondaryButton.href}
                             download
-                            whileHover={{ scale: 1.05, backgroundColor: "rgba(212,175,55,0.1)" }}
-                            whileTap={{ scale: 0.95 }}
                             className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold text-gold border border-gold/30 rounded-lg transition-colors duration-300"
                         >
                             <Download className="mr-2 w-5 h-5" aria-label="Icono de descarga" />
                             {HERO_DATA.secondaryButton.text}
-                        </motion.a>
-                    </motion.div>
+                        </AnimatedButton>
+                    </RevealWrapper>
                 </div>
             </div>
         </section>
     );
 }
+

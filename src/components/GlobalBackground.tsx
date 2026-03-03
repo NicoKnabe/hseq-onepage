@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 
 export function GlobalBackground() {
     const { scrollYProgress } = useScroll();
+    const shouldReduceMotion = useReducedMotion();
 
     // Fade out Hero background around 25% to 40% of the page scroll
     const heroOpacity = useTransform(scrollYProgress, [0, 0.25, 0.4], [1, 1, 0]);
@@ -23,11 +24,11 @@ export function GlobalBackground() {
         <div className="fixed inset-0 z-[-1] bg-black overflow-hidden pointer-events-none">
             {/* Hero Image */}
             <motion.div
-                style={{ opacity: heroOpacity, scale: heroScale }}
+                style={shouldReduceMotion ? { opacity: 1, scale: 1 } : { opacity: heroOpacity, scale: heroScale }}
                 className="absolute inset-0 origin-center"
             >
                 <Image
-                    src="/hero-bg.jpeg"
+                    src="/hero-bg.webp"
                     alt="Fondo Los Andes"
                     fill
                     priority
@@ -37,11 +38,11 @@ export function GlobalBackground() {
 
             {/* Middle Image */}
             <motion.div
-                style={{ opacity: middleOpacity, y: middleY, scale: middleScale }}
+                style={shouldReduceMotion ? { opacity: 0, y: 0, scale: 1 } : { opacity: middleOpacity, y: middleY, scale: middleScale }}
                 className="absolute inset-0 origin-center"
             >
                 <Image
-                    src="/middle-bg.jpeg"
+                    src="/middle-bg.webp"
                     alt="Fondo Intermedio"
                     fill
                     className="object-cover"
@@ -50,11 +51,11 @@ export function GlobalBackground() {
 
             {/* Footer Image */}
             <motion.div
-                style={{ opacity: footerOpacity, y: footerY }}
+                style={shouldReduceMotion ? { opacity: 0, y: 0 } : { opacity: footerOpacity, y: footerY }}
                 className="absolute inset-0 origin-bottom"
             >
                 <Image
-                    src="/footer-bg.jpeg"
+                    src="/footer-bg.webp"
                     alt="Fondo Patagonia"
                     fill
                     className="object-cover"

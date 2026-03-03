@@ -1,8 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { FOOTER_DATA } from "@/lib/data";
 import { MapPin, Mail, Sparkles } from "lucide-react";
+import { RevealWrapper } from "./ui/RevealWrapper";
+import { AnimatedButton } from "./ui/AnimatedButton";
 
 // WhatsApp Custom Icon
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -28,12 +27,7 @@ export function Footer() {
 
             <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10">
                 <div className="grid md:grid-cols-2 gap-10 lg:gap-24 mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <RevealWrapper>
                         <div className="flex items-center gap-3 mb-6">
                             <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-black/60 backdrop-blur-md border border-gold/40 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
                                 <span className="font-extrabold text-2xl text-gold tracking-tighter drop-shadow-sm">NK</span>
@@ -63,13 +57,10 @@ export function Footer() {
                                 <span className="drop-shadow-md">{FOOTER_DATA.contact.location}</span>
                             </div>
                         </div>
-                    </motion.div>
+                    </RevealWrapper>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                    <RevealWrapper
+                        delay={0.2}
                         className="bg-black/60 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-gold/20 shadow-xl"
                     >
                         <h4 className="text-xl font-bold text-white mb-6 flex items-center drop-shadow-sm">
@@ -79,12 +70,9 @@ export function Footer() {
                         <p className="text-white-dim mb-8 pb-4 border-b border-gold/20 drop-shadow-sm">
                             Contáctanos hoy para realizar un diagnóstico inicial gratuito y establecer la hoja de ruta QHSE para tu empresa.
                         </p>
-                        <motion.a
+                        <AnimatedButton
                             href="https://wa.me/56950989084?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20inicial%20gratuito."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.03 }}
-                            whileTap={{ scale: 0.97 }}
+                            primary
                             className="mt-6 flex items-center justify-center w-full py-4 bg-gradient-to-r from-gold-dark to-gold text-black font-bold rounded-lg shadow-[0_8px_20px_rgba(212,175,55,0.25)] transition-all relative overflow-hidden group"
                         >
                             <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -92,21 +80,19 @@ export function Footer() {
                                 <WhatsAppIcon className="w-5 h-5 mr-2" aria-label="Icono WhatsApp" />
                                 Solicitar Diagnóstico
                             </span>
-                        </motion.a>
-                    </motion.div>
+                        </AnimatedButton>
+                    </RevealWrapper>
                 </div>
 
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
+                <RevealWrapper
+                    delay={0.4}
                     className="pt-8 border-t border-gold/20 flex flex-col md:flex-row items-center justify-between text-gray text-sm drop-shadow-md"
                 >
                     <p>{FOOTER_DATA.copyright}</p>
                     <p className="mt-2 md:mt-0 font-medium">Consultoría QHSE Especializada</p>
-                </motion.div>
+                </RevealWrapper>
             </div>
         </footer>
     );
 }
+
