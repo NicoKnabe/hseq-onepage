@@ -8,7 +8,7 @@ export const HERO_DATA = {
   },
   secondaryButton: {
     text: "📥 Descargar Brochure Comercial",
-    href: "/brochure.pdf",
+    href: "https://www.qhse.cl/brochure.pdf",
   },
 };
 
@@ -132,7 +132,7 @@ export const CONTACT_DATA = {
   phone: "+56 9 5098 9084",
   email: "nknabe@qhse.cl",
   location: "Cobertura Nacional - Todo Chile",
-  brochureLink: "/brochure.pdf",
+  brochureLink: "https://www.qhse.cl/brochure.pdf",
 };
 
 export const FOOTER_DATA = {
