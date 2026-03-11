@@ -84,11 +84,11 @@ export const SOLUTIONS_DATA = {
 };
 
 export const PLANS_DATA = {
-  sectionTitle: "Partnership Continuo",
+  sectionTitle: "Soporte Mensual: Un Sistema Vivo, no Documentos Estáticos",
   plans: [
     {
       name: "Esencial",
-      description: "Cobertura fundamental para operaciones estándar.",
+      description: "25 hrs/mes - $400.000. Cobertura fundamental para operaciones estándar.",
       features: [
         "Mantenimiento documental preventivo",
         "Soporte remoto horario hábil",
@@ -100,7 +100,7 @@ export const PLANS_DATA = {
     },
     {
       name: "Profesional",
-      description: "Gestión integral enfocada en el sector industrial.",
+      description: "35 hrs/mes - $750.000. Gestión integral enfocada en el sector industrial.",
       features: [
         "Acreditación Minera continua",
         "Auditorías internas preventivas",
@@ -113,7 +113,7 @@ export const PLANS_DATA = {
     },
     {
       name: "Enterprise",
-      description: "Solución corporativa para operaciones de alta complejidad.",
+      description: "44 hrs/mes - $1.400.000. Solución corporativa para operaciones de alta complejidad.",
       features: [
         "Gestión Trinorma (ISO) completa",
         "Representación directa ante mandantes",
