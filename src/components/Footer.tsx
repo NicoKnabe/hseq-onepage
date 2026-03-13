@@ -28,11 +28,10 @@ export function Footer() {
             <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10">
                 <div className="grid md:grid-cols-2 gap-10 lg:gap-24 mb-16">
                     <RevealWrapper>
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-black/60 backdrop-blur-md border border-gold/40 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+                        <div className="flex items-center mb-6">
+                            <div className="flex items-center justify-center px-4 h-12 rounded-lg bg-black/60 backdrop-blur-md border border-gold/40 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
                                 <span className="font-extrabold text-2xl text-gold tracking-tighter drop-shadow-sm">QHSE</span>
                             </div>
-                            <h3 className="text-2xl font-bold tracking-wide text-white drop-shadow-md">QHSE</h3>
                         </div>
 
                         <p className="text-white-dim mb-8 max-w-md leading-relaxed text-lg drop-shadow-md">
