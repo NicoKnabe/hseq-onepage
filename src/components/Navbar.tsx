@@ -22,10 +22,13 @@ export function Navbar() {
         >
             <div className="container mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#" className="flex items-center group cursor-pointer">
+                <a href="#" className="flex items-center gap-3 group cursor-pointer">
                     <div className="flex items-center justify-center px-3 h-10 sm:h-12 rounded-lg bg-black-card border border-gold/30 group-hover:border-gold/60 transition-colors shadow-[0_0_15px_rgba(212,175,55,0.1)]">
                         <span className="font-extrabold text-xl sm:text-2xl text-gold tracking-tighter">QHSE</span>
                     </div>
+                    <span className="hidden sm:block font-bold text-white tracking-wide text-xs opacity-70 group-hover:opacity-100 transition-opacity uppercase">
+                        Consultoría Especializada
+                    </span>
                 </a>
 
                 {/* Desktop Nav */}
