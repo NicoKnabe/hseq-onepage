@@ -141,5 +141,5 @@ export const FOOTER_DATA = {
     email: "nknabe@qhse.cl",
     location: "Cobertura Nacional - Todo Chile",
   },
-  copyright: `© ${new Date().getFullYear()} Nicolás Knabe. Todos los derechos reservados.`,
+  copyright: `© ${new Date().getFullYear()} QHSE. Todos los derechos reservados.`,
 };
