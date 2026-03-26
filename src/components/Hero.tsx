@@ -5,7 +5,7 @@ import { AnimatedButton } from "./ui/AnimatedButton";
 
 export function Hero() {
     return (
-        <section className="relative overflow-hidden bg-transparent pt-32 pb-16 md:pt-40 md:pb-20 lg:pt-56 lg:pb-32">
+        <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-transparent pt-24 pb-16 md:pt-32 md:pb-20">
             {/* Background Glow */}
             <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.08),transparent_50%)]" />
             <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_bottom_left,rgba(212,175,55,0.04),transparent_50%)]" />
@@ -36,9 +36,9 @@ export function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         delay={0.3}
-                        className="text-lg md:text-xl text-white-dim mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
+                        className="mb-12 max-w-3xl mx-auto"
                     >
-                        <p>
+                        <p className="text-lg md:text-xl text-white/95 leading-relaxed bg-black/40 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl shadow-2xl">
                             {HERO_DATA.subtitle}
                         </p>
                     </RevealWrapper>
