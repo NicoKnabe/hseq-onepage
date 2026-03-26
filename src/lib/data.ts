@@ -13,17 +13,17 @@ export const HERO_DATA = {
 };
 
 export const AUTHORITY_DATA = {
-  consultant: "Nicolás Knabe",
-  title: "Consultoría QHSE Especializada",
+  consultant: "Respaldo Técnico Estratégico",
+  title: "Consultoría QHSE de Alta Exigencia",
   highlights: [
-    "Auditor Líder Trinorma",
-    "Cambridge University",
-    "Experiencia Codelco SIGO",
+    "Gestión Integral Trinorma (ISO)",
+    "Estándares de Nivel Internacional",
+    "Acreditación Minera Garantizada",
   ],
   stats: [
-    { value: 8, suffix: "+", label: "Años de Experiencia" },
-    { value: 3, suffix: "", label: "Normas ISO Dominadas" },
-    { value: 100, suffix: "%", label: "Aprobación en Faena" },
+    { value: 8, suffix: "+", label: "Años Blindando Operaciones" },
+    { value: 0, suffix: "%", label: "Rechazos en Acreditación" },
+    { value: 100, suffix: "%", label: "Integración Normativa Exitosa" },
   ],
 };
 
