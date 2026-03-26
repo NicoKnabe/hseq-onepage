@@ -26,7 +26,7 @@ function ChallengeCard({ challenge, index }: { challenge: typeof CHALLENGES_DATA
 
 export function Challenges() {
     return (
-        <section id="retos" className="min-h-[90vh] flex flex-col justify-center py-24 md:py-32 bg-transparent border-t border-white/5 relative overflow-hidden">
+        <section id="retos" className="min-h-[90vh] flex flex-col justify-center py-16 md:py-32 bg-transparent border-t border-white/5 relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.05),transparent_60%)] z-0 pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">

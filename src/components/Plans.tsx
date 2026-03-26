@@ -13,7 +13,7 @@ interface PlanData {
 
 export function Plans() {
     return (
-        <section id="planes" className="min-h-[90vh] flex flex-col justify-center py-24 md:py-32 bg-transparent border-b border-white/5 overflow-hidden relative">
+        <section id="planes" className="min-h-[90vh] flex flex-col justify-center py-16 md:py-32 bg-transparent border-b border-white/5 overflow-hidden relative">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.02),transparent_100%)] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">

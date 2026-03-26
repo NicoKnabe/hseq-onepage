@@ -4,7 +4,7 @@ import { SolutionsTabs } from "./ui/SolutionsTabs";
 
 export function Solutions() {
     return (
-        <section id="servicios" className="min-h-[90vh] flex flex-col justify-center py-24 md:py-32 bg-transparent relative border-b border-white/5 overflow-hidden">
+        <section id="servicios" className="min-h-[90vh] flex flex-col justify-center py-16 md:py-32 bg-transparent relative border-b border-white/5 overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.03),transparent_70%)] pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
