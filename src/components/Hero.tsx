@@ -38,7 +38,7 @@ export function Hero() {
                         delay={0.3}
                         className="mb-12 max-w-3xl mx-auto"
                     >
-                        <p className="text-lg md:text-xl text-white/95 leading-relaxed bg-black/40 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl shadow-2xl">
+                        <p className="text-lg md:text-xl text-white/95 leading-relaxed bg-black/20 backdrop-blur-sm border border-white/10 p-5 md:p-6 rounded-2xl shadow-lg">
                             {HERO_DATA.subtitle}
                         </p>
                     </RevealWrapper>
