@@ -6,7 +6,7 @@ import { GlowCard } from "./ui/GlowCard";
 
 export function Authority() {
     return (
-        <section className="py-20 md:py-32 bg-transparent relative border-y border-white/5 overflow-hidden">
+        <section className="min-h-[90vh] flex flex-col justify-center py-20 md:py-32 bg-transparent relative border-y border-white/5 overflow-hidden">
             {/* Ambient background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
             
