@@ -28,11 +28,11 @@ export function GlobalBackground() {
                 className="absolute inset-0 origin-center"
             >
                 <Image
-                    src="/hero-bg.webp"
+                    src="/hero-bg.jpeg"
                     alt="Fondo Los Andes"
                     fill
                     priority
-                    className="object-cover"
+                    className="object-cover grayscale transition-all duration-[1000ms] group-hover:grayscale-0"
                 />
             </motion.div>
 
@@ -55,10 +55,10 @@ export function GlobalBackground() {
                 className="absolute inset-0 origin-bottom"
             >
                 <Image
-                    src="/footer-bg.webp"
+                    src="/footer-bg.jpeg"
                     alt="Fondo Patagonia"
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale transition-all duration-[1000ms] group-hover:grayscale-0"
                 />
             </motion.div>
 

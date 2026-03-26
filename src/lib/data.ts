@@ -1,7 +1,7 @@
 export const HERO_DATA = {
   title: "Consultoría QHSE y Cumplimiento Normativo",
   subtitle:
-    "Garantice la continuidad de sus faenas y supere los estándares de la industria con una gestión preventiva implacable.",
+    "Ingeniería de precisión en seguridad, salud y medio ambiente para operaciones de alta complejidad en minería y manufactura pesada.",
   primaryButton: {
     text: "Agendar Reunión Técnica",
     href: "#contacto",
