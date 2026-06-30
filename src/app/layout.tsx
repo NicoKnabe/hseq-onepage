@@ -17,17 +17,40 @@ export const metadata: Metadata = {
   title: "Consultoría QHSE y Prevención de Riesgos | Nicolás Knabe",
   description: "Asegure la continuidad operativa de su empresa. Especialista en acreditación minera (SIGO), auditorías trinorma ISO y actualización DS 44 en todo Chile.",
   keywords: ["Consultoría QHSE", "Prevención de Riesgos", "Acreditación minera", "SIGO", "Auditorías trinorma ISO", "Software QHSE", "SGSST", "Evaluación de riesgos"],
+  alternates: {
+    canonical: "https://www.qhse.cl",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     title: "Consultoría QHSE y Prevención de Riesgos | Nicolás Knabe",
     description: "Asegure la continuidad operativa de su empresa. Especialista en acreditación minera (SIGO), auditorías trinorma ISO y actualización DS 44 en todo Chile.",
     type: "website",
     locale: "es_CL",
     url: "https://www.qhse.cl",
+    siteName: "Consultoría QHSE - Nicolás Knabe",
+    images: [
+      {
+        url: "/hero-bg.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Consultoría QHSE y Prevención de Riesgos - Nicolás Knabe",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Consultoría QHSE y Prevención de Riesgos | Nicolás Knabe",
     description: "Asegure la continuidad operativa de su empresa. Especialista en acreditación minera (SIGO), auditorías trinorma ISO y actualización DS 44 en todo Chile.",
+    images: ["/hero-bg.jpeg"],
   },
 };
 
@@ -36,19 +59,33 @@ const jsonLd = {
   "@type": "ProfessionalService",
   "name": "Nicolás Knabe - Consultoría QHSE",
   "url": "https://www.qhse.cl",
+  "image": "https://www.qhse.cl/hero-bg.jpeg",
   "description": "Consultoría especializada en QHSE, prevención de riesgos, acreditación minera y auditorías trinorma ISO en Chile.",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "CL",
   },
-  "areaServed": "Chile",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Chile",
+  },
+  "priceRange": "$$",
   "telephone": "+56950989084",
   "email": "nknabe@qhse.cl",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+56950989084",
     "contactType": "customer service",
+    "areaServed": "CL",
+    "availableLanguage": "Spanish",
   },
+  "serviceType": [
+    "Consultoría QHSE",
+    "Prevención de Riesgos",
+    "Acreditación minera SIGO",
+    "Auditorías trinorma ISO",
+    "Implementación DS 44/2024",
+  ],
 };
 
 export default function RootLayout({
