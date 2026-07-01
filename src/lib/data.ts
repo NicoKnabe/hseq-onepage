@@ -27,6 +27,33 @@ export const AUTHORITY_DATA = {
   ],
 };
 
+export const CLIENTS_DATA = {
+  eyebrow: "Confianza demostrada",
+  sectionTitle: "Empresas que ya confiaron en QHSE",
+  clients: [
+    {
+      name: "Firerent",
+      href: "https://www.firerent.cl",
+      logo: "/clients/firerent.jpg",
+    },
+    {
+      name: "Astra Tech Ascensores",
+      href: "https://www.astratechascensores.cl",
+      logo: "/clients/astratech.png",
+    },
+    {
+      name: "Knabe Group",
+      href: "https://knabegroup.cl",
+      logo: "/clients/knabe.svg",
+    },
+    {
+      name: "ASI Group",
+      href: "https://asi-group.com",
+      logo: "/clients/asi-group.png",
+    },
+  ],
+};
+
 export const CHALLENGES_DATA = {
   sectionTitle: "El Desafío Operativo 2026",
   challenges: [

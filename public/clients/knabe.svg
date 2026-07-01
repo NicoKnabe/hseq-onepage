@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
+  <style>
+    .k { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 800; letter-spacing: 4px; }
+  </style>
+  <text x="200" y="72" text-anchor="middle" class="k" font-size="42" fill="#ffffff">
+    KNABE <tspan fill="#D4AF37">GROUP</tspan>
+  </text>
+</svg>
