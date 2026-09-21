@@ -13,7 +13,11 @@ export function DS44() {
                         <SectionHeader eyebrow={DS44_DATA.eyebrow} title={DS44_DATA.title} subtitle={DS44_DATA.subtitle} />
                         <RevealWrapper delay={0.1} className="mt-6">
                             <p className="text-sm md:text-base text-muted leading-relaxed">{DS44_DATA.context}</p>
-                            <Link href={DS44_DATA.cta.href} className="btn-primary mt-8 w-full sm:w-auto">
+                            <div className="mt-6 rounded-xl border border-accent/40 bg-white p-5">
+                                <p className="text-base font-semibold text-ink">{DS44_DATA.question}</p>
+                                <p className="mt-2 text-sm text-ink-dim leading-relaxed">{DS44_DATA.questionText}</p>
+                            </div>
+                            <Link href={DS44_DATA.cta.href} className="btn-primary mt-5 w-full sm:w-auto">
                                 {DS44_DATA.cta.text}
                                 <ArrowRight className="w-5 h-5" aria-hidden="true" />
                             </Link>

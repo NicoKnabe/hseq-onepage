@@ -8,9 +8,9 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 // Solo para el wordmark de FireRent en la sección de clientes.
 const barlow = Barlow_Condensed({ variable: "--font-barlow", subsets: ["latin"], weight: "900", style: "italic" });
 
-const TITLE = "Prevención de Riesgos, DS44 y Acreditación de Contratistas | QHSE Chile";
+const TITLE = "Prevención de Riesgos para PYMES y Empresas | Prevencionista Externo, DS44 y Acreditación | QHSE Chile";
 const DESCRIPTION =
-  "Asesoría en prevención de riesgos para empresas en Chile: prevención externa, implementación DS44, MIPER, acreditación de contratistas, auditorías e ISO 45001. Diagnóstico preventivo para pymes e industria.";
+  "Prevencionista externo para PYMES y empresas en Chile. Diagnóstico preventivo desde $99.000 y planes mensuales de gestión preventiva desde $249.000: cumplimiento DS44, matriz de riesgos, acreditación de contratistas, auditorías e ISO. Atención directa con un profesional.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -21,9 +21,16 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     "prevención de riesgos Chile",
-    "asesoría prevención de riesgos",
     "prevención de riesgos para empresas",
-    "prevención externa",
+    "prevención de riesgos PYME",
+    "prevencionista externo",
+    "prevención de riesgos externa",
+    "asesoría prevención de riesgos",
+    "cumplimiento DS44",
+    "acreditación de empresas",
+    "asesoría QHSE",
+    "auditoría ISO",
+    "gestión preventiva",
     "DS44",
     "implementación DS44",
     "asesoría DS44",

@@ -16,9 +16,9 @@ export const HERO_DATA = {
   title: "Prevención y cumplimiento normativo para empresas que necesitan hacer las cosas bien.",
   subtitle:
     "Implementamos y gestionamos la Seguridad y Salud en el Trabajo de tu empresa, desde el diagnóstico y cumplimiento DS44 hasta la gestión preventiva mensual, auditorías y procesos de acreditación.",
-  primaryCta: { text: "Solicitar diagnóstico", href: "#contacto" },
+  primaryCta: { text: "Solicitar diagnóstico", href: "/?servicio=Diagn%C3%B3stico#contacto" },
   secondaryCta: { text: "Hablar con un especialista" },
-  tagline: "Prevención externa · DS44 · Acreditación · SST · ISO · QHSE",
+  tagline: "Diagnóstico desde $99.000 · Planes mensuales desde $249.000 · Honorarios, sin IVA",
 };
 
 export const PROBLEMS_DATA = {
@@ -37,7 +37,7 @@ export const PROBLEMS_DATA = {
       label: "Prevención externa",
       quote: "No necesito un prevencionista a tiempo completo, pero sí necesito gestión preventiva.",
       href: "#prevencion-externa",
-      cta: "Ver planes",
+      cta: "Ver planes y precios",
     },
     {
       id: "documentacion",
@@ -75,7 +75,7 @@ export const DS44_DATA = {
   title: "¿Tu empresa está realmente preparada para el DS44?",
   subtitle: "Más que tener documentos, una empresa necesita demostrar que su gestión preventiva funciona.",
   context:
-    "El Decreto Supremo 44/2024 aprueba el nuevo Reglamento sobre Gestión Preventiva de los Riesgos Laborales, vigente desde el 1 de febrero de 2025. Reemplaza al DS 40 y al DS 54 y exige a las empresas gestionar sus riesgos de forma sistemática: identificarlos, evaluarlos, controlarlos y demostrar que ese control se mantiene en el tiempo. Las obligaciones concretas varían según el tamaño de la empresa, su actividad y su nivel de riesgo.",
+    "El Decreto Supremo 44/2024 aprueba el nuevo Reglamento sobre Gestión Preventiva de los Riesgos Laborales, vigente desde el 1 de febrero de 2025. Reemplaza al DS 40 y al DS 54 y exige a las empresas gestionar sus riesgos de forma sistemática: identificarlos, evaluarlos, controlarlos y demostrar que ese control se mantiene en el tiempo. Las obligaciones concretas aplican según corresponda a la actividad, tamaño y condiciones de cada empresa.",
   steps: [
     { n: "01", title: "Diagnóstico", desc: "Levantamiento del estado actual de la gestión preventiva." },
     { n: "02", title: "Identificación de brechas", desc: "Comparación contra requisitos aplicables a tu empresa." },
@@ -87,7 +87,9 @@ export const DS44_DATA = {
     { n: "08", title: "Seguimiento", desc: "Indicadores, inspecciones y verificación." },
     { n: "09", title: "Mejora continua", desc: "Revisión periódica y ajuste del sistema." },
   ],
-  cta: { text: "Evaluar mi cumplimiento", href: "#contacto" },
+  question: "¿No sabes en qué nivel de cumplimiento está tu empresa?",
+  questionText: "El Diagnóstico Preventivo QHSE revisa tu situación frente al DS 44, según corresponda a la actividad, tamaño y condiciones de tu empresa, y te entrega un plan de acción priorizado.",
+  cta: { text: "Solicitar diagnóstico DS44", href: "/?servicio=DS44#contacto" },
 };
 
 export const DIAGNOSTIC_DATA = {
@@ -96,107 +98,156 @@ export const DIAGNOSTIC_DATA = {
   subtitle:
     "Antes de contratar una asesoría permanente, identifica qué está funcionando, qué falta y cuáles son las principales brechas de tu empresa.",
   includes: [
+    "Reunión inicial",
     "Revisión documental",
-    "Revisión preventiva en terreno",
+    "Revisión de matriz de riesgos",
+    "Revisión del programa preventivo",
+    "Revisión de registros disponibles",
     "Identificación de brechas",
-    "Revisión MIPER",
-    "Revisión de registros",
-    "Revisión de cumplimiento legal",
-    "Informe con hallazgos clasificados",
+    "Revisión de cumplimiento aplicable",
+    "Informe ejecutivo",
     "Plan de acción priorizado",
   ],
-  // Precio configurable. null = "Valor según tamaño y complejidad de la empresa".
-  price: null as string | null,
-  priceNote: "Valor según dotación, número de sedes y complejidad de la operación.",
-  duration: "Entrega del informe en plazo acordado tras la visita.",
-  cta: { text: "Solicitar diagnóstico", href: "#contacto" },
+  price: "$99.000",
+  priceSuffix: "pago único",
+  priceNote: "Honorarios profesionales. Empresas con un centro de trabajo.",
+  condition:
+    "Si contratas un plan mensual dentro de los 30 días posteriores al diagnóstico, el valor del diagnóstico se descuenta del primer mes.",
+  cta: { text: "Solicitar diagnóstico", href: "/?servicio=Diagn%C3%B3stico#contacto" },
 };
 
 export interface Plan {
   id: string;
   name: string;
+  price: string; // Editable. Honorarios, sin IVA.
+  priceSuffix: string;
   tagline: string;
-  forWho: string;
-  solves: string;
   includes: string[];
-  frequency: string;
-  modality: string;
-  hours: string | null; // Información secundaria. null para ocultar.
-  price: string | null; // Editable. null = "Cotizar".
+  visits: string; // Información secundaria, no argumento de venta.
   highlighted: boolean;
+  badge?: string;
   cta: string;
 }
 
+export const JOURNEY_DATA = {
+  title: "Un camino claro: empieza por el diagnóstico y avanza según lo que tu empresa necesite",
+  steps: [
+    { name: "Diagnóstico", price: "$99.000", note: "pago único", href: "#diagnostico" },
+    { name: "Esencial", price: "$249.000", note: "/ mes", href: "#prevencion-externa" },
+    { name: "Profesional", price: "$349.000", note: "/ mes", href: "#prevencion-externa" },
+    { name: "Integral", price: "$499.000", note: "/ mes", href: "#prevencion-externa" },
+    { name: "A medida", price: "Desde 15 UF", note: "/ mes", href: "#plan-a-medida" },
+  ],
+  footnote: "Puedes partir con el diagnóstico y pasar a un plan mensual cuando tengas claro el alcance.",
+};
+
+export const NO_DEPARTMENT_DATA = {
+  title: "No necesitas contratar un departamento completo de prevención",
+  text: "Tu empresa puede contar con gestión preventiva profesional sin asumir el costo de incorporar un departamento completo. Diseñamos una modalidad proporcional al tamaño, actividad y nivel de riesgo de tu organización.",
+  text2: "Pagas por la gestión que tu empresa realmente necesita, con acompañamiento técnico y seguimiento permanente.",
+  pairs: [
+    { problem: "Necesitas cumplir con el DS44", solution: "Gestión preventiva y seguimiento." },
+    { problem: "Te están solicitando documentación", solution: "Regularización y control documental." },
+    { problem: "Trabajas con mandantes", solution: "Apoyo en acreditación." },
+    { problem: "No tienes prevencionista interno", solution: "Externalización de la gestión preventiva." },
+  ],
+};
+
 export const PLANS_DATA = {
-  eyebrow: "Prevención externa",
-  title: "Externaliza tu prevención",
+  eyebrow: "Planes mensuales",
+  title: "Gestión preventiva profesional, ajustada al tamaño y realidad de tu empresa",
   subtitle:
-    "No todas las empresas necesitan contratar un prevencionista a tiempo completo. QHSE puede asumir la gestión preventiva que realmente necesita tu organización.",
-  note: "Todos los planes incluyen informe mensual de avance y canal directo por WhatsApp y correo en horario hábil. Permanencia mínima sugerida: 3 meses.",
+    "Tres planes con precio claro. Eliges según lo que tu empresa necesita resolver, no por cantidad de horas.",
   plans: [
     {
       id: "esencial",
       name: "Esencial",
-      tagline: "Para empresas que necesitan mantener su gestión preventiva ordenada.",
-      forWho: "Pymes con riesgo bajo o medio que no requieren un prevencionista permanente.",
-      solves: "Documentación al día, registros vigentes y respuesta ordenada ante una fiscalización.",
+      price: "$249.000",
+      priceSuffix: "/ mes",
+      tagline: "Para pequeñas empresas que necesitan mantener una gestión preventiva formal sin contratar un profesional a tiempo completo.",
       includes: [
-        "Mantención de documentación preventiva",
-        "Actualización de registros obligatorios",
-        "Revisión de vencimientos",
-        "Alertas normativas relevantes",
-        "Soporte remoto por WhatsApp y correo",
+        "Diagnóstico preventivo inicial",
+        "Revisión de documentación existente",
+        "Revisión y gestión de matriz de riesgos, según corresponda",
+        "Programa preventivo",
+        "Control y actualización documental",
+        "Seguimiento mensual",
+        "Soporte vía WhatsApp y correo",
+        "Reunión mensual de seguimiento",
+        "Informe mensual simplificado",
       ],
-      frequency: "Visita mensual",
-      modality: "Remoto + terreno",
-      hours: null,
-      price: null,
+      visits: "1 visita presencial mensual de hasta 3 horas",
       highlighted: false,
-      cta: "Consultar plan Esencial",
+      cta: "Quiero contratar este plan",
     },
     {
       id: "profesional",
       name: "Profesional",
-      tagline: "Para empresas que necesitan acompañamiento técnico y gestión continua.",
-      forWho: "Empresas medianas, contratistas y operaciones con exigencias de mandantes.",
-      solves: "Gestión preventiva activa, con seguimiento y capacidad de responder ante clientes y autoridades.",
+      price: "$349.000",
+      priceSuffix: "/ mes",
+      tagline: "Para empresas que necesitan una gestión preventiva activa y seguimiento continuo.",
       includes: [
-        "Todo lo del plan Esencial",
-        "Programa preventivo y seguimiento de indicadores",
-        "Inspecciones planificadas en terreno",
-        "Charlas y capacitaciones por cargo",
-        "Investigación de incidentes",
-        "Apoyo en procesos de acreditación",
+        "Todo lo incluido en Plan Esencial",
+        "Gestión y actualización de matriz de riesgos",
+        "Programa preventivo y seguimiento",
+        "Inspecciones preventivas",
+        "Seguimiento de acciones correctivas",
+        "Informes de gestión",
+        "Charlas y capacitaciones programadas",
+        "Revisión de cumplimiento DS44",
+        "Apoyo documental para procesos de acreditación",
+        "Preparación documental ante fiscalizaciones",
+        "Soporte técnico continuo",
       ],
-      frequency: "Visitas quincenales",
-      modality: "Terreno + remoto",
-      hours: null,
-      price: null,
+      visits: "2 visitas presenciales mensuales de hasta 4 horas",
       highlighted: true,
-      cta: "Cotizar plan Profesional",
+      badge: "Más contratado",
+      cta: "Quiero este plan",
     },
     {
       id: "integral",
       name: "Integral",
-      tagline: "Para empresas con operaciones más complejas y mayores exigencias.",
-      forWho: "Operaciones industriales, multi-sede o con sistemas de gestión ISO.",
-      solves: "Gestión QHSE completa: seguridad, salud, medio ambiente y sistema de gestión integrado.",
+      price: "$499.000",
+      priceSuffix: "/ mes",
+      tagline: "Para empresas con mayor dotación, operaciones más exigentes o necesidades preventivas más amplias.",
       includes: [
-        "Todo lo del plan Profesional",
-        "Gestión de sistema integrado ISO 9001 / 14001 / 45001",
+        "Todo lo incluido en Plan Profesional",
+        "Gestión preventiva continua",
         "Auditorías internas",
-        "Representación técnica ante mandantes",
-        "Reporte ejecutivo para gerencia",
-        "Cobertura multi-sede según alcance",
+        "Indicadores de gestión",
+        "Apoyo en procesos de acreditación",
+        "Gestión documental frente a mandantes",
+        "Apoyo en investigación de incidentes y accidentes, según alcance",
+        "Revisión de protocolos y procedimientos",
+        "Gestión QHSE",
+        "Reunión de gestión con administración o gerencia",
+        "Informe ejecutivo mensual",
       ],
-      frequency: "Presencia semanal",
-      modality: "Terreno + remoto",
-      hours: null,
-      price: null,
+      visits: "Hasta 4 visitas presenciales mensuales",
       highlighted: false,
-      cta: "Conversar plan Integral",
+      cta: "Quiero evaluar este plan",
     },
   ] as Plan[],
+  custom: {
+    id: "a-medida",
+    name: "Plan a medida",
+    price: "Desde 15 UF",
+    priceSuffix: "/ mes",
+    tagline: "Cobertura superior a los planes estándar. El valor depende del alcance.",
+    forWho: [
+      "Empresas con múltiples centros de trabajo",
+      "Contratistas",
+      "Operaciones de alta exigencia",
+      "Empresas que trabajan con grandes mandantes",
+      "Operaciones mineras",
+      "Servicios industriales",
+      "Necesidades específicas de QHSE",
+    ],
+    cta: "Solicitar propuesta",
+  },
+  pricingNote:
+    "Valores referenciales para empresas con un centro de trabajo. El valor definitivo puede variar según dotación, actividad económica, nivel de riesgo, cantidad de centros de trabajo y alcance requerido.",
+  billingNote: "Honorarios profesionales con boleta de honorarios. No aplica IVA. Permanencia mínima sugerida: 3 meses.",
 };
 
 export const ACCREDITATION_DATA = {

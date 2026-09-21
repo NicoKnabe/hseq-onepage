@@ -14,11 +14,14 @@ export function Diagnostic() {
                             <SectionHeader eyebrow={DIAGNOSTIC_DATA.eyebrow} title={DIAGNOSTIC_DATA.title} subtitle={DIAGNOSTIC_DATA.subtitle} />
                             <div className="mt-8 rounded-lg border border-line bg-white/80 p-5">
                                 <p className="text-xs uppercase tracking-widest text-muted">Inversión</p>
-                                <p className="mt-1 text-2xl font-bold text-ink">
-                                    {DIAGNOSTIC_DATA.price ?? "Según alcance"}
+                                <p className="mt-1 flex items-baseline gap-2">
+                                    <span className="text-4xl font-bold tracking-tight text-ink">{DIAGNOSTIC_DATA.price}</span>
+                                    <span className="text-sm text-muted">{DIAGNOSTIC_DATA.priceSuffix}</span>
                                 </p>
                                 <p className="mt-1 text-sm text-muted">{DIAGNOSTIC_DATA.priceNote}</p>
-                                <p className="mt-1 text-sm text-muted">{DIAGNOSTIC_DATA.duration}</p>
+                                <p className="mt-4 border-t border-line pt-3 text-sm text-ink-dim leading-relaxed">
+                                    {DIAGNOSTIC_DATA.condition}
+                                </p>
                             </div>
                             <Link href={DIAGNOSTIC_DATA.cta.href} className="btn-primary mt-6 w-full sm:w-auto">
                                 {DIAGNOSTIC_DATA.cta.text}

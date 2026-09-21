@@ -43,8 +43,11 @@ function prefillFromParams(params: URLSearchParams): Prefill {
     const plan = params.get("plan");
     const servicio = params.get("servicio");
     if (plan) {
+        if (plan === PLANS_DATA.custom.id) {
+            return { servicio: "Prevención externa", mensaje: "Quiero solicitar una propuesta para un plan a medida." };
+        }
         const p = PLANS_DATA.plans.find((x) => x.id === plan);
-        return { servicio: "Prevención externa", mensaje: p ? `Me interesa el plan ${p.name}.` : "" };
+        return { servicio: "Prevención externa", mensaje: p ? `Quiero contratar el plan ${p.name} (${p.price} ${p.priceSuffix}).` : "" };
     }
     if (servicio) {
         const match = CONTACT_DATA.services.find((s) => servicio.toLowerCase().includes(s.toLowerCase()));
