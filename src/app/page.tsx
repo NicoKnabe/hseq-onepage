@@ -9,7 +9,6 @@ import { Services } from "@/components/Services";
 import { Digital } from "@/components/Digital";
 import { Industry } from "@/components/Industry";
 import { Trust } from "@/components/Trust";
-import { Knowledge } from "@/components/Knowledge";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -30,7 +29,6 @@ export default function Home() {
         <Digital />
         <Industry />
         <Trust />
-        <Knowledge />
         <About />
         <Contact />
       </main>

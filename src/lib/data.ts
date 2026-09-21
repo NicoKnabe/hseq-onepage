@@ -7,7 +7,6 @@ export const NAV_LINKS = [
   { label: "Planes", href: "/#prevencion-externa" },
   { label: "Acreditación", href: "/#acreditacion" },
   { label: "Plataforma", href: "/#plataforma" },
-  { label: "Recursos", href: "/recursos" },
   { label: "Nosotros", href: "/#nosotros" },
   { label: "Contacto", href: "/#contacto" },
 ];

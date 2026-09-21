@@ -20,7 +20,7 @@ export function Footer() {
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-widest text-ink/70">Navegación</p>
                         <ul className="mt-4 grid grid-cols-2 gap-2 text-sm">
-                            {NAV_LINKS.map((l) => (
+                            {[...NAV_LINKS, { label: "Guías", href: "/recursos" }].map((l) => (
                                 <li key={l.href}><Link href={l.href} className="text-ink-dim hover:text-accent transition-colors">{l.label}</Link></li>
                             ))}
                         </ul>
