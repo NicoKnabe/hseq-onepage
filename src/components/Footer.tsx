@@ -9,7 +9,7 @@ export function Footer() {
                 <div className="grid gap-10 md:grid-cols-3">
                     <div>
                         <div className="flex items-center gap-3">
-                            <span className="flex items-center justify-center px-2.5 h-9 rounded-md bg-ink">
+                            <span className="flex items-center justify-center px-2.5 h-9 rounded-md bg-brand">
                                 <span className="font-extrabold text-lg text-white tracking-tighter">QHSE</span>
                             </span>
                             <span className="text-[11px] font-semibold uppercase tracking-wider text-ink/70">Consultoría Especializada</span>

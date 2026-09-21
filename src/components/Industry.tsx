@@ -5,7 +5,7 @@ import { RevealWrapper } from "./ui/RevealWrapper";
 
 export function Industry() {
     return (
-        <section id="industria" className="py-16 md:py-24 bg-ink text-white">
+        <section id="industria" className="py-16 md:py-24 bg-brand text-white">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid gap-10 lg:grid-cols-12 lg:gap-14 items-center">
                     <div className="lg:col-span-5">

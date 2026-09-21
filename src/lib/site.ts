@@ -8,7 +8,7 @@ export const SITE = {
   phoneDisplay: "+56 9 5098 9084",
   phoneE164: "56950989084",
   email: "nknabe@qhse.cl",
-  linkedin: "https://www.linkedin.com/in/nicolasknabeqhse",
+  linkedin: "https://www.linkedin.com/in/nicolasknabe-qhse",
   location: "Viña del Mar, Chile",
   coverage: "Cobertura nacional. Visitas a terreno en Región de Valparaíso y Región Metropolitana; otras regiones según proyecto.",
   brochure: "/brochure.pdf",

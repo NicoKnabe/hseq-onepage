@@ -12,30 +12,32 @@ export function About() {
                 <div className="grid gap-10 lg:grid-cols-5 lg:gap-16">
                     <div className="lg:col-span-2">
                         <SectionHeader eyebrow={ABOUT_DATA.eyebrow} title={ABOUT_DATA.title} />
-                        <RevealWrapper delay={0.1} className="mt-8 card overflow-hidden">
-                            <div className="relative aspect-[16/9]">
-                                <Image
-                                    src="/fotos/valle-andino.webp"
-                                    alt="Valle andino visto desde una faena en altura"
-                                    fill
-                                    sizes="(max-width: 1024px) 100vw, 40vw"
-                                    className="object-cover"
-                                />
+                        <RevealWrapper delay={0.1} className="mt-8 card p-6">
+                            <div className="flex items-center gap-5">
+                                <div className="relative h-28 w-28 md:h-32 md:w-32 shrink-0 overflow-hidden rounded-xl border border-line">
+                                    <Image
+                                        src="/fotos/nicolas-knabe.webp"
+                                        alt="Nicolás Knabe Alcaino, consultor QHSE"
+                                        fill
+                                        sizes="128px"
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div>
+                                    <p className="text-xl font-bold text-ink">{ABOUT_DATA.name}</p>
+                                    <p className="mt-1 text-sm text-accent">{ABOUT_DATA.role}</p>
+                                </div>
                             </div>
-                            <div className="p-6">
-                            <p className="text-xl font-bold text-ink">{ABOUT_DATA.name}</p>
-                            <p className="mt-1 text-sm text-accent">{ABOUT_DATA.role}</p>
-                            <p className="mt-4 text-sm text-ink-dim leading-relaxed">{ABOUT_DATA.intro}</p>
+                            <p className="mt-5 text-sm text-ink-dim leading-relaxed">{ABOUT_DATA.intro}</p>
                             <a
                                 href={SITE.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-accent transition-colors"
+                                className="mt-5 inline-flex items-center gap-2 rounded-md border border-line-strong bg-white px-4 py-2.5 text-sm font-semibold text-ink hover:border-accent hover:text-accent transition-colors"
                             >
                                 <Linkedin className="w-4 h-4" aria-hidden="true" />
-                                Ver perfil en LinkedIn
+                                linkedin.com/in/nicolasknabe-qhse
                             </a>
-                            </div>
                         </RevealWrapper>
                     </div>
 
