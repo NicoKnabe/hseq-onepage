@@ -40,7 +40,7 @@ export const ARTICLES: Article[] = [
       {
         heading: "Qué cambia en la práctica",
         list: [
-          "La obligación de informar (ODI) reemplaza al antiguo derecho a saber (DAS). El trabajador debe ser informado de los riesgos de su cargo, las medidas de control y los procedimientos aplicables, y debe quedar registro de ello.",
+          "La Información de los Riesgos Laborales (IRL, artículo 15 del DS 44) reemplaza a la antigua obligación de informar (ODI) del DS 40. Cada trabajador debe recibir, antes de iniciar sus labores, información sobre los riesgos de su cargo, las medidas preventivas y los métodos de trabajo correctos, determinados conforme a la matriz de riesgos y al programa preventivo, y debe quedar registro de ello.",
           "La gestión preventiva se estructura en torno a la identificación de peligros y evaluación de riesgos (MIPER), un programa de trabajo preventivo y el seguimiento de su ejecución.",
           "Se refuerza la participación de los trabajadores y el rol de los comités paritarios en las faenas donde corresponde constituirlos.",
           "La empresa debe poder mostrar evidencia: registros, matrices, capacitaciones, inspecciones y acciones correctivas.",
@@ -59,7 +59,7 @@ export const ARTICLES: Article[] = [
           "Diagnóstico: revisar qué existe, qué está vigente y qué falta según el tamaño y actividad de la empresa.",
           "MIPER: levantar en terreno los peligros reales de cada puesto de trabajo.",
           "Programa preventivo: definir actividades, responsables y plazos.",
-          "Capacitación: cumplir la ODI y formar por cargo, con registro.",
+          "Información y capacitación: cumplir la IRL y formar por cargo, con registro.",
           "Seguimiento: inspecciones, indicadores y revisión periódica.",
         ],
       },
@@ -98,7 +98,7 @@ export const ARTICLES: Article[] = [
           "Elaborarla desde la oficina sin recorrer los puestos de trabajo ni conversar con quienes ejecutan las tareas.",
           "No actualizarla cuando cambian los procesos, equipos, insumos o instalaciones.",
           "Evaluar todo como riesgo bajo para no tener que implementar controles.",
-          "No conectarla con la ODI: los trabajadores deben ser informados de los riesgos que la matriz identifica para su cargo.",
+          "No conectarla con la IRL: la información de riesgos que recibe cada trabajador debe salir de la matriz y del programa preventivo.",
         ],
       },
       {
@@ -175,7 +175,7 @@ export const ARTICLES: Article[] = [
         heading: "Qué suele revisarse",
         list: [
           "Reglamento interno de higiene y seguridad, cuando corresponde, y su entrega a los trabajadores.",
-          "Obligación de informar (ODI) con registro por trabajador.",
+          "Información de los Riesgos Laborales (IRL) con registro por trabajador.",
           "Matriz de identificación de peligros y evaluación de riesgos.",
           "Programa de trabajo preventivo y su ejecución.",
           "Comité paritario, en faenas donde corresponde constituirlo.",
@@ -213,7 +213,7 @@ export const ARTICLES: Article[] = [
         list: [
           "Antecedentes de la empresa: constitución, vigencia, certificados de cumplimiento laboral y previsional.",
           "Documentación de seguridad y salud: reglamento interno, MIPER, programa preventivo, procedimientos de trabajo seguro, plan de emergencia.",
-          "Antecedentes de cada trabajador: contrato, ODI firmada, exámenes, capacitaciones, entrega de EPP.",
+          "Antecedentes de cada trabajador: contrato, registro de IRL, exámenes, capacitaciones, entrega de EPP.",
           "Documentación de equipos y vehículos, cuando aplica.",
           "Cumplimiento de estándares propios del mandante, que pueden ser más exigentes que la ley.",
         ],
@@ -293,7 +293,7 @@ export const ARTICLES: Article[] = [
         heading: "Obligaciones que aplican de forma general",
         list: [
           "Estar adherido a un organismo administrador del seguro de la Ley 16.744 (mutualidad o ISL).",
-          "Informar a cada trabajador sobre los riesgos de su trabajo, las medidas preventivas y los métodos de trabajo correctos (ODI), con registro.",
+          "Informar a cada trabajador, antes de iniciar sus labores, sobre los riesgos de su trabajo, las medidas preventivas y los métodos de trabajo correctos (IRL, artículo 15 del DS 44), con registro.",
           "Identificar peligros y evaluar riesgos de las actividades de la empresa.",
           "Proporcionar elementos de protección personal adecuados sin costo para el trabajador.",
           "Mantener condiciones sanitarias y ambientales básicas en los lugares de trabajo.",

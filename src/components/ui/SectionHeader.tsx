@@ -15,10 +15,10 @@ export function SectionHeader({ eyebrow, title, subtitle, align = "left", classN
     return (
         <RevealWrapper className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
             {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
-            <Heading className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] text-white">
+            <Heading className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] text-ink">
                 {title}
             </Heading>
-            {subtitle && <p className="mt-4 text-base md:text-lg text-white-dim leading-relaxed">{subtitle}</p>}
+            {subtitle && <p className="mt-4 text-base md:text-lg text-ink-dim leading-relaxed">{subtitle}</p>}
         </RevealWrapper>
     );
 }

@@ -8,7 +8,6 @@ import { Accreditation } from "@/components/Accreditation";
 import { Services } from "@/components/Services";
 import { Industry } from "@/components/Industry";
 import { Trust } from "@/components/Trust";
-import { Cases } from "@/components/Cases";
 import { Knowledge } from "@/components/Knowledge";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
@@ -29,7 +28,6 @@ export default function Home() {
         <Services />
         <Industry />
         <Trust />
-        <Cases />
         <Knowledge />
         <About />
         <Contact />

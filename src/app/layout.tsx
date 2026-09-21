@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Barlow_Condensed } from "next/font/google";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+// Solo para el wordmark de FireRent en la sección de clientes.
+const barlow = Barlow_Condensed({ variable: "--font-barlow", subsets: ["latin"], weight: "900", style: "italic" });
 
 const TITLE = "Prevención de Riesgos, DS44 y Acreditación de Contratistas | QHSE Chile";
 const DESCRIPTION =
@@ -93,7 +95,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-black text-white`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} antialiased min-h-screen bg-white text-ink`}>
         {children}
       </body>
     </html>

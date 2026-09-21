@@ -29,9 +29,9 @@ export default function RecursosPage() {
             {ARTICLES.map((a) => (
               <Link key={a.slug} href={`/recursos/${a.slug}`} className="card group flex h-full flex-col p-6">
                 <span className="eyebrow">{a.category}</span>
-                <h2 className="mt-2 text-lg font-semibold leading-snug text-white group-hover:text-gold transition-colors">{a.title}</h2>
-                <p className="mt-3 flex-1 text-sm text-gray leading-relaxed">{a.description}</p>
-                <span className="mt-4 text-xs text-gray">{a.readingMinutes} min de lectura</span>
+                <h2 className="mt-2 text-lg font-semibold leading-snug text-ink group-hover:text-accent transition-colors">{a.title}</h2>
+                <p className="mt-3 flex-1 text-sm text-muted leading-relaxed">{a.description}</p>
+                <span className="mt-4 text-xs text-muted">{a.readingMinutes} min de lectura</span>
               </Link>
             ))}
           </div>

@@ -144,13 +144,13 @@ function ContactFormInner({ prefill = {} }: { prefill?: Prefill }) {
             </div>
 
             {sent && (
-                <p className="sm:col-span-2 text-sm text-gold" role="status">
+                <p className="sm:col-span-2 text-sm text-accent" role="status">
                     {sent === "whatsapp"
                         ? "Se abrió WhatsApp con tu solicitud. Si no se abrió, escríbenos directamente al +56 9 5098 9084."
                         : "Se abrió tu cliente de correo con la solicitud. Si no se abrió, escríbenos a nknabe@qhse.cl."}
                 </p>
             )}
-            <p className="sm:col-span-2 text-xs text-gray">Tus datos se usan solo para responder tu solicitud.</p>
+            <p className="sm:col-span-2 text-xs text-muted">Tus datos se usan solo para responder tu solicitud.</p>
         </form>
     );
 }

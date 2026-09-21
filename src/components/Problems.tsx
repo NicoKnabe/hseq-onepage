@@ -6,7 +6,7 @@ import { RevealWrapper } from "./ui/RevealWrapper";
 
 export function Problems() {
     return (
-        <section id="problemas" className="py-16 md:py-24 border-t border-white/10">
+        <section id="problemas" className="py-16 md:py-24 border-t border-line">
             <div className="container mx-auto px-4 md:px-6">
                 <SectionHeader title={PROBLEMS_DATA.title} subtitle={PROBLEMS_DATA.subtitle} />
 
@@ -15,10 +15,10 @@ export function Problems() {
                         <RevealWrapper key={item.id} delay={i * 0.06}>
                             <Link href={item.href} className="card group flex h-full flex-col p-6">
                                 <span className="eyebrow">{item.label}</span>
-                                <p className="mt-3 flex-1 text-lg font-medium leading-snug text-white">
+                                <p className="mt-3 flex-1 text-lg font-medium leading-snug text-ink">
                                     &ldquo;{item.quote}&rdquo;
                                 </p>
-                                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold">
+                                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent">
                                     {item.cta}
                                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                                 </span>

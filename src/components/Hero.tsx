@@ -16,22 +16,22 @@ export function Hero() {
                     fill
                     priority
                     sizes="100vw"
-                    className="object-cover opacity-30"
+                    className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/85 to-white" />
             </div>
 
             <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-4xl">
                     <RevealWrapper>
                         <p className="eyebrow mb-5">{HERO_DATA.eyebrow}</p>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold text-white leading-[1.05] tracking-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold text-ink leading-[1.05] tracking-tight">
                             {HERO_DATA.title}
                         </h1>
                     </RevealWrapper>
 
                     <RevealWrapper delay={0.15} className="mt-6 md:mt-8 max-w-2xl">
-                        <p className="text-base sm:text-lg md:text-xl text-white-dim leading-relaxed">
+                        <p className="text-base sm:text-lg md:text-xl text-ink-dim leading-relaxed">
                             {HERO_DATA.subtitle}
                         </p>
                     </RevealWrapper>
@@ -42,13 +42,13 @@ export function Hero() {
                             <ArrowRight className="w-5 h-5" aria-hidden="true" />
                         </Link>
                         <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">
-                            <WhatsAppIcon className="w-5 h-5 text-[#25D366]" />
+                            <WhatsAppIcon className="w-5 h-5 text-[#1DA851]" />
                             {HERO_DATA.secondaryCta.text}
                         </a>
                     </RevealWrapper>
 
                     <RevealWrapper delay={0.45} className="mt-10 md:mt-14">
-                        <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-gray">
+                        <p className="text-xs sm:text-sm font-medium uppercase tracking-[0.18em] text-muted">
                             {HERO_DATA.tagline}
                         </p>
                     </RevealWrapper>

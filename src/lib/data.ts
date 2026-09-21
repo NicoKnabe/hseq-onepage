@@ -82,7 +82,7 @@ export const DS44_DATA = {
     { n: "03", title: "MIPER", desc: "Matriz de identificación de peligros y evaluación de riesgos." },
     { n: "04", title: "Programa preventivo", desc: "Actividades, responsables y plazos." },
     { n: "05", title: "Documentación", desc: "Procedimientos, reglamento interno, registros." },
-    { n: "06", title: "Capacitación", desc: "Obligación de informar y formación por cargo." },
+    { n: "06", title: "Capacitación", desc: "Información de riesgos laborales (IRL) y formación por cargo." },
     { n: "07", title: "Implementación", desc: "Puesta en marcha de controles en terreno." },
     { n: "08", title: "Seguimiento", desc: "Indicadores, inspecciones y verificación." },
     { n: "09", title: "Mejora continua", desc: "Revisión periódica y ajuste del sistema." },
@@ -296,7 +296,7 @@ export const SERVICES_DATA = {
           id: "capacitacion",
           name: "Capacitación",
           problem: "Los trabajadores no conocen los riesgos de su cargo ni las medidas de control.",
-          includes: ["Obligación de informar (ODI)", "Inducciones", "Cursos específicos", "Evaluación", "Certificado"],
+          includes: ["Información de riesgos laborales (IRL)", "Inducciones", "Cursos específicos", "Evaluación", "Certificado"],
           who: "Todas las empresas; requisito legal para cada trabajador.",
           how: "Relatoría directa, presencial o por videollamada, con registro de asistencia.",
         },
@@ -500,30 +500,13 @@ export const TRUST_DATA = {
   ],
   clientsTitle: "Empresas que han confiado en QHSE",
   clients: [
-    { name: "Firerent", href: "https://www.firerent.cl", logo: "/clients/firerent.jpg" },
+    { name: "FireRent", href: "https://www.firerent.cl", logo: null },
     { name: "Astra Tech Ascensores", href: "https://www.astratechascensores.cl", logo: "/clients/astratech.png" },
     { name: "Knabe Group", href: "https://knabegroup.cl", logo: "/clients/knabe.svg" },
     { name: "ASI Group", href: "https://asi-group.com", logo: "/clients/asi-group.png" },
   ],
 };
 
-export interface CaseStudy {
-  client: string;
-  sector: string;
-  problem: string;
-  service: string;
-  solution: string;
-  result: string;
-}
-
-export const CASES_DATA = {
-  eyebrow: "Experiencia aplicada",
-  title: "Casos de trabajo real",
-  subtitle: "Cada caso se publica con autorización del cliente y describe el problema, el servicio y el resultado obtenido.",
-  emptyState: "Estamos preparando la publicación de casos con autorización de cada cliente. Mientras tanto, conversemos sobre tu situación.",
-  // Agregar casos aquí con autorización del cliente. No inventar resultados.
-  cases: [] as CaseStudy[],
-};
 
 export const ABOUT_DATA = {
   eyebrow: "Nosotros",
