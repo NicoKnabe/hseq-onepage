@@ -6,6 +6,7 @@ import { Diagnostic } from "@/components/Diagnostic";
 import { Plans } from "@/components/Plans";
 import { Accreditation } from "@/components/Accreditation";
 import { Services } from "@/components/Services";
+import { Digital } from "@/components/Digital";
 import { Industry } from "@/components/Industry";
 import { Trust } from "@/components/Trust";
 import { Knowledge } from "@/components/Knowledge";
@@ -26,6 +27,7 @@ export default function Home() {
         <Plans />
         <Accreditation />
         <Services />
+        <Digital />
         <Industry />
         <Trust />
         <Knowledge />

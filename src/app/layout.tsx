@@ -10,7 +10,7 @@ const barlow = Barlow_Condensed({ variable: "--font-barlow", subsets: ["latin"],
 
 const TITLE = "Prevención de Riesgos para PYMES y Empresas | Prevencionista Externo, DS44 y Acreditación | QHSE Chile";
 const DESCRIPTION =
-  "Prevencionista externo para PYMES y empresas en Chile. Diagnóstico preventivo desde $99.000 y planes mensuales de gestión preventiva desde $249.000: cumplimiento DS44, matriz de riesgos, acreditación de contratistas, auditorías e ISO. Atención directa con un profesional.";
+  "Prevencionista externo para PYMES y empresas en Chile. Diagnóstico preventivo desde $99.000 y planes mensuales de gestión preventiva desde $249.000: cumplimiento DS44, matriz de riesgos, acreditación de contratistas, auditorías, ISO y plataformas a medida de digitalización y control documental QHSE. Atención directa con un profesional.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -28,6 +28,9 @@ export const metadata: Metadata = {
     "asesoría prevención de riesgos",
     "cumplimiento DS44",
     "acreditación de empresas",
+    "plataforma control documental QHSE",
+    "software prevención de riesgos a medida",
+    "digitalización SST",
     "asesoría QHSE",
     "auditoría ISO",
     "gestión preventiva",

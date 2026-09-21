@@ -4,8 +4,9 @@
 export const NAV_LINKS = [
   { label: "Servicios", href: "/#servicios" },
   { label: "DS44", href: "/#ds44" },
-  { label: "Prevención Externa", href: "/#prevencion-externa" },
+  { label: "Planes", href: "/#prevencion-externa" },
   { label: "Acreditación", href: "/#acreditacion" },
+  { label: "Plataforma", href: "/#plataforma" },
   { label: "Recursos", href: "/recursos" },
   { label: "Nosotros", href: "/#nosotros" },
   { label: "Contacto", href: "/#contacto" },
@@ -517,7 +518,52 @@ export const SERVICES_DATA = {
         },
       ],
     },
+    {
+      id: "digital",
+      name: "Digitalización QHSE",
+      short: "Plataformas a medida para control documental y registros.",
+      services: [
+        {
+          id: "plataforma-medida",
+          name: "Plataforma QHSE a medida",
+          problem: "La documentación vive en carpetas, planillas y correos; nadie sabe qué está vigente ni qué venció.",
+          includes: ["Control documental con versiones", "Registros de terreno digitales", "Personas, capacitaciones y EPP", "Acreditaciones y vencimientos", "Indicadores automáticos"],
+          who: "Empresas que ya tienen gestión preventiva y quieren dejar de perder tiempo en planillas.",
+          how: "Levantamiento de procesos, diseño a la medida de la empresa, carga inicial y acompañamiento.",
+        },
+        {
+          id: "control-documental-digital",
+          name: "Control documental digital",
+          problem: "Documentos obsoletos circulando, sin trazabilidad de quién aprobó ni cuándo cambió.",
+          includes: ["Codificación", "Versionado", "Aprobación y distribución", "Alertas de revisión"],
+          who: "Empresas con sistema de gestión o exigencias de mandantes.",
+          how: "Migración de la documentación existente y reglas de control definidas con la empresa.",
+        },
+      ],
+    },
   ] as ServiceCategory[],
+};
+
+export const DIGITAL_DATA = {
+  eyebrow: "Digitalización QHSE",
+  title: "Plataformas a medida para dejar atrás las planillas",
+  subtitle:
+    "Diseñamos y desarrollamos plataformas de digitalización y control documental QHSE adaptadas a cómo trabaja tu empresa. Sin licencias genéricas ni módulos que nadie usa.",
+  body:
+    "Una sola herramienta donde viven los documentos con sus versiones, los registros de terreno, la ficha de cada trabajador con capacitaciones y EPP, las acreditaciones con sus vencimientos y los indicadores que la gerencia necesita ver. Se construye sobre los procesos que ya tienes y crece con la empresa.",
+  features: [
+    { title: "Control documental", text: "Códigos, versiones, estados (vigente, en revisión, obsoleto), aprobación y distribución." },
+    { title: "Registros de terreno", text: "Charlas, inspecciones, preusos e IRL llenados desde el celular y guardados con trazabilidad." },
+    { title: "Personas y acreditaciones", text: "Ficha por trabajador: capacitaciones, entregas de EPP, exámenes y documentos para el mandante." },
+    { title: "Indicadores automáticos", text: "Semáforo documental, accidentabilidad, programa anual y cobertura de capacitación, sin planillas aparte." },
+  ],
+  screenshots: [
+    { src: "/plataforma/inicio.webp", alt: "Panel de inicio de una plataforma QHSE desarrollada por QHSE Consultoría: documentos, registros, proyectos e indicadores", caption: "Panel de inicio" },
+    { src: "/plataforma/documentos.webp", alt: "Listado de control documental con código, tipo, proceso, estado y versión", caption: "Control documental" },
+    { src: "/plataforma/indicadores.webp", alt: "Indicadores: semáforo documental, accidentabilidad, programa anual y cobertura de capacitación", caption: "Indicadores" },
+  ],
+  note: "Capturas de una plataforma desarrollada por QHSE Consultoría con datos de demostración.",
+  cta: { text: "Conversar sobre una plataforma", href: "/?servicio=Plataforma#contacto" },
 };
 
 export const INDUSTRY_DATA = {
@@ -604,6 +650,7 @@ export const CONTACT_DATA = {
     "Capacitación",
     "ISO",
     "Medio ambiente",
+    "Plataforma digital",
     "Otro",
   ],
   regions: [
