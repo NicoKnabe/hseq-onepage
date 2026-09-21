@@ -32,6 +32,7 @@ export function Footer() {
                             <li><a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="text-ink-dim hover:text-accent transition-colors">WhatsApp {SITE.phoneDisplay}</a></li>
                             <li><a href={`mailto:${SITE.email}`} className="text-ink-dim hover:text-accent transition-colors">{SITE.email}</a></li>
                             <li><a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="text-ink-dim hover:text-accent transition-colors">LinkedIn</a></li>
+                            <li><a href={SITE.brochure} download="QHSE-Brochure-2026.pdf" className="text-ink-dim hover:text-accent transition-colors">Brochure comercial (PDF)</a></li>
                             <li className="text-muted">{SITE.location}</li>
                             <li className="text-muted">Cobertura nacional</li>
                         </ul>

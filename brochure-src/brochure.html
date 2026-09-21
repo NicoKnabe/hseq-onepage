@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>QHSE Consultoría Especializada. Brochure 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink:#1f262e; --dim:#4a5361; --muted:#6b6b6b; --surface:#f5f5f3; --line:#e0e0dc; --line2:#c8c8c2;
+    --accent:#8a6d12; --accent-soft:#f3ecd6; --brand:#2f3b48; --wa:#1DA851;
+  }
+  html, body { font-family: Inter, -apple-system, sans-serif; color: var(--ink); background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 16mm 16mm 14mm; page-break-after: always; position: relative; display: flex; flex-direction: column; }
+  .page:last-child { page-break-after: auto; }
+  .eyebrow { font-size: 8.5pt; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-size: 30pt; font-weight: 800; letter-spacing: -.02em; line-height: 1.05; }
+  h2 { font-size: 20pt; font-weight: 700; letter-spacing: -.015em; line-height: 1.12; margin-top: 3mm; }
+  h3 { font-size: 12pt; font-weight: 700; }
+  p { font-size: 9.5pt; line-height: 1.55; color: var(--dim); }
+  .lead { font-size: 11pt; color: var(--dim); }
+  .logo { display: inline-flex; align-items: center; gap: 8px; }
+  .logo .box { background: var(--brand); color:#fff; font-weight: 800; font-size: 13pt; letter-spacing: -.04em; padding: 4px 9px; border-radius: 5px; }
+  .logo span.sub { font-size: 7.5pt; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+  .head { display:flex; justify-content: space-between; align-items:center; padding-bottom: 5mm; border-bottom: 1px solid var(--line); margin-bottom: 8mm; }
+  .head .pg { font-size: 8pt; color: var(--muted); }
+  .foot { margin-top:auto; padding-top: 4mm; border-top: 1px solid var(--line); display:flex; justify-content: space-between; font-size: 7.5pt; color: var(--muted); }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 5mm; background:#fff; }
+  .surface { background: var(--surface); }
+  .grid2 { display:grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .grid3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+  ul { list-style:none; }
+  li { font-size: 8.8pt; color: var(--dim); line-height: 1.4; padding-left: 14px; position: relative; margin-bottom: 1.6mm; }
+  li::before { content:""; position:absolute; left:0; top:5px; width:7px; height:7px; border-radius:50%; background: var(--accent); }
+  .price { font-size: 22pt; font-weight: 800; letter-spacing: -.02em; color: var(--ink); }
+  .price small { font-size: 9pt; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+  .badge { display:inline-block; background: var(--accent); color:#fff; font-size: 7pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 2px 8px; border-radius: 99px; }
+  .hl { border-color: var(--accent); box-shadow: 0 0 0 1.5px rgba(138,109,18,.3); }
+  .photo { width:100%; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); }
+  .cap { font-size: 7.5pt; color: var(--muted); margin-top: 2mm; }
+  .steps { display:grid; grid-template-columns: repeat(5,1fr); gap: 3mm; }
+  .step { border:1px solid var(--line); border-radius: 8px; padding: 3mm; text-align:center; }
+  .step .n { font-size: 7pt; letter-spacing:.15em; text-transform:uppercase; color: var(--muted); font-weight:600; }
+  .step .t { font-weight:700; font-size: 10pt; margin-top: 1mm; }
+  .step .p { font-size: 8.5pt; color: var(--dim); }
+  .step .p b { color: var(--ink); }
+  .brand { background: var(--brand); color:#fff; border-radius: 10px; padding: 6mm; }
+  .brand p, .brand li { color: rgba(255,255,255,.8); }
+  .brand h3 { color:#fff; }
+  .brand li::before { background: #d9b84a; }
+  .btn { display:inline-block; background: var(--brand); color:#fff; font-weight: 600; font-size: 9.5pt; padding: 3mm 6mm; border-radius: 6px; }
+  .btn.wa { background: var(--wa); }
+  .kv { display:grid; grid-template-columns: auto 1fr; gap: 1.5mm 4mm; font-size: 9pt; }
+  .kv dt { color: var(--muted); }
+  .kv dd { color: var(--ink); font-weight: 500; }
+  .pair { display:grid; grid-template-columns: 1fr 14px 1fr; gap: 3mm; align-items:center; padding: 2.5mm 0; border-bottom: 1px solid var(--line); font-size: 9pt; }
+  .pair .q { font-weight: 600; color: var(--ink); }
+  .pair .a { color: var(--dim); }
+  .pair .arrow { color: var(--accent); font-weight: 700; }
+  .note { font-size: 7.5pt; color: var(--muted); line-height: 1.5; }
+  .num { font-family: ui-monospace, Menlo, monospace; font-size: 8.5pt; color: var(--accent); font-weight: 700; }
+  .cover-tag { display:inline-block; background: var(--accent-soft); color: var(--accent); font-size: 8.5pt; font-weight: 600; padding: 2mm 4mm; border-radius: 6px; letter-spacing: .05em; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="page">
+  <div class="head"><div class="logo"><span class="box">QHSE</span><span class="sub">Consultoría Especializada</span></div><div class="pg">Brochure comercial · 2026</div></div>
+  <p class="eyebrow">Prevención de riesgos · DS44 · Acreditación · QHSE</p>
+  <h1 style="margin-top:4mm; max-width: 150mm;">Prevención y cumplimiento normativo para empresas que necesitan hacer las cosas bien.</h1>
+  <p class="lead" style="margin-top:6mm; max-width:150mm;">Implementamos y gestionamos la Seguridad y Salud en el Trabajo de tu empresa, desde el diagnóstico y cumplimiento DS44 hasta la gestión preventiva mensual, auditorías y procesos de acreditación.</p>
+  <div style="margin-top:8mm;"><span class="cover-tag">Diagnóstico desde $99.000 · Planes mensuales desde $249.000 · Honorarios, sin IVA</span></div>
+  <img class="photo" src="charla-seguridad-faena.jpg" style="height: 95mm; margin-top: 10mm;">
+  <p class="cap">Charla de seguridad en terreno.</p>
+  <div class="grid2" style="margin-top:8mm;">
+    <div class="card surface"><h3>Gestión preventiva profesional, ajustada al tamaño y realidad de tu empresa.</h3><p style="margin-top:2mm;">Una pyme puede acceder a prevención de riesgos profesional sin contratar un departamento completo. Atención directa, precio claro y soluciones proporcionales.</p></div>
+    <div class="card"><h3>Nicolás Knabe Alcaino</h3><p style="margin-top:1mm;">Consultor QHSE · Auditor Líder ISO 9001 / 14001 / 45001 (Bureau Veritas) · Dirección de Proyectos Complejos, University of Cambridge · Más de 8 años en industrias exigentes.</p></div>
+  </div>
+  <div class="foot"><span>www.qhse.cl · nknabe@qhse.cl · +56 9 5098 9084</span><span>Viña del Mar, Chile · Cobertura nacional</span></div>
+</section>
+
+<!-- QUÉ RESOLVEMOS -->
+<section class="page">
+  <div class="head"><div class="logo"><span class="box">QHSE</span><span class="sub">Consultoría Especializada</span></div><div class="pg">02 · Qué resolvemos</div></div>
+  <p class="eyebrow">¿Qué necesitas resolver?</p>
+  <h2>Elige el punto de partida que más se parece a tu situación</h2>
+  <div class="grid3" style="margin-top:6mm;">
+    <div class="card"><p class="eyebrow" style="font-size:7.5pt">DS44</p><p style="font-weight:600; color:var(--ink); margin-top:1.5mm;">“Necesito saber si mi empresa está cumpliendo.”</p></div>
+    <div class="card"><p class="eyebrow" style="font-size:7.5pt">Prevención externa</p><p style="font-weight:600; color:var(--ink); margin-top:1.5mm;">“No necesito un prevencionista a tiempo completo, pero sí gestión preventiva.”</p></div>
+    <div class="card"><p class="eyebrow" style="font-size:7.5pt">Documentación</p><p style="font-weight:600; color:var(--ink); margin-top:1.5mm;">“Tengo documentación atrasada, incompleta o desordenada.”</p></div>
+    <div class="card"><p class="eyebrow" style="font-size:7.5pt">Acreditación</p><p style="font-weight:600; color:var(--ink); margin-top:1.5mm;">“Necesito preparar mi empresa para acreditar ante un mandante.”</p></div>
+    <div class="card"><p class="eyebrow" style="font-size:7.5pt">Fiscalización</p><p style="font-weight:600; color:var(--ink); margin-top:1.5mm;">“Quiero detectar brechas antes de que aparezca una fiscalización.”</p></div>
+    <div class="card"><p class="eyebrow" style="font-size:7.5pt">Gestión QHSE</p><p style="font-weight:600; color:var(--ink); margin-top:1.5mm;">“Necesito apoyo permanente en seguridad, salud, medio ambiente y sistemas de gestión.”</p></div>
+  </div>
+
+  <div class="card surface" style="margin-top:8mm;">
+    <h3 style="text-transform:uppercase; letter-spacing:-.01em;">No necesitas contratar un departamento completo de prevención</h3>
+    <p style="margin-top:2mm;">Tu empresa puede contar con gestión preventiva profesional sin asumir el costo de incorporar un departamento completo. Diseñamos una modalidad proporcional al tamaño, actividad y nivel de riesgo de tu organización. Pagas por la gestión que tu empresa realmente necesita, con acompañamiento técnico y seguimiento permanente.</p>
+    <div style="margin-top:4mm; background:#fff; border-radius:8px; padding: 1mm 4mm;">
+      <div class="pair"><span class="q">“Necesitas cumplir con el DS44”</span><span class="arrow">→</span><span class="a">Gestión preventiva y seguimiento.</span></div>
+      <div class="pair"><span class="q">“Te están solicitando documentación”</span><span class="arrow">→</span><span class="a">Regularización y control documental.</span></div>
+      <div class="pair"><span class="q">“Trabajas con mandantes”</span><span class="arrow">→</span><span class="a">Apoyo en acreditación.</span></div>
+      <div class="pair" style="border-bottom:0"><span class="q">“No tienes prevencionista interno”</span><span class="arrow">→</span><span class="a">Externalización de la gestión preventiva.</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:8mm;">
+    <p class="eyebrow">DS 44/2024 · Ministerio del Trabajo</p>
+    <h3 style="margin-top:2mm;">¿Tu empresa está realmente preparada para el DS44?</h3>
+    <p style="margin-top:2mm;">El DS 44/2024, vigente desde el 1 de febrero de 2025, reemplaza al DS 40 y DS 54 y exige gestionar los riesgos de forma sistemática: identificarlos, evaluarlos, controlarlos y demostrar que ese control se mantiene. Las obligaciones aplican según corresponda a la actividad, tamaño y condiciones de cada empresa.</p>
+    <div class="grid3" style="margin-top:4mm; grid-template-columns: repeat(9,1fr); gap:2mm;">
+      <div class="step"><div class="num">01</div><div class="p">Diagnóstico</div></div>
+      <div class="step"><div class="num">02</div><div class="p">Brechas</div></div>
+      <div class="step"><div class="num">03</div><div class="p">MIPER</div></div>
+      <div class="step"><div class="num">04</div><div class="p">Programa</div></div>
+      <div class="step"><div class="num">05</div><div class="p">Documentos</div></div>
+      <div class="step"><div class="num">06</div><div class="p">Capacitación</div></div>
+      <div class="step"><div class="num">07</div><div class="p">Implementación</div></div>
+      <div class="step"><div class="num">08</div><div class="p">Seguimiento</div></div>
+      <div class="step"><div class="num">09</div><div class="p">Mejora</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>www.qhse.cl · nknabe@qhse.cl · +56 9 5098 9084</span><span>QHSE Consultoría Especializada · 2026</span></div>
+</section>
+
+<!-- DIAGNÓSTICO + RECORRIDO -->
+<section class="page">
+  <div class="head"><div class="logo"><span class="box">QHSE</span><span class="sub">Consultoría Especializada</span></div><div class="pg">03 · Diagnóstico y recorrido</div></div>
+  <p class="eyebrow">Producto de entrada</p>
+  <h2>Diagnóstico Preventivo QHSE</h2>
+  <p class="lead" style="margin-top:3mm;">Antes de contratar una asesoría permanente, identifica qué está funcionando, qué falta y cuáles son las principales brechas de tu empresa.</p>
+  <div class="grid2" style="margin-top:6mm; grid-template-columns: 1fr 1.3fr;">
+    <div class="card hl">
+      <p class="eyebrow" style="font-size:7.5pt">Inversión</p>
+      <div class="price" style="margin-top:1mm;">$99.000 <small>pago único</small></div>
+      <p class="note" style="margin-top:1mm;">Honorarios profesionales. Empresas con un centro de trabajo.</p>
+      <p style="margin-top:4mm; padding-top:3mm; border-top:1px solid var(--line); font-size:9pt; color:var(--ink);">Si contratas un plan mensual dentro de los 30 días posteriores al diagnóstico, el valor del diagnóstico se descuenta del primer mes.</p>
+    </div>
+    <div class="card surface">
+      <h3 style="font-size:10pt; text-transform:uppercase; letter-spacing:.1em; color:var(--dim);">Qué incluye</h3>
+      <ul style="margin-top:3mm; columns:2; column-gap:5mm;">
+        <li>Reunión inicial</li><li>Revisión documental</li><li>Revisión de matriz de riesgos</li><li>Revisión del programa preventivo</li><li>Revisión de registros disponibles</li><li>Identificación de brechas</li><li>Revisión de cumplimiento aplicable</li><li>Informe ejecutivo</li><li>Plan de acción priorizado</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:10mm;">
+    <p class="eyebrow">Un camino claro</p>
+    <h3 style="margin-top:2mm;">Empieza por el diagnóstico y avanza según lo que tu empresa necesite</h3>
+    <div class="steps" style="margin-top:4mm;">
+      <div class="step"><div class="n">Empieza aquí</div><div class="t">Diagnóstico</div><div class="p"><b>$99.000</b> pago único</div></div>
+      <div class="step"><div class="n">Paso 2</div><div class="t">Esencial</div><div class="p"><b>$249.000</b> / mes</div></div>
+      <div class="step hl"><div class="n">Paso 3</div><div class="t">Profesional</div><div class="p"><b>$349.000</b> / mes</div></div>
+      <div class="step"><div class="n">Paso 4</div><div class="t">Integral</div><div class="p"><b>$499.000</b> / mes</div></div>
+      <div class="step"><div class="n">Paso 5</div><div class="t">A medida</div><div class="p"><b>Desde 15 UF</b> / mes</div></div>
+    </div>
+    <p class="note" style="margin-top:3mm; text-align:center;">Puedes partir con el diagnóstico y pasar a un plan mensual cuando tengas claro el alcance.</p>
+  </div>
+
+  <img class="photo" src="faena-vista-aerea.jpg" style="height:70mm; margin-top:10mm;">
+  <p class="cap">Vista aérea de faena. Revisión preventiva en terreno.</p>
+  <div class="foot"><span>www.qhse.cl · nknabe@qhse.cl · +56 9 5098 9084</span><span>QHSE Consultoría Especializada · 2026</span></div>
+</section>
+
+<!-- PLANES -->
+<section class="page">
+  <div class="head"><div class="logo"><span class="box">QHSE</span><span class="sub">Consultoría Especializada</span></div><div class="pg">04 · Planes mensuales</div></div>
+  <p class="eyebrow">Planes mensuales</p>
+  <h2>Gestión preventiva profesional, ajustada al tamaño y realidad de tu empresa</h2>
+  <p style="margin-top:2mm;">Tres planes con precio claro. Eliges según lo que tu empresa necesita resolver, no por cantidad de horas.</p>
+  <div class="grid3" style="margin-top:6mm; align-items:stretch;">
+    <div class="card">
+      <h3>Esencial</h3>
+      <div class="price" style="font-size:18pt;">$249.000 <small>/ mes</small></div>
+      <p style="font-size:8.5pt; margin-top:2mm;">Para pequeñas empresas que necesitan mantener una gestión preventiva formal sin contratar un profesional a tiempo completo.</p>
+      <ul style="margin-top:3mm; padding-top:3mm; border-top:1px solid var(--line);">
+        <li>Diagnóstico preventivo inicial</li><li>Revisión de documentación existente</li><li>Revisión y gestión de matriz de riesgos, según corresponda</li><li>Programa preventivo</li><li>Control y actualización documental</li><li>Seguimiento mensual</li><li>Soporte vía WhatsApp y correo</li><li>Reunión mensual de seguimiento</li><li>Informe mensual simplificado</li>
+      </ul>
+      <p class="note" style="margin-top:3mm; padding-top:2mm; border-top:1px solid var(--line);">1 visita presencial mensual de hasta 3 horas</p>
+    </div>
+    <div class="card hl">
+      <span class="badge">Más contratado</span>
+      <h3 style="margin-top:2mm;">Profesional</h3>
+      <div class="price" style="font-size:20pt;">$349.000 <small>/ mes</small></div>
+      <p style="font-size:8.5pt; margin-top:2mm;">Para empresas que necesitan una gestión preventiva activa y seguimiento continuo.</p>
+      <ul style="margin-top:3mm; padding-top:3mm; border-top:1px solid var(--line);">
+        <li>Todo lo incluido en Plan Esencial</li><li>Gestión y actualización de matriz de riesgos</li><li>Programa preventivo y seguimiento</li><li>Inspecciones preventivas</li><li>Seguimiento de acciones correctivas</li><li>Informes de gestión</li><li>Charlas y capacitaciones programadas</li><li>Revisión de cumplimiento DS44</li><li>Apoyo documental para procesos de acreditación</li><li>Preparación documental ante fiscalizaciones</li><li>Soporte técnico continuo</li>
+      </ul>
+      <p class="note" style="margin-top:3mm; padding-top:2mm; border-top:1px solid var(--line);">2 visitas presenciales mensuales de hasta 4 horas</p>
+    </div>
+    <div class="card">
+      <h3>Integral</h3>
+      <div class="price" style="font-size:18pt;">$499.000 <small>/ mes</small></div>
+      <p style="font-size:8.5pt; margin-top:2mm;">Para empresas con mayor dotación, operaciones más exigentes o necesidades preventivas más amplias.</p>
+      <ul style="margin-top:3mm; padding-top:3mm; border-top:1px solid var(--line);">
+        <li>Todo lo incluido en Plan Profesional</li><li>Gestión preventiva continua</li><li>Auditorías internas</li><li>Indicadores de gestión</li><li>Apoyo en procesos de acreditación</li><li>Gestión documental frente a mandantes</li><li>Apoyo en investigación de incidentes y accidentes, según alcance</li><li>Revisión de protocolos y procedimientos</li><li>Gestión QHSE</li><li>Reunión de gestión con administración o gerencia</li><li>Informe ejecutivo mensual</li>
+      </ul>
+      <p class="note" style="margin-top:3mm; padding-top:2mm; border-top:1px solid var(--line);">Hasta 4 visitas presenciales mensuales</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:4mm; display:grid; grid-template-columns: 1fr 2fr; gap:5mm; align-items:center;">
+    <div><h3>Plan a medida</h3><div class="price" style="font-size:18pt;">Desde 15 UF <small>/ mes</small></div><p style="font-size:8.5pt;">Cobertura superior a los planes estándar. El valor depende del alcance.</p></div>
+    <ul style="columns:2; column-gap:5mm; margin-bottom:0;"><li>Empresas con múltiples centros de trabajo</li><li>Contratistas</li><li>Operaciones de alta exigencia</li><li>Empresas que trabajan con grandes mandantes</li><li>Operaciones mineras</li><li>Servicios industriales</li><li>Necesidades específicas de QHSE</li></ul>
+  </div>
+  <p class="note" style="margin-top:3mm;">Valores referenciales para empresas con un centro de trabajo. El valor definitivo puede variar según dotación, actividad económica, nivel de riesgo, cantidad de centros de trabajo y alcance requerido. Honorarios profesionales con boleta de honorarios. No aplica IVA. Permanencia mínima sugerida: 3 meses.</p>
+  <div class="foot"><span>www.qhse.cl · nknabe@qhse.cl · +56 9 5098 9084</span><span>QHSE Consultoría Especializada · 2026</span></div>
+</section>
+
+<!-- SERVICIOS + ACREDITACIÓN + INDUSTRIA -->
+<section class="page">
+  <div class="head"><div class="logo"><span class="box">QHSE</span><span class="sub">Consultoría Especializada</span></div><div class="pg">05 · Servicios y capacidad</div></div>
+  <p class="eyebrow">Servicios</p>
+  <h2>Soluciones organizadas por lo que necesitas resolver</h2>
+  <div class="grid3" style="margin-top:5mm; grid-template-columns: repeat(5,1fr); gap:3mm;">
+    <div class="card" style="padding:3.5mm;"><h3 style="font-size:9.5pt;">Seguridad y Salud</h3><ul style="margin-top:2mm;"><li>Prevención de riesgos</li><li>Implementación DS44</li><li>MIPER</li><li>Inspecciones</li><li>Procedimientos</li><li>Investigación de incidentes</li><li>Capacitación e IRL</li><li>Auditorías</li></ul></div>
+    <div class="card" style="padding:3.5mm;"><h3 style="font-size:9.5pt;">Gestión QHSE</h3><ul style="margin-top:2mm;"><li>ISO 9001</li><li>ISO 14001</li><li>ISO 45001</li><li>Sistemas integrados</li><li>Auditorías internas</li><li>Mejora continua</li></ul></div>
+    <div class="card" style="padding:3.5mm;"><h3 style="font-size:9.5pt;">Acreditación</h3><ul style="margin-top:2mm;"><li>Preparación documental</li><li>Control documental</li><li>Procesos de acreditación</li><li>Seguimiento</li></ul></div>
+    <div class="card" style="padding:3.5mm;"><h3 style="font-size:9.5pt;">Medio Ambiente</h3><ul style="margin-top:2mm;"><li>Aspectos e impactos</li><li>Gestión de residuos</li><li>Declaraciones RETC</li></ul></div>
+    <div class="card" style="padding:3.5mm;"><h3 style="font-size:9.5pt;">Estudios</h3><ul style="margin-top:2mm;"><li>Requisitos legales</li><li>Plan de emergencia</li><li>Reportería e indicadores</li></ul></div>
+  </div>
+
+  <div class="grid2" style="margin-top:7mm; align-items:start;">
+    <div>
+      <p class="eyebrow">Acreditación de contratistas</p>
+      <h3 style="margin-top:2mm; font-size:13pt;">¿Necesitas acreditar tu empresa ante un mandante?</h3>
+      <p style="margin-top:2mm;">Te ayudamos a ordenar, preparar y mantener la documentación necesaria para enfrentar procesos de acreditación de contratistas. El resultado lo decide el mandante; nuestro trabajo es que llegues con la documentación completa, vigente y respaldada, y que cada observación se responda a tiempo.</p>
+      <ul style="margin-top:3mm; columns:2; column-gap:4mm;"><li>Control documental</li><li>Gestión de vencimientos</li><li>Documentación SST</li><li>Matrices de riesgo</li><li>Procedimientos de trabajo</li><li>Registros y evidencias</li><li>Antecedentes de trabajadores</li><li>Seguimiento del proceso</li><li>Preparación ante observaciones</li></ul>
+    </div>
+    <div class="brand">
+      <p class="eyebrow" style="color:#d9b84a;">Minería e industria</p>
+      <h3 style="margin-top:2mm; font-size:13pt;">Capacidad para operaciones de alta exigencia</h3>
+      <p style="margin-top:2mm; font-size:9pt;">Experiencia en entornos donde el estándar lo fija el mandante: minería, industria, operaciones multinacionales y procesos de acreditación exigentes. La misma metodología se adapta a la escala de cada empresa.</p>
+      <ul style="margin-top:3mm; columns:2; column-gap:4mm;"><li>Acreditación de contratistas</li><li>Gestión documental</li><li>Estándares de mandantes</li><li>Sistemas ISO</li><li>Auditorías</li><li>Gestión preventiva</li><li>Medio ambiente</li><li>Cumplimiento legal</li></ul>
+    </div>
+  </div>
+  <img class="photo" src="operador-faena-minera.jpg" style="height:62mm; margin-top:6mm;">
+  <p class="cap">Operador con equipo de protección personal en faena minera.</p>
+  <div class="foot"><span>www.qhse.cl · nknabe@qhse.cl · +56 9 5098 9084</span><span>QHSE Consultoría Especializada · 2026</span></div>
+</section>
+
+<!-- NOSOTROS + CONTACTO -->
+<section class="page">
+  <div class="head"><div class="logo"><span class="box">QHSE</span><span class="sub">Consultoría Especializada</span></div><div class="pg">06 · Quién está detrás y contacto</div></div>
+  <p class="eyebrow">Nosotros</p>
+  <h2>Quién está detrás de QHSE</h2>
+  <div class="grid2" style="margin-top:6mm; grid-template-columns: 1fr 1.4fr; align-items:start;">
+    <div class="card">
+      <div style="display:flex; gap:4mm; align-items:center;">
+        <img src="nicolas-knabe.jpg" style="width:26mm; height:26mm; object-fit:cover; border-radius:8px; border:1px solid var(--line);">
+        <div><h3 style="font-size:11pt; white-space:nowrap;">Nicolás Knabe Alcaino</h3><p style="font-size:8pt; color:var(--accent); font-weight:600;">Consultor QHSE<br>Auditor Líder ISO 9001 / 14001 / 45001</p></div>
+      </div>
+      <p style="margin-top:4mm;">QHSE Consultoría Especializada es una consultora independiente dirigida por Nicolás Knabe Alcaino, con base en Viña del Mar y trabajo en todo Chile. La propuesta es simple: que cada empresa tenga una gestión preventiva que funcione en terreno, no solo en carpetas. Contacto directo con el profesional, sin intermediarios.</p>
+      <p style="margin-top:3mm; font-size:8.5pt;"><b style="color:var(--ink)">LinkedIn:</b> linkedin.com/in/nicolasknabe-qhse</p>
+    </div>
+    <div class="grid2" style="gap:3mm;">
+      <div class="card surface"><h3 style="font-size:10pt;">Experiencia</h3><p style="font-size:8.5pt; margin-top:1mm;">Más de 8 años en prevención de riesgos y sistemas de gestión en minería, industria, ascensores y operaciones multinacionales en Chile, Perú, Colombia y Estados Unidos.</p></div>
+      <div class="card surface"><h3 style="font-size:10pt;">Formación</h3><p style="font-size:8.5pt; margin-top:1mm;">Auditor Líder ISO 9001, 14001 y 45001 certificado por Bureau Veritas. Formación en Dirección de Proyectos Complejos por la University of Cambridge.</p></div>
+      <div class="card surface"><h3 style="font-size:10pt;">Metodología</h3><p style="font-size:8.5pt; margin-top:1mm;">Diagnóstico primero. Luego un plan por hitos con entregables auditables, capacitación de quienes ejecutan y seguimiento hasta que el sistema se sostiene solo.</p></div>
+      <div class="card surface"><h3 style="font-size:10pt;">Cobertura</h3><p style="font-size:8.5pt; margin-top:1mm;">Visitas a terreno en Región de Valparaíso y Región Metropolitana. Otras regiones según proyecto. Trabajo remoto para revisión documental, capacitación y seguimiento.</p></div>
+    </div>
+  </div>
+
+  <div class="card surface" style="margin-top:8mm;">
+    <p class="eyebrow">Empresas que han confiado en QHSE</p>
+    <p style="margin-top:2mm; font-size:10pt; font-weight:600; color:var(--ink);">FireRent · Astra Tech Ascensores · Knabe Group · ASI Group</p>
+  </div>
+
+  <div class="brand" style="margin-top:8mm; display:grid; grid-template-columns: 1.5fr 1fr; gap:6mm; align-items:center;">
+    <div>
+      <p class="eyebrow" style="color:#d9b84a;">Contacto</p>
+      <h3 style="font-size:16pt; margin-top:2mm;">Cuéntanos qué necesitas resolver</h3>
+      <p style="margin-top:2mm; font-size:9.5pt;">Respondemos en horario hábil. La primera conversación no tiene costo. Escríbenos por WhatsApp: “Hola, quiero consultar por un diagnóstico preventivo para mi empresa.”</p>
+      <div style="margin-top:4mm; display:flex; gap:3mm;"><span class="btn wa" style="white-space:nowrap;">WhatsApp +56 9 5098 9084</span><span class="btn" style="background:#fff; color:var(--brand);">www.qhse.cl</span></div>
+    </div>
+    <dl class="kv" style="color:#fff;">
+      <dt style="color:rgba(255,255,255,.6)">Email</dt><dd style="color:#fff">nknabe@qhse.cl</dd>
+      <dt style="color:rgba(255,255,255,.6)">Teléfono</dt><dd style="color:#fff">+56 9 5098 9084</dd>
+      <dt style="color:rgba(255,255,255,.6)">Web</dt><dd style="color:#fff">www.qhse.cl</dd>
+      <dt style="color:rgba(255,255,255,.6)">LinkedIn</dt><dd style="color:#fff">nicolasknabe-qhse</dd>
+      <dt style="color:rgba(255,255,255,.6)">Ubicación</dt><dd style="color:#fff">Viña del Mar, Chile</dd>
+    </dl>
+  </div>
+  <div class="foot"><span>Servicios profesionales prestados por Nicolás Knabe Alcaino. Los valores se cotizan según el alcance de cada empresa.</span><span>© 2026 QHSE</span></div>
+</section>
+</body>
+</html>

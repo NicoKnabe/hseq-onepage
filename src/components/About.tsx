@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Linkedin } from "lucide-react";
+import { Download, Linkedin } from "lucide-react";
 import { ABOUT_DATA } from "@/lib/data";
 import { SITE } from "@/lib/site";
 import { SectionHeader } from "./ui/SectionHeader";
@@ -37,6 +37,14 @@ export function About() {
                             >
                                 <Linkedin className="w-4 h-4" aria-hidden="true" />
                                 linkedin.com/in/nicolasknabe-qhse
+                            </a>
+                            <a
+                                href={SITE.brochure}
+                                download="QHSE-Brochure-2026.pdf"
+                                className="mt-3 ml-0 sm:ml-2 inline-flex items-center gap-2 rounded-md border border-line-strong bg-white px-4 py-2.5 text-sm font-semibold text-ink hover:border-accent hover:text-accent transition-colors"
+                            >
+                                <Download className="w-4 h-4" aria-hidden="true" />
+                                Descargar brochure (PDF)
                             </a>
                         </RevealWrapper>
                     </div>

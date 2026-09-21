@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Download } from "lucide-react";
 import { CONTACT_DATA } from "@/lib/data";
 import { SITE, whatsappLink } from "@/lib/site";
 import { SectionHeader } from "./ui/SectionHeader";
@@ -30,6 +30,10 @@ export function Contact() {
                                 <li className="flex items-center gap-3 text-ink-dim">
                                     <Linkedin className="w-4 h-4 text-accent" aria-hidden="true" />
                                     <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-accent">LinkedIn</a>
+                                </li>
+                                <li className="flex items-center gap-3 text-ink-dim">
+                                    <Download className="w-4 h-4 text-accent" aria-hidden="true" />
+                                    <a href={SITE.brochure} download="QHSE-Brochure-2026.pdf" className="hover:text-accent">Descargar brochure comercial (PDF)</a>
                                 </li>
                                 <li className="flex items-start gap-3 text-ink-dim">
                                     <MapPin className="w-4 h-4 mt-0.5 text-accent" aria-hidden="true" />
