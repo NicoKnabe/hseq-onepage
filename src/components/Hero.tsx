@@ -56,7 +56,7 @@ export function Hero() {
                                 />
                             </div>
                             <figcaption className="mt-3 text-xs text-muted">
-                                Charla de seguridad en terreno. Trabajo real, no imagen de archivo.
+                                Charla de seguridad en terreno.
                             </figcaption>
                         </figure>
                     </RevealWrapper>
