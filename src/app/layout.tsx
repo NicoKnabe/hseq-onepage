@@ -1,55 +1,56 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const TITLE = "Prevención de Riesgos, DS44 y Acreditación de Contratistas | QHSE Chile";
+const DESCRIPTION =
+  "Asesoría en prevención de riesgos para empresas en Chile: prevención externa, implementación DS44, MIPER, acreditación de contratistas, auditorías e ISO 45001. Diagnóstico preventivo para pymes e industria.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.qhse.cl"),
-  title: "Consultoría QHSE y Prevención de Riesgos | Nicolás Knabe",
-  description: "Asegure la continuidad operativa de su empresa. Especialista en acreditación minera (SIGO), auditorías trinorma ISO y actualización DS 44 en todo Chile.",
-  keywords: ["Consultoría QHSE", "Prevención de Riesgos", "Acreditación minera", "SIGO", "Auditorías trinorma ISO", "Software QHSE", "SGSST", "Evaluación de riesgos"],
-  alternates: {
-    canonical: "https://www.qhse.cl",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: TITLE,
+    template: "%s | QHSE Consultoría Especializada",
   },
+  description: DESCRIPTION,
+  keywords: [
+    "prevención de riesgos Chile",
+    "asesoría prevención de riesgos",
+    "prevención de riesgos para empresas",
+    "prevención externa",
+    "DS44",
+    "implementación DS44",
+    "asesoría DS44",
+    "MIPER",
+    "acreditación de contratistas",
+    "acreditación minera",
+    "consultoría QHSE",
+    "ISO 45001 Chile",
+    "seguridad y salud en el trabajo",
+  ],
+  alternates: { canonical: SITE.url },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   openGraph: {
-    title: "Consultoría QHSE y Prevención de Riesgos | Nicolás Knabe",
-    description: "Asegure la continuidad operativa de su empresa. Especialista en acreditación minera (SIGO), auditorías trinorma ISO y actualización DS 44 en todo Chile.",
+    title: TITLE,
+    description: DESCRIPTION,
     type: "website",
     locale: "es_CL",
-    url: "https://www.qhse.cl",
-    siteName: "Consultoría QHSE - Nicolás Knabe",
-    images: [
-      {
-        url: "/hero-bg.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Consultoría QHSE y Prevención de Riesgos - Nicolás Knabe",
-      },
-    ],
+    url: SITE.url,
+    siteName: SITE.name,
+    images: [{ url: "/hero-bg.jpeg", width: 1200, height: 630, alt: "QHSE Consultoría Especializada" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Consultoría QHSE y Prevención de Riesgos | Nicolás Knabe",
-    description: "Asegure la continuidad operativa de su empresa. Especialista en acreditación minera (SIGO), auditorías trinorma ISO y actualización DS 44 en todo Chile.",
+    title: TITLE,
+    description: DESCRIPTION,
     images: ["/hero-bg.jpeg"],
   },
 };
@@ -57,56 +58,44 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Nicolás Knabe - Consultoría QHSE",
-  "url": "https://www.qhse.cl",
-  "image": "https://www.qhse.cl/hero-bg.jpeg",
-  "description": "Consultoría especializada en QHSE, prevención de riesgos, acreditación minera y auditorías trinorma ISO en Chile.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "CL",
-  },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Chile",
-  },
-  "priceRange": "$$",
-  "telephone": "+56950989084",
-  "email": "nknabe@qhse.cl",
-  "contactPoint": {
+  name: SITE.name,
+  url: SITE.url,
+  image: `${SITE.url}/hero-bg.jpeg`,
+  description: DESCRIPTION,
+  founder: { "@type": "Person", name: SITE.consultant, sameAs: SITE.linkedin },
+  address: { "@type": "PostalAddress", addressLocality: "Viña del Mar", addressRegion: "Valparaíso", addressCountry: "CL" },
+  areaServed: { "@type": "Country", name: "Chile" },
+  telephone: `+${SITE.phoneE164}`,
+  email: SITE.email,
+  sameAs: [SITE.linkedin],
+  contactPoint: {
     "@type": "ContactPoint",
-    "telephone": "+56950989084",
-    "contactType": "customer service",
-    "areaServed": "CL",
-    "availableLanguage": "Spanish",
+    telephone: `+${SITE.phoneE164}`,
+    contactType: "sales",
+    areaServed: "CL",
+    availableLanguage: "Spanish",
   },
-  "serviceType": [
-    "Consultoría QHSE",
-    "Prevención de Riesgos",
-    "Acreditación minera SIGO",
-    "Auditorías trinorma ISO",
+  serviceType: [
+    "Prevención de riesgos",
+    "Prevención externa",
     "Implementación DS 44/2024",
+    "MIPER",
+    "Acreditación de contratistas",
+    "Auditorías internas ISO",
+    "ISO 9001, ISO 14001, ISO 45001",
+    "Gestión ambiental",
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-black text-white`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-black text-white`}>
         {children}
       </body>
     </html>
   );
 }
-

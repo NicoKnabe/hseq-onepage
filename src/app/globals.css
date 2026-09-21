@@ -4,21 +4,50 @@
   --color-black: #050505;
   --color-black-light: #0d0d0d;
   --color-black-card: #111111;
+  --color-graphite: #1a1a1a;
+  --color-graphite-light: #242424;
   --color-gold: #D4AF37;
   --color-gold-light: #E8C94A;
   --color-gold-dark: #B8941E;
   --color-white: #F8F8F8;
   --color-white-dim: #CCCCCC;
-  --color-gray: #888888;
+  --color-gray: #8a8a8a;
+  --color-gray-dark: #5a5a5a;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
     background-color: var(--color-black);
     color: var(--color-white);
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-gold px-6 py-3.5 text-sm md:text-base font-semibold text-black transition-colors hover:bg-gold-light focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-white/20 bg-white/5 px-6 py-3.5 text-sm md:text-base font-semibold text-white transition-colors hover:border-gold/60 hover:text-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60;
+  }
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] px-6 py-3.5 text-sm md:text-base font-semibold text-black transition-colors hover:bg-[#3ae37a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/60;
+  }
+  .card {
+    @apply rounded-xl border border-white/10 bg-black-card/80 transition-colors hover:border-gold/40;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-gold;
+  }
+  .field {
+    @apply w-full rounded-md border border-white/15 bg-black px-3.5 py-3 text-sm text-white placeholder:text-gray focus:border-gold/70 focus:outline-none focus:ring-1 focus:ring-gold/40;
   }
 }

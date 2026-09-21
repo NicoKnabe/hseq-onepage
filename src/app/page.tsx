@@ -1,27 +1,41 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Authority } from "@/components/Authority";
-import { Clients } from "@/components/Clients";
-import { Challenges } from "@/components/Challenges";
-import { Solutions } from "@/components/Solutions";
+import { Problems } from "@/components/Problems";
+import { DS44 } from "@/components/DS44";
+import { Diagnostic } from "@/components/Diagnostic";
 import { Plans } from "@/components/Plans";
+import { Accreditation } from "@/components/Accreditation";
+import { Services } from "@/components/Services";
+import { Industry } from "@/components/Industry";
+import { Trust } from "@/components/Trust";
+import { Cases } from "@/components/Cases";
+import { Knowledge } from "@/components/Knowledge";
+import { About } from "@/components/About";
+import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { GlobalBackground } from "@/components/GlobalBackground";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
     <>
-      <GlobalBackground />
-      <main className="min-h-screen text-white font-sans selection:bg-gold/30 flex flex-col">
-        <Navbar />
+      <Navbar />
+      <main>
         <Hero />
-        <Authority />
-        <Clients />
-        <Challenges />
-        <Solutions />
+        <Problems />
+        <DS44 />
+        <Diagnostic />
         <Plans />
-        <Footer />
+        <Accreditation />
+        <Services />
+        <Industry />
+        <Trust />
+        <Cases />
+        <Knowledge />
+        <About />
+        <Contact />
       </main>
+      <Footer />
+      <WhatsAppFloat />
     </>
   );
 }

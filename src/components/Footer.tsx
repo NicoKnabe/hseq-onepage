@@ -1,98 +1,48 @@
-import { FOOTER_DATA } from "@/lib/data";
-import { MapPin, Mail, Sparkles } from "lucide-react";
-import { RevealWrapper } from "./ui/RevealWrapper";
-import { AnimatedButton } from "./ui/AnimatedButton";
-
-// WhatsApp Custom Icon
-const WhatsAppIcon = ({ className }: { className?: string }) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={className}
-    >
-        <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
-        <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-    </svg>
-);
+import Link from "next/link";
+import { FOOTER_DATA, NAV_LINKS } from "@/lib/data";
+import { SITE, whatsappLink } from "@/lib/site";
 
 export function Footer() {
     return (
-        <footer id="contacto" className="bg-transparent pt-16 md:pt-24 pb-12 relative overflow-hidden">
-            <div className="absolute inset-0 z-1 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05),transparent_70%)] pointer-events-none" />
-
-            <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10">
-                <div className="grid md:grid-cols-2 gap-10 lg:gap-24 mb-16">
-                    <RevealWrapper>
-                        <div className="flex items-center gap-3 sm:gap-4 mb-6">
-                            <div className="flex items-center justify-center px-3 sm:px-4 h-10 sm:h-12 rounded-lg bg-black/60 backdrop-blur-md border border-gold/40 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
-                                <span className="font-extrabold text-lg sm:text-2xl text-gold tracking-tighter drop-shadow-sm">QHSE</span>
-                            </div>
-                            <h3 className="text-sm sm:text-xl font-bold tracking-wide text-white drop-shadow-md opacity-90 uppercase">Consultoría Especializada</h3>
-                        </div>
-
-                        <p className="text-white-dim mb-8 max-w-md leading-relaxed text-lg drop-shadow-md">
-                            {FOOTER_DATA.description}
-                        </p>
-
-                        <div className="flex flex-col space-y-4">
-                            <a
-                                href={`mailto:${FOOTER_DATA.contact.email}`}
-                                className="inline-flex items-center text-gold hover:text-gold-light transition-colors group"
-                            >
-                                <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center mr-4 group-hover:bg-gold/20 transition-colors border border-gold/30">
-                                    <Mail className="w-5 h-5" aria-label="Icono correo electrónico" />
-                                </div>
-                                <span className="font-semibold text-lg drop-shadow-md">{FOOTER_DATA.contact.email}</span>
-                            </a>
-
-                            <div className="inline-flex items-center text-white-dim">
-                                <div className="w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center mr-4 border border-gold/20">
-                                    <MapPin className="w-5 h-5 text-gray" aria-label="Icono ubicación" />
-                                </div>
-                                <span className="drop-shadow-md">{FOOTER_DATA.contact.location}</span>
-                            </div>
-                        </div>
-                    </RevealWrapper>
-
-                    <RevealWrapper
-                        delay={0.2}
-                        className="bg-black/60 backdrop-blur-md rounded-2xl p-8 lg:p-10 border border-gold/20 shadow-xl"
-                    >
-                        <h4 className="text-xl font-bold text-white mb-6 flex items-center drop-shadow-sm">
-                            <Sparkles className="w-5 h-5 text-gold mr-2" aria-label="Icono destellos" />
-                            Inicia tu Evaluación
-                        </h4>
-                        <p className="text-white-dim mb-8 pb-4 border-b border-gold/20 drop-shadow-sm">
-                            Contáctanos hoy para realizar un diagnóstico inicial gratuito y establecer la hoja de ruta QHSE para tu empresa.
-                        </p>
-                        <AnimatedButton
-                            href="https://wa.me/56950989084?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20inicial%20gratuito."
-                            primary
-                            className="mt-6 flex items-center justify-center w-full py-4 bg-gradient-to-r from-gold-dark to-gold text-black font-bold rounded-lg shadow-[0_8px_20px_rgba(212,175,55,0.25)] transition-all relative overflow-hidden group"
-                        >
-                            <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                            <span className="relative z-10 flex items-center">
-                                <WhatsAppIcon className="w-5 h-5 mr-2" aria-label="Icono WhatsApp" />
-                                Solicitar Diagnóstico
+        <footer className="border-t border-white/10 bg-black pt-12 pb-24">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="grid gap-10 md:grid-cols-3">
+                    <div>
+                        <div className="flex items-center gap-3">
+                            <span className="flex items-center justify-center px-2.5 h-9 rounded-md border border-gold/40 bg-black-card">
+                                <span className="font-extrabold text-lg text-gold tracking-tighter">QHSE</span>
                             </span>
-                        </AnimatedButton>
-                    </RevealWrapper>
+                            <span className="text-[11px] font-semibold uppercase tracking-wider text-white/70">Consultoría Especializada</span>
+                        </div>
+                        <p className="mt-4 text-sm text-gray leading-relaxed max-w-sm">{FOOTER_DATA.description}</p>
+                    </div>
+
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-white/70">Navegación</p>
+                        <ul className="mt-4 grid grid-cols-2 gap-2 text-sm">
+                            {NAV_LINKS.map((l) => (
+                                <li key={l.href}><Link href={l.href} className="text-white-dim hover:text-gold transition-colors">{l.label}</Link></li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p className="text-xs font-semibold uppercase tracking-widest text-white/70">Contacto</p>
+                        <ul className="mt-4 space-y-2 text-sm">
+                            <li><a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="text-white-dim hover:text-gold transition-colors">WhatsApp {SITE.phoneDisplay}</a></li>
+                            <li><a href={`mailto:${SITE.email}`} className="text-white-dim hover:text-gold transition-colors">{SITE.email}</a></li>
+                            <li><a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" className="text-white-dim hover:text-gold transition-colors">LinkedIn</a></li>
+                            <li className="text-gray">{SITE.location}</li>
+                            <li className="text-gray">Cobertura nacional</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <RevealWrapper
-                    delay={0.4}
-                    className="pt-8 border-t border-gold/20 flex flex-col md:flex-row items-center justify-between text-gray text-sm drop-shadow-md"
-                >
+                <div className="mt-10 border-t border-white/10 pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between text-xs text-gray">
                     <p>{FOOTER_DATA.copyright}</p>
-                    <p className="mt-2 md:mt-0 font-medium">Consultoría QHSE Especializada</p>
-                </RevealWrapper>
+                    <p>{FOOTER_DATA.legal}</p>
+                </div>
             </div>
         </footer>
     );
 }
-
