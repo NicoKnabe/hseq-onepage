@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileCheck2 } from "lucide-react";
 import { ACCREDITATION_DATA } from "@/lib/data";
@@ -23,10 +24,19 @@ export function Accreditation() {
                     </div>
 
                     <RevealWrapper delay={0.15}>
-                        <ul className="grid gap-3 sm:grid-cols-2">
+                        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-line mb-4">
+                            <Image
+                                src="/fotos/faena-vista-aerea.webp"
+                                alt="Vista aérea de una faena con instalaciones de contratista"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover"
+                            />
+                        </div>
+                        <ul className="grid gap-2.5 sm:grid-cols-2">
                             {ACCREDITATION_DATA.items.map((item) => (
-                                <li key={item} className="card flex items-center gap-3 px-4 py-3.5">
-                                    <FileCheck2 className="w-5 h-5 shrink-0 text-accent" aria-hidden="true" />
+                                <li key={item} className="card flex items-center gap-3 px-4 py-3">
+                                    <FileCheck2 className="w-4 h-4 shrink-0 text-accent" aria-hidden="true" />
                                     <span className="text-sm font-medium text-ink-dim">{item}</span>
                                 </li>
                             ))}

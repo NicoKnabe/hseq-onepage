@@ -47,13 +47,13 @@ export const metadata: Metadata = {
     locale: "es_CL",
     url: SITE.url,
     siteName: SITE.name,
-    images: [{ url: "/hero-bg.jpeg", width: 1200, height: 630, alt: "QHSE Consultoría Especializada" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "QHSE Consultoría Especializada: prevención de riesgos en terreno" }],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/hero-bg.jpeg"],
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -62,7 +62,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: SITE.name,
   url: SITE.url,
-  image: `${SITE.url}/hero-bg.jpeg`,
+  image: `${SITE.url}/og-image.jpg`,
   description: DESCRIPTION,
   founder: { "@type": "Person", name: SITE.consultant, sameAs: SITE.linkedin },
   address: { "@type": "PostalAddress", addressLocality: "Viña del Mar", addressRegion: "Valparaíso", addressCountry: "CL" },
