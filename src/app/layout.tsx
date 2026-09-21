@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     template: "%s | QHSE Consultoría Especializada",
   },
   description: DESCRIPTION,
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    apple: "/apple-icon.png",
+  },
   keywords: [
     "prevención de riesgos Chile",
     "prevención de riesgos para empresas",
