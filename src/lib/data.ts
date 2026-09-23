@@ -600,6 +600,7 @@ export const TRUST_DATA = {
     { name: "Astra Tech Ascensores", href: "https://www.astratechascensores.cl", logo: "/clients/astratech.png" },
     { name: "Knabe Group", href: "https://knabegroup.cl", logo: "/clients/knabe.svg" },
     { name: "ASI Group", href: "https://asi-group.com", logo: "/clients/asi-group.png" },
+    { name: "NGEN Ambiental", href: "https://www.ngenambiental.cl", logo: "/clients/ngen-ambiental.png" },
   ],
 };
 
