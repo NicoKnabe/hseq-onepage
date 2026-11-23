@@ -602,6 +602,8 @@ export const TRUST_DATA = {
     { name: "ASI Group", href: "https://asi-group.com", logo: "/clients/asi-group.png" },
     { name: "NGEN Ambiental", href: "https://www.ngenambiental.cl", logo: "/clients/ngen-ambiental.png" },
     { name: "Construcciones Benavente Ltda.", href: "https://www.cbe.cl", logo: "/clients/construcciones-benavente.png" },
+    { name: "Cedsadent", href: "https://www.clinicacedsadent.cl", logo: "/clients/cedsadent.png" },
+    { name: "Proyecta Impacto", href: "https://www.proyectaimpacto.com", logo: "/clients/proyecta-impacto.svg" },
   ],
 };
 
