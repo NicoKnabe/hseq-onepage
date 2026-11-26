@@ -10,8 +10,8 @@ function Logo({ c, tabIndex }: { c: Client; tabIndex?: number }) {
         <Image
             src={c.logo}
             alt={c.name}
-            width={200}
-            height={90}
+            width={180}
+            height={56}
             className="max-h-12 md:max-h-14 w-auto object-contain"
             unoptimized={c.logo.endsWith(".svg")}
         />

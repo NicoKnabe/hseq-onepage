@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, HTMLMotionProps } from "framer-motion";
+import { m, useReducedMotion, HTMLMotionProps } from "framer-motion";
 import { ReactNode } from "react";
 
 interface RevealWrapperProps extends HTMLMotionProps<"div"> {
@@ -13,7 +13,7 @@ export function RevealWrapper({ children, delay = 0, className, ...props }: Reve
     const shouldReduceMotion = useReducedMotion();
 
     return (
-        <motion.div
+        <m.div
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -22,7 +22,7 @@ export function RevealWrapper({ children, delay = 0, className, ...props }: Reve
             {...props}
         >
             {children}
-        </motion.div>
+        </m.div>
     );
 }
 
@@ -30,7 +30,7 @@ export function BlurRevealWrapper({ children, delay = 0, className, ...props }: 
     const shouldReduceMotion = useReducedMotion();
 
     return (
-        <motion.div
+        <m.div
             initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 50, filter: "blur(10px)" }}
             whileInView={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0.3 }}
@@ -39,6 +39,6 @@ export function BlurRevealWrapper({ children, delay = 0, className, ...props }: 
             {...props}
         >
             {children}
-        </motion.div>
+        </m.div>
     );
 }

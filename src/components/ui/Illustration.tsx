@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 export type IllustrationKind = "shield" | "folder" | "audit" | "phone";
 
@@ -68,7 +68,7 @@ export function Illustration({ kind, className }: { kind: IllustrationKind; clas
     return (
         <svg viewBox="0 0 320 240" className={className} aria-hidden="true" fill="none" strokeLinecap="round" strokeLinejoin="round">
             {art.fill && (
-                <motion.path
+                <m.path
                     d={art.fill}
                     fill="#f3ecd6"
                     stroke="none"
@@ -84,10 +84,10 @@ export function Illustration({ kind, className }: { kind: IllustrationKind; clas
                 />
             )}
             {art.ink.map((d, i) => (
-                <motion.path key={d} d={d} stroke="#2f3b48" strokeWidth={2.4} {...draw(i * 0.12)} />
+                <m.path key={d} d={d} stroke="#2f3b48" strokeWidth={2.4} {...draw(i * 0.12)} />
             ))}
             {art.gold.map((d, i) => (
-                <motion.path key={d} d={d} stroke="#8a6d12" strokeWidth={3} {...draw(0.9 + i * 0.2)} />
+                <m.path key={d} d={d} stroke="#8a6d12" strokeWidth={3} {...draw(0.9 + i * 0.2)} />
             ))}
         </svg>
     );

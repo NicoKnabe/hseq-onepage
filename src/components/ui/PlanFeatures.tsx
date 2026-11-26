@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Check, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,7 +31,7 @@ export function PlanFeatures({ items }: { items: string[] }) {
             </ul>
             <AnimatePresence initial={false}>
                 {open && (
-                    <motion.ul
+                    <m.ul
                         id={id}
                         key="rest"
                         initial={{ height: 0, opacity: 0 }}
@@ -43,7 +43,7 @@ export function PlanFeatures({ items }: { items: string[] }) {
                         {rest.map((f) => (
                             <Item key={f} text={f} />
                         ))}
-                    </motion.ul>
+                    </m.ul>
                 )}
             </AnimatePresence>
             {rest.length > 0 && (

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll, useTransform, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
+import { m, useReducedMotion, useScroll, useTransform, useMotionValue, useSpring, useMotionTemplate } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { HERO_DATA } from "@/lib/data";
 import { whatsappLink } from "@/lib/site";
@@ -52,23 +52,23 @@ export function Hero() {
             onPointerLeave={onLeave}
             className="hero-grid relative flex min-h-[100svh] items-center overflow-hidden pt-24 pb-20 md:pt-28"
         >
-            <motion.div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: spotlight }} />
+            <m.div aria-hidden="true" className="pointer-events-none absolute inset-0" style={{ background: spotlight }} />
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white" />
 
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
-                    <motion.div className="lg:col-span-6" style={reduce ? undefined : { y: textY, opacity: fade }}>
-                        <motion.p
+                    <m.div className="lg:col-span-6" style={reduce ? undefined : { y: textY, opacity: fade }}>
+                        <m.p
                             className="eyebrow mb-5"
                             initial={reduce ? false : { opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: EASE }}
                         >
                             {HERO_DATA.eyebrow}
-                        </motion.p>
+                        </m.p>
                         <h1 className="text-[2.5rem] leading-[1.04] sm:text-5xl md:text-6xl font-bold text-ink tracking-tight">
                             {words.map((w, i) => (
-                                <motion.span
+                                <m.span
                                     key={i}
                                     className="inline-block"
                                     initial={reduce ? false : { opacity: 0, y: 18 }}
@@ -77,10 +77,10 @@ export function Hero() {
                                 >
                                     {w}
                                     {i < words.length - 1 && " "}
-                                </motion.span>
+                                </m.span>
                             ))}
                         </h1>
-                        <motion.div
+                        <m.div
                             initial={reduce ? false : { y: 12 }}
                             animate={{ y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
@@ -97,10 +97,10 @@ export function Hero() {
                                 </a>
                             </div>
                             <p className="mt-6 text-sm text-muted">{HERO_DATA.tagline}</p>
-                        </motion.div>
-                    </motion.div>
+                        </m.div>
+                    </m.div>
 
-                    <motion.div
+                    <m.div
                         className="relative lg:col-span-6 [perspective:1000px]"
                         style={reduce ? undefined : { y: stageY, scale: stageScale }}
                         initial={reduce ? false : { opacity: 0, y: 40 }}
@@ -108,11 +108,11 @@ export function Hero() {
                         transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
                     >
                         <CompliancePanel rx={rx} ry={ry} reduce={!!reduce} />
-                    </motion.div>
+                    </m.div>
                 </div>
             </div>
 
-            <motion.a
+            <m.a
                 href="#clientes"
                 aria-label="Bajar a la siguiente sección"
                 className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-xs font-medium text-muted md:flex"
@@ -120,7 +120,7 @@ export function Hero() {
             >
                 Desliza
                 <span className="scroll-cue block h-8 w-px bg-gradient-to-b from-accent to-transparent" />
-            </motion.a>
+            </m.a>
         </section>
     );
 }
@@ -179,7 +179,7 @@ function CompliancePanel({ rx, ry, reduce }: { rx: Spring; ry: Spring; reduce: b
                 </span>
             ))}
 
-            <motion.div
+            <m.div
                 style={{ rotateX: rx, rotateY: ry }}
                 className="rounded-2xl border border-line bg-white p-5 md:p-6 shadow-[0_30px_70px_-35px_rgba(31,38,46,0.45)]"
                 role="img"
@@ -230,7 +230,7 @@ function CompliancePanel({ rx, ry, reduce }: { rx: Spring; ry: Spring; reduce: b
                         );
                     })}
                 </ul>
-            </motion.div>
+            </m.div>
         </div>
     );
 }

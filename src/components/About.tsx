@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { m, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Download, Linkedin, MapPin } from "lucide-react";
 import { ABOUT_DATA, CREDENTIALS } from "@/lib/data";
 import { SITE } from "@/lib/site";
@@ -21,7 +21,7 @@ export function About() {
                 <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
                     <RevealWrapper className="lg:col-span-4">
                         <div ref={ref} className="relative mx-auto aspect-square w-full max-w-[340px] overflow-hidden rounded-3xl border border-line bg-white">
-                            <motion.div className="absolute inset-[-6%]" style={reduce ? undefined : { y }}>
+                            <m.div className="absolute inset-[-6%]" style={reduce ? undefined : { y }}>
                                 <Image
                                     src="/fotos/nicolas-knabe.webp"
                                     alt="Nicolás Knabe Alcaino, consultor QHSE"
@@ -29,7 +29,7 @@ export function About() {
                                     sizes="360px"
                                     className="object-cover"
                                 />
-                            </motion.div>
+                            </m.div>
                         </div>
                     </RevealWrapper>
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { m, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { METHOD_DATA } from "@/lib/data";
 import { SectionHeader } from "./ui/SectionHeader";
@@ -34,13 +34,13 @@ export function HowWeWork() {
                     <div className="lg:col-span-6">
                         <ol ref={ref} className="relative grid gap-10 pl-10 md:pl-14">
                             <span aria-hidden="true" className="absolute left-[11px] md:left-[15px] top-2 bottom-2 w-[2px] bg-line" />
-                            <motion.span
+                            <m.span
                                 aria-hidden="true"
                                 className="absolute left-[11px] md:left-[15px] top-2 bottom-2 w-[2px] origin-top bg-accent"
                                 style={{ scaleY: reduce ? 1 : fill }}
                             />
                             {METHOD_DATA.steps.map((s, i) => (
-                                <motion.li
+                                <m.li
                                     key={s.name}
                                     id={i === 0 ? "diagnostico" : undefined}
                                     className="relative scroll-mt-28"
@@ -62,7 +62,7 @@ export function HowWeWork() {
                                             </p>
                                         </div>
                                         <p className="mt-2 max-w-lg text-base text-ink-dim leading-relaxed">{s.text}</p>
-                                </motion.li>
+                                </m.li>
                             ))}
                         </ol>
 

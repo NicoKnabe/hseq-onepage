@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, useScroll, useSpring, useMotionValueEvent } from "framer-motion";
+import { m, useScroll, useSpring, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/data";
 import { whatsappLink } from "@/lib/site";
@@ -40,7 +40,7 @@ export function Navbar() {
     }, [pathname]);
 
     return (
-        <motion.header
+        <m.header
             initial={false}
             animate={{ y: hidden ? "-100%" : "0%" }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
@@ -69,17 +69,10 @@ export function Navbar() {
                                 href={link.href}
                                 aria-current={isActive ? "true" : undefined}
                                 className={cn(
-                                    "relative isolate rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors",
-                                    isActive ? "text-ink" : "text-ink-dim hover:text-accent"
+                                    "rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors duration-300",
+                                    isActive ? "bg-surface-2 text-ink" : "text-ink-dim hover:text-accent"
                                 )}
                             >
-                                {isActive && (
-                                    <motion.span
-                                        layoutId="nav-active"
-                                        className="absolute inset-0 -z-10 rounded-full bg-surface-2"
-                                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                                    />
-                                )}
                                 {link.label}
                             </Link>
                         );
@@ -106,7 +99,7 @@ export function Navbar() {
                 </button>
             </div>
 
-            <motion.div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-accent" style={{ scaleX: progress }} />
+            <m.div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-accent" style={{ scaleX: progress }} />
 
             {isOpen && (
                 <div className="lg:hidden bg-white border-t border-line">
@@ -132,6 +125,6 @@ export function Navbar() {
                     </nav>
                 </div>
             )}
-        </motion.header>
+        </m.header>
     );
 }

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { m, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import { HELP_DATA } from "@/lib/data";
 import { SectionHeader } from "./ui/SectionHeader";
@@ -44,7 +44,7 @@ function Card({ area, index, total, progress }: { area: Area; index: number; tot
 
     return (
         <div className="sticky mb-6 md:mb-[10vh] last:mb-0" style={{ top: `calc(88px + ${index * 22}px)` }}>
-            <motion.article
+            <m.article
                 style={reduce ? undefined : { scale }}
                 className="origin-top grid overflow-hidden rounded-3xl border border-line bg-white shadow-[0_24px_60px_-40px_rgba(31,38,46,0.45)] md:grid-cols-2"
             >
@@ -67,7 +67,7 @@ function Card({ area, index, total, progress }: { area: Area; index: number; tot
                 <div className="hero-grid relative flex items-center justify-center border-t border-line bg-surface p-6 md:border-l md:border-t-0">
                     <Illustration kind={area.illustration as IllustrationKind} className="h-40 w-auto sm:h-52 md:h-64 lg:h-72" />
                 </div>
-            </motion.article>
+            </m.article>
         </div>
     );
 }
