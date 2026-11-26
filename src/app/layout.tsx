@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Barlow_Condensed } from "next/font/google";
 import { SITE } from "@/lib/site";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+// Mono y Barlow no se precargan: son detalles secundarios y competirían con la fuente principal en móviles.
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], preload: false });
 // Solo para el wordmark de FireRent en la sección de clientes.
-const barlow = Barlow_Condensed({ variable: "--font-barlow", subsets: ["latin"], weight: "900", style: "italic" });
+const barlow = Barlow_Condensed({ variable: "--font-barlow", subsets: ["latin"], weight: "900", style: "italic", preload: false });
 
 const TITLE = "Prevención de Riesgos para PYMES y Empresas | Prevencionista Externo, DS44 y Acreditación | QHSE Chile";
 const DESCRIPTION =
@@ -110,6 +112,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${barlow.variable} antialiased min-h-screen bg-white text-ink`}>
+        <SmoothScroll />
         {children}
       </body>
     </html>

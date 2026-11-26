@@ -3,22 +3,97 @@
 
 export const NAV_LINKS = [
   { label: "Servicios", href: "/#servicios" },
-  { label: "DS44", href: "/#ds44" },
+  { label: "Método", href: "/#metodo" },
   { label: "Planes", href: "/#prevencion-externa" },
-  { label: "Acreditación", href: "/#acreditacion" },
-  { label: "Plataforma", href: "/#plataforma" },
+  { label: "Clientes", href: "/#clientes" },
   { label: "Nosotros", href: "/#nosotros" },
   { label: "Contacto", href: "/#contacto" },
 ];
 
 export const HERO_DATA = {
   eyebrow: "Consultoría QHSE · Chile",
-  title: "Prevención y cumplimiento normativo para empresas que necesitan hacer las cosas bien.",
+  title: "Tu empresa al día en prevención, sin contratar un departamento.",
   subtitle:
-    "Implementamos y gestionamos la Seguridad y Salud en el Trabajo de tu empresa, desde el diagnóstico y cumplimiento DS44 hasta la gestión preventiva mensual, auditorías y procesos de acreditación.",
+    "Prevención externa, DS44, acreditación de contratistas e ISO para pymes y contratistas. Partimos con un diagnóstico.",
   primaryCta: { text: "Solicitar diagnóstico", href: "/?servicio=Diagn%C3%B3stico#contacto" },
-  secondaryCta: { text: "Hablar con un especialista" },
-  tagline: "Diagnóstico desde $99.000 · Planes mensuales desde $249.000 · Honorarios, sin IVA",
+  secondaryCta: { text: "Hablar por WhatsApp" },
+  tagline: "Diagnóstico $99.000 · Planes desde $249.000 al mes · Honorarios, sin IVA",
+  // Panel ilustrativo de la portada (no representa a un cliente real).
+  panel: {
+    title: "Estado de cumplimiento",
+    note: "Vista ilustrativa",
+    metric: "Requisitos aplicables cubiertos",
+    items: ["Matriz MIPER", "Programa preventivo", "IRL a trabajadores", "Reglamento interno", "Carpeta de acreditación"],
+    chips: ["DS 44/2024", "ISO 45001", "Acreditación lista"],
+  },
+};
+
+export const HELP_DATA = {
+  eyebrow: "Cómo te ayudamos",
+  title: "Cuatro frentes, un solo responsable",
+  subtitle: "Cada frente se contrata por separado o dentro de un plan mensual.",
+  areas: [
+    {
+      id: "prevencion",
+      illustration: "shield",
+      name: "Prevención externa y DS44",
+      claim: "Gestión preventiva profesional sin contratar un departamento completo.",
+      points: ["MIPER y programa preventivo", "IRL y capacitación por cargo", "Inspecciones y seguimiento mensual", "Cumplimiento DS 44/2024"],
+      link: { text: "Cómo abordamos el DS44", href: "/ds44" },
+    },
+    {
+      id: "acreditacion",
+      illustration: "folder",
+      name: "Acreditación de contratistas",
+      claim: "Tu documentación completa, vigente y respaldada para entrar a faena.",
+      points: ["Carpeta según estándar del mandante", "Control de vencimientos", "Respuesta a observaciones", "Antecedentes de trabajadores"],
+      link: { text: "Ver servicios de acreditación", href: "/servicios#acreditacion" },
+    },
+    {
+      id: "iso",
+      illustration: "audit",
+      name: "ISO y auditorías",
+      claim: "Sistemas de gestión que funcionan en terreno, no solo en carpetas.",
+      points: ["ISO 9001, 14001 y 45001", "Sistemas integrados", "Auditorías internas con Auditor Líder", "Medio ambiente y RETC"],
+      link: { text: "Ver todos los servicios", href: "/servicios" },
+    },
+    {
+      id: "digital",
+      illustration: "phone",
+      name: "Digitalización QHSE",
+      claim: "Plataformas a medida para dejar atrás las planillas.",
+      points: ["Control documental con versiones", "Registros de terreno desde el celular", "Personas, EPP y acreditaciones", "Indicadores automáticos"],
+      link: { text: "Conocer la plataforma", href: "/plataforma" },
+    },
+  ],
+};
+
+export const METHOD_DATA = {
+  eyebrow: "Cómo trabajamos",
+  title: "Partimos por un diagnóstico y avanzamos según lo que tu empresa necesite",
+  steps: [
+    {
+      name: "Diagnóstico",
+      price: "$99.000",
+      note: "pago único",
+      text: "Revisamos documentos, matriz de riesgos y registros. Recibes un informe ejecutivo con un plan de acción priorizado.",
+    },
+    {
+      name: "Plan mensual",
+      price: "Desde $249.000",
+      note: "al mes",
+      text: "Definimos el alcance según tamaño, actividad y nivel de riesgo. Sin pagar por horas que no necesitas.",
+    },
+    {
+      name: "Seguimiento",
+      price: "Continuo",
+      note: "",
+      text: "Visitas a terreno programadas, informe mensual y canal directo por WhatsApp con el consultor.",
+    },
+  ],
+  condition: "Si contratas un plan dentro de los 30 días posteriores al diagnóstico, su valor se descuenta del primer mes.",
+  cta: { text: "Solicitar diagnóstico", href: "/?servicio=Diagn%C3%B3stico#contacto" },
+  video: { src: "/video/qhse-orden.mp4", poster: "/video/qhse-orden-poster.webp" },
 };
 
 export const PROBLEMS_DATA = {
@@ -155,9 +230,9 @@ export const NO_DEPARTMENT_DATA = {
 
 export const PLANS_DATA = {
   eyebrow: "Planes mensuales",
-  title: "Gestión preventiva profesional, ajustada al tamaño y realidad de tu empresa",
+  title: "Planes mensuales con precio claro",
   subtitle:
-    "Tres planes con precio claro. Eliges según lo que tu empresa necesita resolver, no por cantidad de horas.",
+    "Eliges según lo que tu empresa necesita resolver, no por cantidad de horas.",
   plans: [
     {
       id: "esencial",
@@ -201,7 +276,7 @@ export const PLANS_DATA = {
       ],
       visits: "2 visitas presenciales mensuales de hasta 4 horas",
       highlighted: true,
-      badge: "Más contratado",
+      badge: "Recomendado",
       cta: "Quiero este plan",
     },
     {
@@ -266,7 +341,7 @@ export const ACCREDITATION_DATA = {
     "Seguimiento del proceso",
     "Preparación ante observaciones",
   ],
-  cta: { text: "Revisar mi documentación", href: "#contacto" },
+  cta: { text: "Revisar mi documentación", href: "/?servicio=Acreditaci%C3%B3n#contacto" },
 };
 
 export interface Service {
@@ -594,7 +669,7 @@ export const TRUST_DATA = {
     { label: "Cobertura", value: "Chile, con experiencia en Perú, Colombia y Estados Unidos" },
     { label: "Metodología", value: "Diagnóstico, plan por hitos, entregables auditables, seguimiento" },
   ],
-  clientsTitle: "Empresas que han confiado en QHSE",
+  clientsTitle: "Empresas que ya confiaron en QHSE",
   clients: [
     { name: "FireRent", href: "https://www.firerent.cl", logo: null },
     { name: "Astra Tech Ascensores", href: "https://www.astratechascensores.cl", logo: "/clients/astratech.png" },
@@ -607,6 +682,13 @@ export const TRUST_DATA = {
   ],
 };
 
+
+export const CREDENTIALS = [
+  "Más de 8 años en industrias exigentes",
+  "Auditor Líder ISO 9001 · 14001 · 45001, Bureau Veritas",
+  "Dirección de Proyectos Complejos, University of Cambridge",
+  "Experiencia en Chile, Perú, Colombia y Estados Unidos",
+];
 
 export const ABOUT_DATA = {
   eyebrow: "Nosotros",

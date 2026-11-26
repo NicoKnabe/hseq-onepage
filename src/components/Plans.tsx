@@ -1,14 +1,15 @@
 import Link from "next/link";
-import { Check, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { PLANS_DATA } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "./ui/SectionHeader";
+import { PlanFeatures } from "./ui/PlanFeatures";
 import { RevealWrapper } from "./ui/RevealWrapper";
 
 export function Plans() {
     const custom = PLANS_DATA.custom;
     return (
-        <section id="prevencion-externa" className="py-16 md:py-24 border-t border-line bg-surface">
+        <section id="prevencion-externa" className="py-20 md:py-28 border-t border-line">
             <div className="container mx-auto px-4 md:px-6">
                 <SectionHeader eyebrow={PLANS_DATA.eyebrow} title={PLANS_DATA.title} subtitle={PLANS_DATA.subtitle} align="center" className="mb-10 md:mb-14" />
 
@@ -40,14 +41,7 @@ export function Plans() {
                                     {plan.cta}
                                 </Link>
 
-                                <ul className="mt-6 space-y-2.5 flex-1 border-t border-line pt-5">
-                                    {plan.includes.map((f) => (
-                                        <li key={f} className="flex items-start gap-2.5 text-sm text-ink-dim">
-                                            <Check className="mt-0.5 w-4 h-4 shrink-0 text-accent" aria-hidden="true" />
-                                            {f}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <PlanFeatures items={plan.includes} />
 
                                 <p className="mt-5 flex items-start gap-2 border-t border-line pt-4 text-xs text-muted">
                                     <MapPin className="mt-0.5 w-3.5 h-3.5 shrink-0" aria-hidden="true" />
@@ -59,23 +53,17 @@ export function Plans() {
                 </div>
 
                 <RevealWrapper delay={0.2} id="plan-a-medida" className="mt-6 max-w-6xl mx-auto scroll-mt-24">
-                    <article className="rounded-2xl border border-line bg-white p-6 md:p-7 grid gap-6 lg:grid-cols-[1fr_2fr_auto] lg:items-center">
+                    <article className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-6 md:flex-row md:items-center md:justify-between md:p-7">
                         <div>
-                            <h3 className="text-xl font-bold text-ink">{custom.name}</h3>
-                            <p className="mt-2 flex items-baseline gap-1.5">
-                                <span className="text-3xl font-bold tracking-tight text-ink">{custom.price}</span>
+                            <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                <span className="text-lg font-bold text-ink">{custom.name}</span>
+                                <span className="font-mono text-base font-semibold text-ink">{custom.price}</span>
                                 <span className="text-sm text-muted">{custom.priceSuffix}</span>
                             </p>
-                            <p className="mt-2 text-sm text-ink-dim leading-relaxed">{custom.tagline}</p>
+                            <p className="mt-1 text-sm text-ink-dim leading-relaxed">
+                                Para varios centros de trabajo, contratistas de grandes mandantes, minería y servicios industriales.
+                            </p>
                         </div>
-                        <ul className="grid gap-x-6 gap-y-1.5 sm:grid-cols-2">
-                            {custom.forWho.map((f) => (
-                                <li key={f} className="flex items-start gap-2 text-sm text-ink-dim">
-                                    <Check className="mt-0.5 w-4 h-4 shrink-0 text-accent" aria-hidden="true" />
-                                    {f}
-                                </li>
-                            ))}
-                        </ul>
                         <Link href={`/?plan=${custom.id}#contacto`} className="btn-secondary whitespace-nowrap">
                             {custom.cta}
                         </Link>

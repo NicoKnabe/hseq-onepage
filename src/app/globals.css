@@ -15,6 +15,46 @@
   --color-accent-strong: #6f570d;
   --color-accent-soft: #f3ecd6;
   --color-whatsapp: #25D366;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* Solo para estados: al día / pendiente. Nunca decorativos. */
+  --color-ok: #1f7a4a;
+  --color-ok-soft: #dff3e7;
+  --color-warn: #9a5b00;
+  --color-warn-soft: #fbefd9;
+}
+
+/* Fondo de plano técnico de la portada. */
+.hero-grid {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(to right, #efefec 1px, transparent 1px),
+    linear-gradient(to bottom, #efefec 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.hero-chip { animation: hero-float 6s ease-in-out infinite; }
+
+@keyframes scroll-cue {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+.scroll-cue { animation: scroll-cue 1.8s ease-in-out infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 40s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-chip, .scroll-cue, .marquee-track { animation: none; }
 }
 
 @layer base {

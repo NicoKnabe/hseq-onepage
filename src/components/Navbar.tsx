@@ -1,17 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, useScroll, useSpring, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/data";
 import { whatsappLink } from "@/lib/site";
+import { cn } from "@/lib/utils";
 import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [hidden, setHidden] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [active, setActive] = useState<string | null>(null);
+    const pathname = usePathname();
+    const { scrollY, scrollYProgress } = useScroll();
+    const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
+
+    // Se esconde al bajar y vuelve al subir.
+    useMotionValueEvent(scrollY, "change", (y) => {
+        const prev = scrollY.getPrevious() ?? 0;
+        setScrolled(y > 24);
+        setHidden(y > 160 && y > prev && !isOpen);
+    });
+
+    // Sección activa en la home.
+    useEffect(() => {
+        if (pathname !== "/") return;
+        const ids = NAV_LINKS.map((l) => l.href.split("#")[1]).filter(Boolean);
+        const els = ids.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => !!el);
+        const io = new IntersectionObserver(
+            (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+            { rootMargin: "-45% 0px -50% 0px" }
+        );
+        els.forEach((el) => io.observe(el));
+        return () => io.disconnect();
+    }, [pathname]);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-line">
+        <motion.header
+            initial={false}
+            animate={{ y: hidden ? "-100%" : "0%" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className={cn(
+                "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-300",
+                scrolled || isOpen ? "bg-white/85 backdrop-blur-md border-b border-line" : "bg-transparent border-b border-transparent"
+            )}
+        >
             <div className="container mx-auto px-4 md:px-6 h-16 md:h-[72px] flex items-center justify-between gap-4">
                 <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="QHSE, inicio">
                     <span className="flex items-center justify-center px-2.5 h-9 rounded-md bg-brand">
@@ -22,12 +59,31 @@ export function Navbar() {
                     </span>
                 </Link>
 
-                <nav className="hidden lg:flex items-center gap-6" aria-label="Principal">
-                    {NAV_LINKS.map((link) => (
-                        <Link key={link.href} href={link.href} className="text-sm font-medium text-ink-dim hover:text-accent transition-colors">
-                            {link.label}
-                        </Link>
-                    ))}
+                <nav className="hidden lg:flex items-center gap-1" aria-label="Principal">
+                    {NAV_LINKS.map((link) => {
+                        const id = link.href.split("#")[1];
+                        const isActive = pathname === "/" && active === id;
+                        return (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                aria-current={isActive ? "true" : undefined}
+                                className={cn(
+                                    "relative isolate rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors",
+                                    isActive ? "text-ink" : "text-ink-dim hover:text-accent"
+                                )}
+                            >
+                                {isActive && (
+                                    <motion.span
+                                        layoutId="nav-active"
+                                        className="absolute inset-0 -z-10 rounded-full bg-surface-2"
+                                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                                    />
+                                )}
+                                {link.label}
+                            </Link>
+                        );
+                    })}
                 </nav>
 
                 <div className="hidden lg:flex items-center gap-3">
@@ -35,7 +91,7 @@ export function Navbar() {
                         <WhatsAppIcon className="w-4 h-4" />
                         WhatsApp
                     </a>
-                    <Link href="/#contacto" className="btn-primary !py-2.5 !px-5 !text-sm">
+                    <Link href="/?servicio=Diagn%C3%B3stico#contacto" className="btn-primary !py-2.5 !px-5 !text-sm">
                         Solicitar diagnóstico
                     </Link>
                 </div>
@@ -50,8 +106,10 @@ export function Navbar() {
                 </button>
             </div>
 
+            <motion.div aria-hidden="true" className="absolute bottom-0 left-0 right-0 h-[2px] origin-left bg-accent" style={{ scaleX: progress }} />
+
             {isOpen && (
-                <div className="lg:hidden bg-white backdrop-blur-lg border-t border-line">
+                <div className="lg:hidden bg-white border-t border-line">
                     <nav className="container mx-auto px-4 py-4 flex flex-col" aria-label="Principal móvil">
                         {NAV_LINKS.map((link) => (
                             <Link
@@ -67,13 +125,13 @@ export function Navbar() {
                             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-whatsapp !py-3 !text-sm" onClick={() => setIsOpen(false)}>
                                 <WhatsAppIcon className="w-4 h-4" /> WhatsApp
                             </a>
-                            <Link href="/#contacto" onClick={() => setIsOpen(false)} className="btn-primary !py-3 !text-sm">
+                            <Link href="/?servicio=Diagn%C3%B3stico#contacto" onClick={() => setIsOpen(false)} className="btn-primary !py-3 !text-sm">
                                 Solicitar diagnóstico
                             </Link>
                         </div>
                     </nav>
                 </div>
             )}
-        </header>
+        </motion.header>
     );
 }

@@ -8,7 +8,7 @@ import { WhatsAppIcon } from "./ui/WhatsAppIcon";
 
 export function Contact() {
     return (
-        <section id="contacto" className="py-16 md:py-24 border-t border-line bg-surface">
+        <section id="contacto" className="py-20 md:py-28 border-t border-line">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="grid gap-10 lg:grid-cols-5 lg:gap-16">
                     <div className="lg:col-span-2">
