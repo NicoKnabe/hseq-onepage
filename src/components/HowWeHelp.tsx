@@ -46,7 +46,7 @@ function Card({ area, index, total, progress }: { area: Area; index: number; tot
         <div className="sticky mb-6 md:mb-[10vh] last:mb-0" style={{ top: `calc(88px + ${index * 22}px)` }}>
             <m.article
                 style={reduce ? undefined : { scale }}
-                className="origin-top grid overflow-hidden rounded-3xl border border-line bg-white shadow-[0_24px_60px_-40px_rgba(31,38,46,0.45)] md:grid-cols-2"
+                className="origin-top will-change-transform grid overflow-hidden rounded-3xl border border-line bg-white shadow-[0_24px_60px_-40px_rgba(31,38,46,0.45)] md:grid-cols-2"
             >
                 <div className="flex flex-col p-6 sm:p-8 md:p-10 lg:p-12">
                     <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-ink">{area.name}</h3>

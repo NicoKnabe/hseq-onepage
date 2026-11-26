@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { m, useScroll, useSpring, useMotionValueEvent } from "framer-motion";
@@ -19,11 +19,24 @@ export function Navbar() {
     const { scrollY, scrollYProgress } = useScroll();
     const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, restDelta: 0.001 });
 
-    // Se esconde al bajar y vuelve al subir.
+    // Se esconde al bajar y vuelve al subir. Umbral de 8 px para ignorar el rebote del scroll en iOS
+    // y solo cambiar el estado cuando realmente cambia (evita renders en cada cuadro).
+    const anchor = useRef(0);
+    const flags = useRef({ hidden: false, scrolled: false });
     useMotionValueEvent(scrollY, "change", (y) => {
-        const prev = scrollY.getPrevious() ?? 0;
-        setScrolled(y > 24);
-        setHidden(y > 160 && y > prev && !isOpen);
+        const isScrolled = y > 24;
+        if (isScrolled !== flags.current.scrolled) {
+            flags.current.scrolled = isScrolled;
+            setScrolled(isScrolled);
+        }
+        const delta = y - anchor.current;
+        if (Math.abs(delta) < 8) return;
+        anchor.current = y;
+        const shouldHide = y > 160 && delta > 0 && !isOpen;
+        if (shouldHide !== flags.current.hidden) {
+            flags.current.hidden = shouldHide;
+            setHidden(shouldHide);
+        }
     });
 
     // Sección activa en la home.
@@ -45,8 +58,8 @@ export function Navbar() {
             animate={{ y: hidden ? "-100%" : "0%" }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-300",
-                scrolled || isOpen ? "bg-white/85 backdrop-blur-md border-b border-line" : "bg-transparent border-b border-transparent"
+                "fixed top-0 left-0 right-0 z-50 will-change-transform transition-[background-color,border-color] duration-300",
+                scrolled || isOpen ? "bg-white/95 lg:bg-white/85 lg:backdrop-blur-md border-b border-line" : "bg-transparent border-b border-transparent"
             )}
         >
             <div className="container mx-auto px-4 md:px-6 h-16 md:h-[72px] flex items-center justify-between gap-4">

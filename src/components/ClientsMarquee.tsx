@@ -42,8 +42,10 @@ export function ClientsMarquee() {
                 <p className="mt-1 text-center text-sm text-muted">Construcción, minería, salud, ascensores, medio ambiente y servicios.</p>
             </RevealWrapper>
 
-            <div className="marquee relative mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] motion-reduce:[mask-image:none]">
-                <ul className="marquee-track flex w-max motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-4">
+            <div className="marquee relative mt-8 overflow-hidden">
+                <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 md:w-24 bg-gradient-to-r from-surface to-transparent motion-reduce:hidden" />
+                <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 md:w-24 bg-gradient-to-l from-surface to-transparent motion-reduce:hidden" />
+                <ul className="marquee-track flex w-max will-change-transform motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-4">
                     {clients.map((c) => (
                         <li key={c.name} className="pr-4 md:pr-6">
                             <Logo c={c} />

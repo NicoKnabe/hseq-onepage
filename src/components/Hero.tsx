@@ -57,7 +57,7 @@ export function Hero() {
 
             <div className="container relative mx-auto px-4 md:px-6">
                 <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
-                    <m.div className="lg:col-span-6" style={reduce ? undefined : { y: textY, opacity: fade }}>
+                    <m.div className="lg:col-span-6 will-change-transform" style={reduce ? undefined : { y: textY, opacity: fade }}>
                         <m.p
                             className="eyebrow mb-5"
                             initial={reduce ? false : { opacity: 0, y: 10 }}
@@ -101,7 +101,7 @@ export function Hero() {
                     </m.div>
 
                     <m.div
-                        className="relative lg:col-span-6 [perspective:1000px]"
+                        className="relative lg:col-span-6 will-change-transform [perspective:1000px]"
                         style={reduce ? undefined : { y: stageY, scale: stageScale }}
                         initial={reduce ? false : { opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}

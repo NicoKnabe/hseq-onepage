@@ -21,7 +21,7 @@ export function About() {
                 <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
                     <RevealWrapper className="lg:col-span-4">
                         <div ref={ref} className="relative mx-auto aspect-square w-full max-w-[340px] overflow-hidden rounded-3xl border border-line bg-white">
-                            <m.div className="absolute inset-[-6%]" style={reduce ? undefined : { y }}>
+                            <m.div className="absolute inset-[-6%] will-change-transform" style={reduce ? undefined : { y }}>
                                 <Image
                                     src="/fotos/nicolas-knabe.webp"
                                     alt="Nicolás Knabe Alcaino, consultor QHSE"
